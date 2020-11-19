@@ -1,0 +1,486 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+
+body { 
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Merriweather', serif;
+    font-family: 'Montserrat Subrayada', sans-serif;
+    font-family: 'Anton', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+/*************************************************/
+/*****************    HEADER    ******************/
+/*************************************************/
+
+.header{
+    position: relative;
+    background-image: url("images/header(2).jpg");
+    background-color: black;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    overflow: hidden;
+    min-width: 100%;
+    min-height: auto;
+    z-index: 10;
+}
+
+
+.navbar{
+    margin: 10px !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.navbar-brand {
+    height:65px !important;
+    width: auto ;
+    margin: 0 0 0 0;
+}
+
+.navbar-dark .nav-item{
+    padding-left: 10px;
+}
+
+.nav-item a{ 
+    font-family:Montserrat;
+    font-weight: 600; 
+    font-size: 18px;
+    color: white;   
+    text-decoration: none;
+    background-image: linear-gradient(#f32429,#f32429), linear-gradient(transparent, transparent);
+    background-size: 0 2px, auto;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    transition: all .2s ease-out;
+    line-height: 90%;
+}
+
+a:hover{
+    background-size: 95% 2px, auto;
+    color: #f32429;
+}
+
+.header .row{
+    margin: 5% 10% 10% 10%;
+}
+
+.header h1{
+    font-family:Montserrat;
+    text-transform: uppercase;
+    font-weight: bolder; 
+    font-size: 34px;
+    color: white;   
+}
+
+.row p{
+    font-family:Montserrat;
+    font-weight: 400; 
+    font-size: 16px;
+    color: white;   
+}
+
+.header .btn{
+    margin-top: 10px;
+    border-radius:28px;
+    font-family:Montserrat;
+    font-weight: bold; 
+    letter-spacing: 2px;
+    color: white;
+    font-size: 16px;
+    width: 90%;
+}
+
+.header .btn-outline-secondary{
+    border:1px solid white;
+}
+
+.header .btn-outline-secondary:hover{
+    background-color: #f32429;
+}
+
+.header .btn-outline-secondary:active{
+    background-color: #f32429 !important;
+    box-shadow: none !important;
+}
+
+.header .btn-outline-primary{
+    border:1px solid #f32429;
+    background-color: #f32429;  
+}
+
+.header .btn-outline-primary:active{
+    background-color: white !important ;
+    color: #f32429 !important;
+    border-color: #f32429 !important;
+    box-shadow: none !important;
+}
+
+/*************************************************/
+/********* #17181a******* SECOND CONTAINER ***************/
+/*************************************************/
+
+.blue_container{
+ 
+    background-color:#1D1E22;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    height: auto !important;
+}
+
+.blue_container h2{
+    font-family:Montserrat Subrayada;
+    text-transform: uppercase;
+ 
+    font-size: 36px;
+    color: white;
+  
+}
+
+
+.header .navbar-toggler-icon {
+    background-image: url("images/tog.png");
+    float: right;
+}
+
+
+/*************************************************/
+/****************    THUMBNAIL    ****************/
+/*************************************************/
+
+.mov-list .row{
+    margin: 0;
+    padding-bottom: 2%;
+  
+}
+
+.title{
+    font-family:Montserrat;
+    text-transform: uppercase;
+    font-weight: 600; 
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    white-space: nowrap;
+    margin: 5px 7px ;
+}
+.mov-list .row .col-xl-3 {
+    padding: 0 !important;
+}
+.thumbnail{
+    background-color: #222325;   
+}
+
+
+.thumbnail:hover  .overlay-effect{
+   
+    opacity: 1;
+    cursor: pointer;
+  }
+  
+.overlay-effect {
+    position: absolute;
+    background-color: rgba(0,0,0,0.60);
+    min-width:80% !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: .5s ease;
+    overflow: hidden;
+    color: white;
+    z-index: 10;
+} 
+
+.poster{
+    width: 100%;
+    height: auto;
+}
+
+.rate{
+    font-family:Montserrat;
+    color: gray;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+
+/*************************************************/
+/****************    THUMBNAIL    ****************/
+/*************************************************/
+.footer{
+    background-color: black;
+    
+}
+
+.block h3{
+    font-family:Montserrat;
+    color: white;
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+
+
+.block p{
+    font-family:Montserrat;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+
+.contact div {
+    font-family:Montserrat;
+    color: white;
+    font-size: 14px;
+    overflow: hidden;
+}
+.sns i{
+    color: white;
+    font-size: 25px;
+}
+
+.sns i:hover{
+    color: white;
+    font-size: 30px;
+}
+
+
+/*************************************************/
+/****************    SIGN UP     ****************/
+/*************************************************/
+.sign-up{
+    background-image:url("images/bg1.png");
+    background-color:   #121212;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    overflow: hidden;
+    background-attachment: scroll;
+    min-height: 100vh;
+    padding: 5%;
+  
+}
+
+.floating-cont{
+    width: 75%;
+    height: auto;
+ 
+}
+
+.div1{
+    position: relative;
+    background-image:url("images/su-bg.jpg");
+    background-color: #212025 ;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    overflow: hidden;
+    height: auto;
+    margin: 0 0 !important;
+    padding: 0 0 !important;
+    border-radius: 26px 0 0 26px  ;
+    box-shadow: -1px 3px 31px 14px rgba(0,0,0,0.75);
+}
+
+.div2{
+    position: relative;
+    background-color:#222325 ;
+    background-attachment: scroll;
+    width: auto;
+    margin: 0 0 !important;
+    padding: 0 0 !important;
+    border-radius: 0 26px 26px 0  ;
+    box-shadow: -1px 3px 31px 14px rgba(0,0,0,0.75);
+}
+
+
+.sign-up label{
+    font-family:Montserrat;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+}
+
+.sign-up .form-group {
+    font-family:Montserrat;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin: 5px !important;
+}
+.sign-up h1 {
+    font-family:Anton;
+    text-transform: uppercase;
+    color: white;
+    font-size: 45px;
+    letter-spacing: 1px;
+}
+
+.sign-up p {
+    font-family:Merriweather; 
+    font-style: italic;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+
+
+.input-group {
+    font-family:Montserrat !important;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin: 5px 0!important;
+    width: 100%;
+    text-decoration: none !important;
+    
+}
+
+.input-group-addon{
+    font-family:Montserrat;
+    font-size: 20px;
+    text-decoration: none !important;
+}
+
+.sign-up  button{
+    font-family:Montserrat;
+    font-weight: bolder; 
+    margin-top: 22px;
+    letter-spacing: 1px;
+}
+
+
+.form-control{
+    box-shadow: none;
+}
+
+.sign-up .back{
+    color: white;
+}
+
+
+.sign-up .back a{
+    font-family:Montserrat; 
+    text-transform: uppercase;
+    color: white;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+
+/*************************************************/
+/****************    LOG-IN     ****************/
+/*************************************************/
+.log-in{
+    background-image:url("images/bg1.png");
+    background-color:   #121212;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    overflow: hidden;
+    background-attachment: scroll;
+    min-height: 100vh;
+    padding: 8%;
+}
+
+
+
+.log-in  label{
+    font-family:Montserrat;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+}
+
+.log-in  .form-group {
+    font-family:Montserrat;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin: 5px !important;
+}
+.log-in  h1 {
+    font-family:Anton;
+    text-transform: uppercase;
+    color: white;
+    font-size: 45px;
+    letter-spacing: 1px;
+}
+
+.log-in  p {
+    font-family:Merriweather; 
+    font-style: italic;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.log-in .floating-cont{
+    width: 65%;
+    height: auto;
+ 
+}
+
+.log-in .back{
+    color: white;
+}
+
+
+.log-in .back a{
+    font-family:Montserrat; 
+    text-transform: uppercase;
+    color: white;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.forgot a{
+    font-family:Montserrat;
+    font-size: 14px;
+    letter-spacing: 1px;
+    float: center;
+} 
+.log-in  button{
+    font-family:Montserrat;
+    font-weight: bolder; 
+    margin-top: 22px;
+    letter-spacing: 1px;
+}
+
+.log-in .sign a{
+    font-family:Montserrat; 
+    color: white;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.error{
+    font-size: 60px;
+    color: #f32429;
+    padding: 0;
+    margin: 0;
+}
