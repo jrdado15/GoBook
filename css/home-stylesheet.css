@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+
+body { 
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Merriweather', serif;
+    font-family: 'Montserrat Subrayada', sans-serif;
+    font-family: 'Anton', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.navbar{
+   background-color: #1d1d1d;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.search-icon{
+ position: absolute;
+ color: white;
+ margin-left: 7px ;
+}
+input[type=text] {
+    
+    width: 130px;
+    height: 35px;
+    box-sizing: border-box;
+    font-family:Montserrat;
+    font-weight: 600; 
+    color: white;
+    border-radius: 0px;
+    border:1px solid white;
+    box-shadow: none !important;
+    font-size: 16px;
+    background-image: url('images/searchicon.png');
+    background-color: transparent;
+    
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+  
+  input[type=text]:focus {
+    background-image: url('images/searchicon.png');
+    width: 50%;
+  }
+.navbar-brand {
+    height:65px !important;
+    width: auto ;
+    margin: 0 0 0 0;
+}
+
+.navbar-dark .nav-item{
+    padding-left: 10px;
+}
+
+.nav-item a{ 
+    font-family:Montserrat;
+    font-weight: 600; 
+    font-size: 18px;
+    color: white;   
+    text-decoration: none;
+    background-image: linear-gradient(#f32429,#f32429), linear-gradient(transparent, transparent);
+    background-size: 0 2px, auto;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    transition: all .2s ease-out;
+    line-height: 90%;
+    
+}
+
+a:hover{
+    background-size: 95% 2px, auto;
+    color: #f32429;
+}
+
+.header .row{
+    margin: 5% 10% 10% 10%;
+}
+
+.header h1{
+    font-family:Montserrat;
+    text-transform: uppercase;
+    font-weight: bolder; 
+    font-size: 34px;
+    color: white;   
+}
+
+.navbar{
+    
+    margin:0;
+    padding: 0;
+}
+/********************************************************/
+/********************************************************/
+/********************************************************/
+/********************************************************/
+
+.carousel-item {
+    height: 70vh !important;
+    width: 100%;
+}
+
+.carousel-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.caption{
+    height: 30vh !important;
+    overflow: hidden;
+    text-overflow: ellipsis !important;
+}
+
+.caption h1{
+    font-family:Montserrat;
+    text-transform: uppercase;
+    font-weight: bolder; 
+    font-size:2.125em;
+    color: white;   
+    text-align: center;
+    height: 40px !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+}
+
+.caption p{
+    font-family:Montserrat;
+    font-weight: 400; 
+    font-size: 1em;
+    color: white;   
+    overflow: hidden;
+    text-overflow: ellipsis !important;
+}
+
+.carousel-caption .row button{
+    
+    border:1px solid white;
+    border-radius: 20px;
+    overflow: hidden;
+
+    font-family:Montserrat;
+    font-weight: bold; 
+    letter-spacing: 1px;
+    color: white;
+    font-size: 16px;
+    box-shadow: none !important;
+}
+
+.carousel-caption .row button:hover{
+    
+    border:1px solid #f32429;
+    background-color: #f32429 !important;
+    box-shadow: none !important;
+}
+
+.carousel-caption .row button:active{
+
+    border:1px solid white !important;
+    background-color:white !important;
+    color:#1F417E !important;
+    box-shadow: none !important;
+}
+
+/********************************************************/
+/********************************************************/
+/********************************************************/
+/********************************************************/
+.product-slider{
+    height: auto;
+    background-color:  #1d1d1d;
+    overflow: hidden;
+    width: 100%;
+}
+
+.product-slider h1{
+    color: white;
+
+}
+
+.product-slider .btn{
+    border:1px solid white;
+    border-radius: 24px;
+    height: 40px;
+    box-shadow: none !important;
+}
+.box{
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform-origin: translate(-50%,-50%);
+    background-color: #121212;
+}
+
+.slide-img{ 
+    height: 450px;
+}
+
+
+.slide-img img{ 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-sizing: border-box;
+}
+
+.detail-box{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+
+.type{
+    display: flex;
+    flex-direction: column;
+}
+
+.type a{
+    font-family:Montserrat;
+    color: white;
+    font-weight: bolder;
+    text-align: left;
+    font-size: 15px;
+    overflow: hidden;
+}
+
+
+.overlay-effect {
+    position: absolute;
+    background-color: rgba(0,0,0,0.60);
+    min-width:80% !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: .5s ease;
+    overflow: hidden;
+    color: white;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+} 
+
+
+.box:hover .overlay-effect:hover{
+    opacity: 1;
+    cursor: pointer;
+    
+}
+
+/********************************************************/
+/********************************************************/
+/********************************************************/
+/********************************************************/
+
+.footer{
+    background-color: black;
+    
+}
+
+.block h3{
+    font-family:Montserrat;
+    color: white;
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+
+
+.block p{
+    font-family:Montserrat;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+
+.contact div {
+    font-family:Montserrat;
+    color: white;
+    font-size: 14px;
+    overflow: hidden;
+}
+.sns i{
+    color: white;
+    font-size: 25px;
+}
+
+.sns i:hover{
+    color: white;
+    font-size: 30px;
+}
