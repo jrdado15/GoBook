@@ -12,12 +12,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoBook</title>
+    <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <link rel="stylesheet" href="css/home-stylesheet.css">
-    <link  rel="stylesheet" href="css/lightslider.css">
+    
   
 
 </head>
@@ -26,12 +26,21 @@
     NOTES
     BY: RHEMA MIRANDA
     SCOPE: HEADER
+
+    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-80" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children dropdown active menu-item-80 nav-item"><a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link" id="menu-item-dropdown-80"><i class="fa fa-bars"></i></a>
+                            <ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-80" role="menu">
+                                <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1147" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-324 current_page_item active menu-item-1147 nav-item"><a title="Host a screening" href="https://www.thesocialdilemma.com/the-film/virtual-tour/host-a-screening/" class="dropdown-item">Host a screening</a></li>
+                                <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-490" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-490 nav-item"><a title="Contact" href="https://www.thesocialdilemma.com/contact/" class="dropdown-item">Contact</a></li>
+                                <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1151" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1151 nav-item"><a title="Donate" href="https://www.denverfilm.org/social-dilemma/" class="dropdown-item">Donate</a></li>
+                                <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-125" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-125 nav-item"><a title="Press" href="https://www.thesocialdilemma.com/press/" class="dropdown-item">Press</a></li>
+                            </ul>
+                        </li>
 -->
 
   
  
-            <nav class="navbar navbar-expand-lg navbar-dark p-sm-3">
-                <div class="container">
+            <nav class="navbar navbar-expand-md navbar-dark">
+                <div class="container-fluid mx-5">
                     <div class="row ">
                         <img class="navbar-brand align-middle mr-3" src="images/gobook_logo-01.png"  alt="GOBOOK"/>
                            
@@ -39,13 +48,12 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent"  aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle Navigation" >
-                    <span  class="navbar-toggler-icon" ></span>
+                    <span  class="fa fa-bars" ></span>
                 </button>
                 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   
-                    <i class="search-icon fa fa-search fa-1x"></i>
-                    <input class="align-middle" type="text"  name="search" placeholder="Search.."> 
+                    
                     
                     <ul class="navbar-nav align-middle ml-auto">
                        
@@ -56,13 +64,10 @@
                         <li class="nav-item ">
                             <a href="#" class="nav-link">MY CART</a>
                         </li>
-                        <?php if(isset($_SESSION['userId'])) : ?>
-                                    <li class="nav-item text-uppercase d-flex"> <a href="#" class="nav-link"><?php echo $_SESSION['userId'];?></a></li>
-                                    <li class="nav-item"> <a href="logout.php" class="nav-link">LOG OUT</a></li> 
-                        <?php else: ?> 
-                            <li class="nav-item"> <a href="log-in.php" class="nav-link">LOG IN</a></li>';
-                            <li class="nav-item"> <a href="sign-up.php" class="nav-link">SIGN UP</a></li>';
-                        <?php endif ?>
+                        <li class="nav-item">
+                            <a href="home.html" class="nav-link">LOG IN</a>
+                        </li>
+                        
                     </ul>
                     
                 </div>
@@ -91,7 +96,7 @@
         <div class="carousel-inner">  
             <div class="carousel-item active">    
                 <img src="images/header(2).jpg" alt="...." >  
-    
+                
                 <div class="carousel-caption">
                     <div class="row  p-0 m-0 justify-content-center ">
                         <div  class="caption column align-self-start">
@@ -128,265 +133,115 @@
     BY: RHEMA MIRANDA
     SCOPE: PRODUCT SLIDER
 
-    *IT SHOULD HAVE AT LEAST 5 THUMBNAILS
-    !!!!!!! FOR ADMIN
-    <i class="admin fa fa-edit fa-5x"></i>
-    !!!!!!! FOR CUSTOMER
-    <i class="customer fa fa-ticket fa-5x"></i>
--->                    
-    <div class="product-slider col-12 p-5">
-        <div class="row justify-content-between">
-        <h1>NOW SHOWING </h1>
-        <?php if($_SESSION['usertype'] == 'admin') : ?>
-            <button id="hideoncustomer" type="button"  class="btn btn-outline-primary"><i class="fa fa-plus"></i> ADD NEW</button>
-        <?php else : ?> 
-            <button id="hideoncustomer" type="button"  class="btn btn-outline-primary"><i class="fa fa-plus"></i> SEE ALL</button>
-        <?php endif ?> 
+
+-->
+<div class="product container my-3">
+    <div class="d-flex flex-sm-row flex-column justify-content-between">
+        <div class="dropdown p-0">
+            <button class=" btn btn-lg dropdown-toggle p-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Now Showing
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item disabled" href="#">Now Showing</a>
+            <a class="dropdown-item" href="#">Coming Soon</a>
+
+            </div>
+            
         </div>
-        <ul id="autoWidth" class="cs-hidden">
-            <li class="item-a">
-                
-                <div class="box">
-                    <!--IMAGE BOX-->
-                    <div class="slide-img">
-                        <img src="images/poster(1).jpg" alt="...">
-                        <div class="overlay-effect"> 
-                            <i class="fa fa-ticket fa-5x"></i>
-                        </div>
-                    </div>
-                    <!--DETAIL BOX-->
-                    <div class="detail-box">
-                        <!--TYPE-->
-                        <div class="type col-10 m-0 p-0">
-                            <!--DETAIL BOX-->
-                            <a href="#">GODZILLA</a>
-                        </div>
-                        <div class="col-2 ">
-                        <a href="#" class="price">P250</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="item-b">
-                
-                <div class="box">
-                    <!--IMAGE BOX-->
-                    <div class="slide-img">
-                        <img src="images/poster(2).jpg" alt="...">
-                        <div class="overlay-effect"> 
-                            <i class="fa fa-ticket fa-5x"></i>
-                        </div>
-                    </div>
-                    <!--DETAIL BOX-->
-                    <div class="detail-box">
-                        <!--TYPE-->
-                        <div class="type col-10 m-0 p-0">
-                            <!--DETAIL BOX-->
-                            <a href="#">GODZILLA</a>
-                        </div>
-                        <div class="col-2 ">
-                        <a href="#" class="price">P250</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="item-c">
-                
-                <div class="box">
-                    <!--IMAGE BOX-->
-                    <div class="slide-img">
-                        <img src="images/poster(3).jpg" alt="...">
-                        <div class="overlay-effect"> 
-                            <i class="fa fa-ticket fa-5x"></i>
-                        </div>
-                    </div>
-                    <!--DETAIL BOX-->
-                    <div class="detail-box">
-                        <!--TYPE-->
-                        <div class="type col-10 m-0 p-0">
-                            <!--DETAIL BOX-->
-                            <a href="#">GODZILLA</a>
-                        </div>
-                        <div class="col-2 ">
-                        <a href="#" class="price">P250</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="item-d">
-                
-                <div class="box">
-                    <!--IMAGE BOX-->
-                    <div class="slide-img">
-                        <img src="images/poster(4).jpg" alt="...">
-                        <div class="overlay-effect"> 
-                            <i class="fa fa-ticket fa-5x"></i>
-                        </div>
-                    </div>
-                    <!--DETAIL BOX-->
-                    <div class="detail-box">
-                        <!--TYPE-->
-                        <div class="type col-10 m-0 p-0">
-                            <!--DETAIL BOX-->
-                            <a href="#">GODZILLA</a>
-                        </div>
-                        <div class="col-2 ">
-                        <a href="#" class="price">P250</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="item-e">
-                
-                <div class="box">
-                    <!--IMAGE BOX-->
-                    <div class="slide-img">
-                        <img src="images/poster(5).jpg" alt="...">
-                        <div class="overlay-effect"> 
-                            <i class="fa fa-ticket fa-5x"></i>
-                        </div>
-                    </div>
-                    <!--DETAIL BOX-->
-                    <div class="detail-box">
-                        <!--TYPE-->
-                        <div class="type col-10 m-0 p-0">
-                            <!--DETAIL BOX-->
-                            <a href="#">GODZILLA</a>
-                        </div>
-                        <div class="col-2 ">
-                        <a href="#" class="price">P250</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-        <div class="row justify-content-between">
-            <h1>COMING SOON</h1>
-            <?php if($_SESSION['usertype'] == 'admin') : ?>
-            <button id="hideoncustomer" type="button"  class="btn btn-outline-primary"><i class="fa fa-plus"></i> ADD NEW</button>
-            <?php else :?> 
-                <button id="hideoncustomer" type="button"  class="btn btn-outline-primary"><i class="fa fa-plus"></i> SEE ALL</button>
-            <?php endif ?> 
-        
+        <div class="search form-inline justify-content-center">
+            <input class=" form-control col-10 " type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-secondary col-2 " type="submit"> <i class="mr-md-3 fa fa-search"></i></button>
         </div>
-        <ul id="autoWidth-2" class="cs-hidden">
-            <li class="item-a">
-                
-                <div class="box">
-                    <!--IMAGE BOX-->
-                    <div class="slide-img">
-                        <img src="images/poster(1).jpg" alt="...">
-                        <div class="overlay-effect"> 
-                            <i class="customer fa fa-ticket fa-5x"></i>
-                        </div>
-                    </div>
-                    <!--DETAIL BOX-->
-                    <div class="detail-box">
-                        <!--TYPE-->
-                        <div class="type col-10 m-0 p-0">
-                            <!--DETAIL BOX-->
-                            <a href="#">GODZILLA</a>
-                        </div>
-                        <div class="col-2 ">
-                        <a href="#" class="price">P250</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="item-b">
-                
-                <div class="box">
-                    <!--IMAGE BOX-->
-                    <div class="slide-img">
-                        <img src="images/poster(2).jpg" alt="...">
-                        <div class="overlay-effect"> 
-                            <i class="fa fa-ticket fa-5x"></i>
-                        </div>
-                    </div>
-                    <!--DETAIL BOX-->
-                    <div class="detail-box">
-                        <!--TYPE-->
-                        <div class="type col-10 m-0 p-0">
-                            <!--DETAIL BOX-->
-                            <a href="#">GODZILLA</a>
-                        </div>
-                        <div class="col-2 ">
-                        <a href="#" class="price">P250</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="item-c">
-                
-                <div class="box">
-                    <!--IMAGE BOX-->
-                    <div class="slide-img">
-                        <img src="images/poster(3).jpg" alt="...">
-                        <div class="overlay-effect"> 
-                            <i class="fa fa-ticket fa-5x"></i>
-                        </div>
-                    </div>
-                    <!--DETAIL BOX-->
-                    <div class="detail-box">
-                        <!--TYPE-->
-                        <div class="type col-10 m-0 p-0">
-                            <!--DETAIL BOX-->
-                            <a href="#">GODZILLA</a>
-                        </div>
-                        <div class="col-2 ">
-                        <a href="#" class="price">P250</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="item-d">
-                
-                <div class="box">
-                    <!--IMAGE BOX-->
-                    <div class="slide-img">
-                        <img src="images/poster(4).jpg" alt="...">
-                        <div class="overlay-effect"> 
-                            <i class="fa fa-ticket fa-5x"></i>
-                        </div>
-                    </div>
-                    <!--DETAIL BOX-->
-                    <div class="detail-box">
-                        <!--TYPE-->
-                        <div class="type col-10 m-0 p-0">
-                            <!--DETAIL BOX-->
-                            <a href="#">GODZILLA</a>
-                        </div>
-                        <div class="col-2 ">
-                        <a href="#" class="price">P250</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="item-e">
-                
-                <div class="box">
-                    <!--IMAGE BOX-->
-                    <div class="slide-img">
-                        <img src="images/poster(5).jpg" alt="...">
-                        <div class="overlay-effect"> 
-                            <i class="fa fa-ticket fa-5x"></i>
-                        </div>
-                    </div>
-                    <!--DETAIL BOX-->
-                    <div class="detail-box">
-                        <!--TYPE-->
-                        <div class="type col-10 m-0 p-0">
-                            <!--DETAIL BOX-->
-                            <a href="#">GODZILLA</a>
-                        </div>
-                        <div class="col-2 ">
-                        <a href="#" class="price">P250</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
     </div>
+
+    <div class=" mov-list my-3">
+        <div class="row justify-content-md-start justify-content-xs-center ">
+             
+             <div class="cont col-xl-3 col-lg-2 col-md-4 col-sm-4 col-xs-2 p-1">
+                <div class=" thumbnail d-flex flex-column justify-content-left">
+                    <div class="overlay-effect d-flex justify-content-center align-items-center p-1"> 
+                        <i class="fa fa-ticket fa-3x"></i>
+                    </div>
+                    <img src="images/poster(1).jpg" alt="..." class="poster">
+                    <b class="title mx-4">ALADDIN</b>
+                    <div class="rate d-flex flex-row justify-content-between mx-2 mb-2">
+                        <b class="ml-1 float-left"> <i class="fa fa-star mt-1"></i> 3.4</b>
+                        <b class="align-self-center"> P250.00</b>
+                    </div>
+                </div>
+             </div>
+             
+             <div class="cont  col-xl-3 col-lg-2 col-md-4 col-sm-4 col-xs-2 p-1">
+                <div class=" thumbnail d-flex flex-column justify-content-left">
+                    <div class="overlay-effect d-flex justify-content-center align-items-center"> 
+                        <i class="fa fa-ticket fa-3x"></i>
+                    </div>
+                    <img src="images/poster(2).jpg" alt="..." class="poster">
+                    <b class="title mx-4">ALADDIN</b>
+                    <div class="rate d-flex flex-row justify-content-between mx-2 mb-2">
+                        <b class="ml-1 float-left"> <i class="fa fa-star mt-1"></i> 3.4</b>
+                        <b class="align-self-center"> P250.00</b>
+                    </div>
+                </div>
+             </div>
+             <div class="cont  col-xl-3 col-lg-2 col-md-4 col-sm-4 col-xs-2 p-1">
+                <div class=" thumbnail d-flex flex-column justify-content-left">
+                    <div class="overlay-effect d-flex justify-content-center align-items-center"> 
+                        <i class="fa fa-ticket fa-3x"></i>
+                    </div>
+                    <img src="images/poster(3).jpg" alt="..." class="poster">
+                    <b class="title mx-4">ALADDIN</b>
+                    <div class="rate d-flex flex-row justify-content-between mx-2 mb-2">
+                        <b class="ml-1 float-left"> <i class="fa fa-star mt-1"></i> 3.4</b>
+                        <b class="align-self-center"> P250.00</b>
+                    </div>
+                </div>
+             </div>
+             <div class="cont  col-xl-3 col-lg-2 col-md-4 col-sm-4 col-xs-2 p-1">
+                <div class=" thumbnail d-flex flex-column justify-content-left">
+                    <div class="overlay-effect d-flex justify-content-center align-items-center"> 
+                        <i class="fa fa-ticket fa-3x"></i>
+                    </div>
+                    <img src="images/poster(4).jpg" alt="..." class="poster">
+                    <b class="title mx-4">ALADDIN</b>
+                    <div class="rate d-flex flex-row justify-content-between mx-2 mb-2">
+                        <b class="ml-1 float-left"> <i class="fa fa-star mt-1"></i> 3.4</b>
+                        <b class="align-self-center"> P250.00</b>
+                    </div>
+                </div>
+             </div>
+             <div class="cont  col-xl-3 col-lg-2 col-md-4 col-sm-4 col-xs-2 p-1">
+                <div class=" thumbnail d-flex flex-column justify-content-left">
+                    <div class="overlay-effect d-flex justify-content-center align-items-center"> 
+                        <i class="fa fa-ticket fa-3x"></i>
+                    </div>
+                    <img src="images/poster(7).jpg" alt="..." class="poster">
+                    <b class="title mx-4">ALADDIN</b>
+                    <div class="rate d-flex flex-row justify-content-between mx-2 mb-2">
+                        <b class="ml-1 float-left"> <i class="fa fa-star mt-1"></i> 3.4</b>
+                        <b class="align-self-center"> P250.00</b>
+                    </div>
+                </div>
+             </div>
+             <div class="cont  col-xl-3 col-lg-2 col-md-4 col-sm-4 col-xs-2 p-1">
+                <div class=" thumbnail d-flex flex-column justify-content-left">
+                    <div class="overlay-effect d-flex justify-content-center align-items-center"> 
+                        <i class="fa fa-ticket fa-3x"></i>
+                    </div>
+                    <img src="images/poster(6).jpg" alt="..." class="poster">
+                    <b class="title mx-4">ALADDIN</b>
+                    <div class="rate d-flex flex-row justify-content-between mx-2 mb-2">
+                        <b class="ml-1 float-left"> <i class="fa fa-star mt-1"></i> 3.4</b>
+                        <b class="align-self-center"> P250.00</b>
+                    </div>
+                </div>
+             </div>
+            
+        </div> 
+       
+    </div>   
+
+</div>
 
 <!--
     NOTES
@@ -427,7 +282,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
     <script src="js/JQuery3.3.1.js"></script>
     <script src="js/lightslider.js"></script>
-    
     <script>
         $(document).ready(function() {
         $('#autoWidth').lightSlider({
@@ -450,47 +304,7 @@
     });  
         });
     </script>
-    <script>
-        $(document).ready(function(){
-            var submitIcon = $('.searchbox-icon');
-            var inputBox = $('.searchbox-input');
-            var searchBox = $('.searchbox');
-            var isOpen = false;
-            submitIcon.click(function(){
-                if(isOpen == false){
-                    searchBox.addClass('searchbox-open');
-                    inputBox.focus();
-                    isOpen = true;
-                } else {
-                    searchBox.removeClass('searchbox-open');
-                    inputBox.focusout();
-                    isOpen = false;
-                }
-            });  
-             submitIcon.mouseup(function(){
-                    return false;
-                });
-            searchBox.mouseup(function(){
-                    return false;
-                });
-            $(document).mouseup(function(){
-                    if(isOpen == true){
-                        $('.searchbox-icon').css('display','block');
-                        submitIcon.click();
-                    }
-                });
-        });
-            function buttonUp(){
-                var inputVal = $('.searchbox-input').val();
-                inputVal = $.trim(inputVal).length;
-                if( inputVal !== 0){
-                    $('.searchbox-icon').css('display','none');
-                } else {
-                    $('.searchbox-input').val('');
-                    $('.searchbox-icon').css('display','block');
-                }
-            }
-    </script>
-
+   
+  
 </body>
 </html>
