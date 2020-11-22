@@ -64,6 +64,9 @@
                         <li class="nav-item ">
                             <a href="#" class="nav-link">MY CART</a>
                         </li>
+                        <li class="nav-item ">
+                            <a href="#" class="nav-link">TICKETS</a>
+                        </li>
                         <li class="nav-item">
                             <a href="home.html" class="nav-link">LOG IN</a>
                         </li>
