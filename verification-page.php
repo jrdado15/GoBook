@@ -11,10 +11,6 @@
 
 </head>
 <body>
-<!--
-<img class="logo" src="images/gobook_logo-01.png" alt="GOBOOK">
-
--->
     <div class="ver-page d-flex justify-content-center" >
     <div class="div3 col-lg-8 col-xs-12 d-flex flex-column justify-content-center m-0 p-0 ">
         <div class="p-lg-5">

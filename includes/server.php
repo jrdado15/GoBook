@@ -81,7 +81,7 @@ if(isset($_POST['signup'])){
         //functions call to send a verification email
         sendVerificationEmail($email, $token);
 
-        header('location: validation-email.php');
+        header('location: verification-page.php');
     }
 }
 ?>
