@@ -484,3 +484,129 @@ a:hover{
     padding: 0;
     margin: 0;
 }
+
+/*************************************************/
+/****************  VERIFICATION   ****************/
+/*************************************************/
+.ver-page{
+   
+    background-color:   #292929;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    overflow: hidden;
+    background-attachment: scroll;
+    min-height: 100vh;
+    padding: 5%;
+    
+}
+
+
+.div3{
+    position: relative;
+    background-color:#292929 ;
+    background-attachment: scroll;
+    width: auto;
+    margin: 0 0 !important;
+    padding: 0 0 !important;
+    
+}
+
+.logo{
+    width: 100px !important;
+    height: auto !important;
+    
+    
+}
+
+
+.div3 h1{
+    font-size: 32px;
+    color: white;
+   text-align: center;
+}
+.div3 p{
+    font-family:Montserrat;
+    color: white;
+    font-size: 16px;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.div3 input{
+    margin-top: -10px !important;
+    
+}
+
+.div3 span{
+    margin-left: -30px !important;
+    color: white;
+}
+
+#exampleInputEmail1{
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    border-radius: 0;
+    color: white;
+    font-family:Bebas Neue;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-top: -25px !important;
+}   
+
+#exampleInputEmail1:focus{
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+#validationTooltip04{
+    background-color: transparent;
+    border:2px solid white;
+    border-radius: 0;
+    color: white;
+    font-family:Bebas Neue;
+    font-size: 20px;
+    width: 50% !important;
+    text-align: center;
+}
+
+#validationTooltip04:focus{
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.div3 button{
+    
+    border:1px solid #e33b3a;
+    background-color:#e33b3a;
+    border-radius: 0;
+    overflow: hidden;   
+    margin: auto;
+    width: 50% !important;
+    font-family:Bebas Neue;
+    font-size: 20px;
+    color: white;
+    box-shadow: none !important;
+}
+
+.div3 a{
+    font-family:Montserrat;
+    font-size: 16px;
+    text-align: center;
+    font-weight: lighter;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
