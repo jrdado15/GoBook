@@ -67,9 +67,13 @@
                         <li class="nav-item ">
                             <a href="#" class="nav-link">TICKETS</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="home.html" class="nav-link">LOG IN</a>
-                        </li>
+                        <?php if(isset($_SESSION['userId'])) : ?>
+                                    <li class="nav-item text-uppercase d-flex"> <a href="#" class="nav-link"><?php echo $_SESSION['userId'];?></a></li>
+                                    <li class="nav-item"> <a href="logout.php" class="nav-link">LOG OUT</a></li> 
+                        <?php else: ?> 
+                            <li class="nav-item"> <a href="log-in.php" class="nav-link">LOG IN</a></li>';
+                            <li class="nav-item"> <a href="sign-up.php" class="nav-link">SIGN UP</a></li>';
+                        <?php endif ?>
                         
                     </ul>
                     
@@ -158,94 +162,35 @@
     </div>
 
     <div class=" mov-list my-3">
-        <div class="row justify-content-md-start justify-content-xs-center ">
-             
-             <div class="cont col-xl-3 col-lg-2 col-md-4 col-sm-4 col-xs-2 p-1">
-                <div class=" thumbnail d-flex flex-column justify-content-left">
-                    <div class="overlay-effect d-flex justify-content-center align-items-center p-1"> 
-                        <i class="fa fa-ticket fa-3x"></i>
-                    </div>
-                    <img src="images/poster(1).jpg" alt="..." class="poster">
-                    <b class="title mx-4">ALADDIN</b>
-                    <div class="rate d-flex flex-row justify-content-between mx-2 mb-2">
-                        <b class="ml-1 float-left"> <i class="fa fa-star mt-1"></i> 3.4</b>
-                        <b class="align-self-center"> P250.00</b>
-                    </div>
-                </div>
-             </div>
-             
-             <div class="cont  col-xl-3 col-lg-2 col-md-4 col-sm-4 col-xs-2 p-1">
-                <div class=" thumbnail d-flex flex-column justify-content-left">
-                    <div class="overlay-effect d-flex justify-content-center align-items-center"> 
-                        <i class="fa fa-ticket fa-3x"></i>
-                    </div>
-                    <img src="images/poster(2).jpg" alt="..." class="poster">
-                    <b class="title mx-4">ALADDIN</b>
-                    <div class="rate d-flex flex-row justify-content-between mx-2 mb-2">
-                        <b class="ml-1 float-left"> <i class="fa fa-star mt-1"></i> 3.4</b>
-                        <b class="align-self-center"> P250.00</b>
-                    </div>
-                </div>
-             </div>
-             <div class="cont  col-xl-3 col-lg-2 col-md-4 col-sm-4 col-xs-2 p-1">
-                <div class=" thumbnail d-flex flex-column justify-content-left">
-                    <div class="overlay-effect d-flex justify-content-center align-items-center"> 
-                        <i class="fa fa-ticket fa-3x"></i>
-                    </div>
-                    <img src="images/poster(3).jpg" alt="..." class="poster">
-                    <b class="title mx-4">ALADDIN</b>
-                    <div class="rate d-flex flex-row justify-content-between mx-2 mb-2">
-                        <b class="ml-1 float-left"> <i class="fa fa-star mt-1"></i> 3.4</b>
-                        <b class="align-self-center"> P250.00</b>
-                    </div>
-                </div>
-             </div>
-             <div class="cont  col-xl-3 col-lg-2 col-md-4 col-sm-4 col-xs-2 p-1">
-                <div class=" thumbnail d-flex flex-column justify-content-left">
-                    <div class="overlay-effect d-flex justify-content-center align-items-center"> 
-                        <i class="fa fa-ticket fa-3x"></i>
-                    </div>
-                    <img src="images/poster(4).jpg" alt="..." class="poster">
-                    <b class="title mx-4">ALADDIN</b>
-                    <div class="rate d-flex flex-row justify-content-between mx-2 mb-2">
-                        <b class="ml-1 float-left"> <i class="fa fa-star mt-1"></i> 3.4</b>
-                        <b class="align-self-center"> P250.00</b>
-                    </div>
-                </div>
-             </div>
-             <div class="cont  col-xl-3 col-lg-2 col-md-4 col-sm-4 col-xs-2 p-1">
-                <div class=" thumbnail d-flex flex-column justify-content-left">
-                    <div class="overlay-effect d-flex justify-content-center align-items-center"> 
-                        <i class="fa fa-ticket fa-3x"></i>
-                    </div>
-                    <img src="images/poster(7).jpg" alt="..." class="poster">
-                    <b class="title mx-4">ALADDIN</b>
-                    <div class="rate d-flex flex-row justify-content-between mx-2 mb-2">
-                        <b class="ml-1 float-left"> <i class="fa fa-star mt-1"></i> 3.4</b>
-                        <b class="align-self-center"> P250.00</b>
-                    </div>
-                </div>
-             </div>
-             <div class="cont  col-xl-3 col-lg-2 col-md-4 col-sm-4 col-xs-2 p-1">
-                <div class=" thumbnail d-flex flex-column justify-content-left">
-                    <div class="overlay-effect d-flex justify-content-center align-items-center"> 
-                        <i class="fa fa-ticket fa-3x"></i>
-                    </div>
-                    <img src="images/poster(6).jpg" alt="..." class="poster">
-                    <b class="title mx-4">ALADDIN</b>
-                    <div class="rate d-flex flex-row justify-content-between mx-2 mb-2">
-                        <b class="ml-1 float-left"> <i class="fa fa-star mt-1"></i> 3.4</b>
-                        <b class="align-self-center"> P250.00</b>
-                    </div>
-                </div>
-             </div>
-            
-        </div> 
-       
-    </div>   
+            <div class="row justify-content-md-start justify-content-xs-center ">
+                <?php 
+                require_once 'includes/conn.php';
 
-</div>
+                $query = "SELECT * FROM `movie_tbl`";
+                $query_run = mysqli_query($db, $query);
 
+                while($row = mysqli_fetch_array($query_run))
+                    {
+                ?>
+                            
+                <div class="cont col-xl-3 col-lg-2 col-md-4 col-sm-4 col-xs-2 p-1">
+                    <div class=" thumbnail d-flex flex-column justify-content-left">
+                        <div class="overlay-effect d-flex justify-content-center align-items-center p-1"> 
+                            <i class="fa fa-ticket fa-3x"></i>
+                        </div>
+                            <?php echo '<img class="poster" src="data:image;base64,' .base64_encode($row['movie_poster']).' ">'; ?>
+                            <b class="title mx-4"> <?php echo $row['movie_name'];?> </b>
+                            <div class="rate d-flex flex-row justify-content-between mx-2 mb-2">
+                                <b class="ml-1 float-left"> <i class="fa fa-star mt-1"></i> 3.4</b>
+                                <b class="align-self-center"> P<?php echo $row['movie_price']; ?></b>
+                            </div> 
+                        </div>
+                    </div>
+                <?php
+                     }      
+                 ?>
+            </div>
+        </div>     
 <!--
     NOTES
     BY: RHEMA MIRANDA
