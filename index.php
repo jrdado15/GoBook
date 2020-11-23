@@ -161,6 +161,7 @@
         </div>
     </div>
 
+    <!--fetch/display movie description from database-->
     <div class=" mov-list my-3">
             <div class="row justify-content-md-start justify-content-xs-center ">
                 <?php 
