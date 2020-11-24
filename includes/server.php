@@ -30,7 +30,10 @@ if(isset($_POST['signup'])){
         array_push($uerrors, "Username is required.");
     }
     if(strlen($username) < 5 && strlen($username) >= 1){
-        array_push($uerrors, "Username characters must at least have 5 characters.");
+        array_push($uerrors, "Username characters must have 5 - 13 characters.");
+    }
+    if(strlen($username) > 13){
+        array_push($uerrors, "Username characters must have 5 - 13 characters.");
     }
     if(!preg_match( "/^[a-zA-Z]+[a-zA-Z0-9._]+$/" ,$username)){
         if(strlen($username) >= 5){
