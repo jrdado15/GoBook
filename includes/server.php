@@ -67,7 +67,7 @@ if(isset($_POST['signup'])){
     //Store users' credential in database
     if(count($eerrors) === 0 && count($uerrors) === 0 && count($perrors) === 0 && count($cperrors) === 0 && count($derrors) === 0){
         $password = md5($password_1); //this will encypt the password
-        $token =  mt_rand(100000,999999);
+        $token =  bin2hex(random_bytes(50));
         $verified = false;
         $usertype = 'member';
         $query = "INSERT INTO account_tbl (user_type, email, verified, token, username, dob, password) VALUES ('$usertype', '$email', '$verified', '$token', '$username', '$dob', '$password')";

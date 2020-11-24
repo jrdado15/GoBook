@@ -36,11 +36,12 @@ if(isset($_POST['login'])){
             $account = mysqli_fetch_assoc($results);
             $_SESSION['userId'] = $account['username'];
             $_SESSION['usertype'] = $account['user_type'];
+            $_SESSION['verified'] = $account['verified'];
+            $_SESSION['email'] = $account['email'];
             header('location: index.php');    
         }
         else{
             array_push($perrors, "Invalid credentials.");
         }
     }
-
 }

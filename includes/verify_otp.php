@@ -2,18 +2,22 @@
 
 require_once 'conn.php';
 
-if(isset($_POST['verify'])){
-        $otp = $_POST['otp'];
-        $username = $_SESSION["userId"];
+function verifyUser($token){
+    global $db;
 
-        $query = "SELECT * FROM account_tbl WHERE username = '$username' LIMIT 1";
-        $results = mysqli_query($db, $query);
-        $user = mysqli_fetch_assoc($results);
+    $sql = "SELECT * FROM account_tbl WHERE token = '$token' LIMIT 1";
+    $result = mysqli_query($db, $sql);
 
-        if($user['token'] === $otp){
+    if(mysqli_num_rows($result) > 0){
+        $user = mysqli_fetch_assoc($result);
+        $update_query = " UPDATE account_tbl SET verified= 1 WHERE token = '$token' ";
+
+        if(mysqli_query($db, $update_query)){
+            session_start();
+            $_SESSION['verified'] = 1;
             header('location: index.php');
         }
-        else
-            echo 'Invalid PIN';
     }
+}
+
 ?>

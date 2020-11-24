@@ -5,6 +5,12 @@
     if(!isset($_SESSION['userId'])){
          $_SESSION['usertype'] = 'member';
     }
+    if(isset($_SESSION['userId'])){
+        if($_SESSION['verified'] == 0){
+            header('location: verification-page.php');
+            exit();
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -191,7 +197,8 @@
                      }      
                  ?>
             </div>
-        </div>     
+        </div> 
+    </div>      
 <!--
     NOTES
     BY: RHEMA MIRANDA

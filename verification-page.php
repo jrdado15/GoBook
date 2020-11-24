@@ -1,3 +1,22 @@
+<?php
+    session_start();
+    include 'includes/verify_otp.php';
+    
+    if(isset($_GET['token'])){
+        $token = $_GET['token'];
+        verifyUser($token);
+    }
+    if(isset($_SESSION['userId'])){
+        if($_SESSION['verified'] == 1){
+            header('location: index.php');
+            exit();
+        }
+    }
+    if(!isset($_SESSION['userId'])){
+        header('location: index.php');
+        exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,22 +36,12 @@
             <h1>Verify your email address</h1>
             <p>You're almost there! We sent a verification code to</p>
             <form class="d-flex flex-row  mx-auto col-md-10 col-xs-12">
-                <input type="email" class="form-control" id="exampleInputEmail1"  placeholder="example@email.com">
+                <input type="email" class="form-control" id="exampleInputEmail1"  placeholder = "<?php echo $_SESSION['email'];?>">
             </form>
             
-            <p class="mt-3 mx-md-4">Just click on the link in that email or enter the verification code here.</p>
-           
-          
-            <input type="number" class="form-control m-auto" id="validationTooltip04"  placeholder="Enter code here">
-            
-            <div class="d-flex justify-content-center mt-2">
-                <button class="btn btn-default">SUBMIT</button>
-            </div>
+            <p class="mt-3 mx-md-4">Just click on the link in that email.</p>
 
             <p class="mt-3 mx-md-4">If the email doesn't arrive soon, check your spam folder or have us <a href="#">send it again.</a></p>
-            <div class="d-flex justify-content-center mt-2">
-            <a href="#"> Go back to home page</a>
-            </div>
         </div>
     </div>
     </div>

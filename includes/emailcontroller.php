@@ -15,20 +15,27 @@ $mailer = new Swift_Mailer($transport);
 
 function sendVerificationEmail($Email, $token){
 
+    if(isset($_SESSION['userId'])){
+        $user = $_SESSION['userId'];
+    }
+
     global $mailer;
-    $body = "<!DOCTYPE html>
+    $body = '<!DOCTYPE html>
     <html>
     <head>
-        <meta charset='utf-8'>
+        <meta charset="utf-8">
         <title>Verify Email</title>
     </head>
     <body>
-        <div class='wrapper'>
-            <td>Thank you for signing up on ouw website. <br> Your one time pin is $token</td>
+        <div class="wrapper">
+            <p>Hi '.$user.', <br><br>Thank you for signing up on our website. Please click on the link below to verify your email.</p>
+            <a href = "http://localhost/go_book/gobook/verification-page.php?token=' .$token. '">
+                Verify your email address.
+            </a>
         </div>
         
     </body>
-    </html>>";
+    </html>';
 
     // Create a message
     $message = (new Swift_Message('Verify your email'))

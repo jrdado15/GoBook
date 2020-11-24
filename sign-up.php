@@ -1,5 +1,10 @@
 <?php include('includes/server.php'); 
-
+    session_start();
+    
+    if(isset($_SESSION['userId'])){
+        header('location: index.php');
+        exit();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
