@@ -1,6 +1,7 @@
 <?php include('includes/server.php'); 
     session_start();
     
+    //restricts user to go back to sign up page after signing up
     if(isset($_SESSION['userId'])){
         header('location: index.php');
         exit();

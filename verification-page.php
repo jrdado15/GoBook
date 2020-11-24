@@ -1,17 +1,21 @@
 <?php
     session_start();
     include 'includes/verify_otp.php';
+    include 'includes/emailcontroller.php';
     
+    //verifies user email address
     if(isset($_GET['token'])){
         $token = $_GET['token'];
         verifyUser($token);
     }
+    //redirects user to homepage if email is verified
     if(isset($_SESSION['userId'])){
         if($_SESSION['verified'] == 1){
             header('location: index.php');
             exit();
         }
     }
+    //redirects user to homepage if no user is logged in
     if(!isset($_SESSION['userId'])){
         header('location: index.php');
         exit();

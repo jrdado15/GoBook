@@ -3,6 +3,7 @@
     include('includes/validation-login.php'); 
     session_start();
     
+    //restricts user from going back to login page after logging in
     if(isset($_SESSION['userId'])){
         header('location: index.php');
         exit();
