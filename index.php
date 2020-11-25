@@ -230,7 +230,45 @@
             </div>
         </div>
     </div>  
+<!--
+    NOTES
+    BY: RHEMA MIRANDA
+    SCOPE: MODAL/ ACCOUNT SETTINGS 1, LOG OUT
+-->
+    <div class="modal fade demo-popup " tabindex="-1" role="dialog"  aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered ">
+            <div class="modal-content  d-flex justify-content-center div3 p-2">
+               
+                <div class="d-flex justify-content-end col-12 mt-2">
+                    <i class="fa fa-close pr-3" data-dismiss="modal" aria-hidden="true"></i>
+                </div>
+                <div class="top d-flex flex-column justify-content-center col-lg-8 col-12 mx-auto p-0">
+                    <div  class="d-flex justify-content-center">
+                      <img class="pic " src="images/062d93bab28c32b51220eecbc5392ce9.png" alt="">
+                    </div>
+                    <h1 class="mb-0 mt-2 p-0">USERNAME123</h1>
+                    <a class="m-0 p-0" href="#">Account Settings</a>
+                </div>
 
+                    <form class="mx-auto mt-2 col-lg-8 col-12">
+                        <label>Your Email</label>
+                        <input type="text" class="form-control mt-1"  placeholder="username123@gmail.com">
+                    </form>
+                    <form class="mx-auto mt-2 col-lg-8 col-12">
+                        <label>Your Password</label>
+                        <input type="password" class="form-control mt-1 dark"  placeholder="********">
+                    </form>
+
+                    <div class="mx-auto mt-3 mb-5 col-lg-8 col-12">
+                        <button class="btn btn-default m-0 col-12">LOG OUT</button>
+                    </div>
+                  
+            </div>
+
+                
+        </div>
+        
+    </div>
 
 <!--END-->
 
