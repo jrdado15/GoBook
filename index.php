@@ -236,7 +236,7 @@
     SCOPE: MODAL/ ACCOUNT SETTINGS 1, LOG OUT
 -->
     <div class="modal fade demo-popup " tabindex="-1" role="dialog"  aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered ">
+        <div class="modal-dialog modal-md modal-dialog-centered ">
             <div class="modal-content  d-flex justify-content-center div3 p-2">
                
                 <div class="d-flex justify-content-end col-12 mt-2">
@@ -250,15 +250,6 @@
                     <a class="m-0 p-0" href="#">Account Settings</a>
                 </div>
 
-                    <form class="mx-auto mt-2 col-lg-8 col-12">
-                        <label>Your Email</label>
-                        <input type="text" class="form-control mt-1"  placeholder="username123@gmail.com">
-                    </form>
-                    <form class="mx-auto mt-2 col-lg-8 col-12">
-                        <label>Your Password</label>
-                        <input type="password" class="form-control mt-1 dark"  placeholder="********">
-                    </form>
-
                     <div class="mx-auto mt-3 mb-5 col-lg-8 col-12">
                         <button class="btn btn-default m-0 col-12">LOG OUT</button>
                     </div>
@@ -269,7 +260,7 @@
         </div>
         
     </div>
-
+<!--END-->
 <!--END-->
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
