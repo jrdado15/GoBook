@@ -260,6 +260,157 @@
         </div>
         
     </div>
+ <!--
+    NOTES
+    BY: RHEMA MIRANDA
+    SCOPE: MODAL/ ACCOUNT SETTINGS 2, USER INFO
+-->
+    <div class="modal demo-popup2 " tabindex="-1" role="dialog"  aria-hidden="true">
+        <div class="modal-dialog modal-md modal-dialog-centered ">
+            <div class="modal-content  d-flex justify-content-center div3 p-2">
+               
+                <div class="d-flex justify-content-end col-12 mt-2">
+                    <i class="fa fa-close pr-3" data-dismiss="modal" aria-hidden="true"></i>
+                </div>
+                <div class="top d-flex flex-column justify-content-center col-lg-8 col-12 mx-auto p-0">
+                    <h1 class="mb-2 mt-2 p-0">ACCOUNT SETTINGS</h1>
+                        <div  class="d-flex justify-content-center">
+                        <img class="pic " src="images/062d93bab28c32b51220eecbc5392ce9.png" alt="">
+                        </div>
+                    <input type="text" class="form-control username mt-3"  readonly value="USERNAME123">
+                    <a class="text-center edit" href="#">edit</a>
+                </div>
+                   
+            
+                <form class="mx-auto mt-2 col-lg-8 col-12">
+                    <label>Your Email</label>
+                    <input type="text" class="form-control field mt-1" readonly value="username123@gmail.com">
+                    <a class="float-right" data-dismiss="modal" data-toggle="modal" data-target=".demo-popup4"  href="#">change</a>
+                </form>
+                <form class="mx-auto mt-2 mb-5 col-lg-8 col-12">
+                    <label>Your Password</label>
+                    <input type="password" class="form-control field mt-1 dark" readonly value="password">
+                    <a class="float-right" data-dismiss="modal" data-toggle="modal" data-target=".demo-popup3"  href="#">change</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<!--
+    NOTES
+    BY: RHEMA MIRANDA
+    SCOPE: MODAL/ ACCOUNT SETTINGS 1, CHANGE PASSWORD
+-->
+    <div class="modal demo-popup3 " tabindex="-1" role="dialog"  aria-hidden="true">
+        <div class="modal-dialog modal-md modal-dialog-centered ">
+            <div class="modal-content  d-flex justify-content-center div3 p-2">
+                
+                <div class="d-flex justify-content-end col-12 mt-2">
+                    <i class="fa fa-close pr-3" data-dismiss="modal" aria-hidden="true"></i>
+                </div>
+                <h1 class="mb-2 mt-2 p-0">CHANGE YOUR PASSWORD</h1>
+                    <form class="mx-auto mt-2 col-lg-10 col-12">
+                        <label>Enter Password</label>
+                        <input type="password" class="form-control field mt-1 " placeholder="password">
+                        <b>You've enter a wrong password</b>
+                    </form>
+                    <form class="mx-auto mt-2  col-lg-10 col-12">
+                        <label>Enter new Password</label>
+                        <input type="password" class="form-control field mt-1 " placeholder="new password">
+                        <b>Must have at least one uppercase or lower case</b>
+                    </form>
+                    <form class="mx-auto mt-1 col-lg-10 col-12">
+                        <label>Re-enter new Password</label>
+                        <input type="password" class="form-control field mt-1 " placeholder="re-enter password">
+                        <b>Password did not match</b>
+                    </form>
+                    <div class="mx-auto mt-3 mb-5 col-lg-10 col-12">
+                        <button class="btn btn-default m-0 col-12" data-dismiss="modal" data-toggle="modal" data-target=".demo-popup5">SAVE CHANGES</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+<!--
+    NOTES
+    BY: RHEMA MIRANDA
+    SCOPE: MODAL/ ACCOUNT SETTINGS 1, CHANGE EMAIL
+-->
+<div class="modal demo-popup4 " tabindex="-1" role="dialog"  aria-hidden="true">
+    <div class="modal-dialog modal-md modal-dialog-centered ">
+        <div class="modal-content  d-flex justify-content-center div3 p-2">
+            
+            <div class="d-flex justify-content-end col-12 mt-2">
+                <i class="fa fa-close pr-3" data-dismiss="modal" aria-hidden="true"></i>
+            </div>
+
+            
+            <h1 class="mb-2 mt-2 p-0">CHANGE YOUR EMAIL ADDRESS</h1>
+
+            <p class="m-0">Your current email address is</p>
+            <p class="email m-0">user12345@gmail.com</p>
+
+                <form class="mx-auto mt-2 col-lg-10 col-12">
+                    <label>Enter new email address</label>
+                    <input type="text" class="form-control field mt-1 " placeholder="email address">
+                    <b>You've enter an invalid email</b>
+                </form>
+
+                <form class="mx-auto mt-2 col-lg-10 col-12">
+                    <label>Enter Password</label>
+                    <input type="password" class="form-control field mt-1 " placeholder="password">
+                    <b>You've enter a wrong password</b>
+                </form>
+                
+                <div class="mx-auto mt-3 mb-5 col-lg-10 col-12">
+                    <button class="btn btn-default m-0 col-12" data-dismiss="modal" data-toggle="modal" data-target=".demo-popup6">SAVE CHANGES</button>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+<!--
+    NOTES
+    BY: RHEMA MIRANDA
+    SCOPE: MODAL/ ACCOUNT SETTINGS , CHANGE PASSWORD > NOTIFICATION
+-->
+<div class="modal demo-popup5 " tabindex="-1" role="dialog" data-backdrop="static" aria-hidden="true">
+    <div class="modal-dialog modal-md modal-dialog-centered ">
+        <div class="modal-content  d-flex justify-content-center div3 p-2">
+
+            <h1 class="mb-2 mt-4 p-0">Password Changed!</h1>
+            <p class="mx-5">Please login to GOBOOK using your new password.</p>
+            
+                <div class="mx-auto mt-3 mb-4 col-lg-10 col-12">
+                    <button class="btn btn-default m-0 col-12">LOGIN</button>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+<!--
+    NOTES
+    BY: RHEMA MIRANDA
+    SCOPE: MODAL/ ACCOUNT SETTINGS , CHANGE EMAIL > NOTIFICATION
+-->
+<div class="modal demo-popup6 " tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-md modal-dialog-centered ">
+        <div class="modal-content  d-flex justify-content-center div3 p-2">
+            <div class="d-flex justify-content-end col-12 mt-2">
+                <i class="fa fa-close pr-3" data-dismiss="modal" aria-hidden="true"></i>
+            </div>
+            <h1 class="mb-2 mt-4 p-0">Check your email</h1>
+            <p class=" mx-2 px-2" >Please click the link that we sent in the email below to confirm this changes.</p>> 
+            <p class="email m-0 px-2" id="notice">newemail.user12345@gmail.com</p> 
+            <a class="mb-4 "href="#">Resend Email</a>
+            <a class="mb-5 "href="#">Cancel Changes</a>
+        </div>
+    </div>
+</div>
+
+<!--END-->
 <!--END-->
 <!--END-->
 
