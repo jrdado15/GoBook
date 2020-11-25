@@ -321,6 +321,7 @@ a:hover{
 
 .modal{
  background-color:  rgba(255, 255, 255, 0.4);
+ overflow-y: auto !important;
 }
 .modal-content{
     border-radius: 0;
@@ -336,7 +337,7 @@ a:hover{
     border-radius: 50px;
     width: 100px;
     height: 100px;
-    background-color: white;
+    background-color: whiite;
     overflow: hidden;
 }
 .div3 h1{
@@ -352,7 +353,7 @@ a:hover{
     text-align: center;
     font-weight: lighter;
     text-decoration: underline;
-    margin-top: -10px !important;
+
 }
 
 .div3 i{
@@ -376,4 +377,90 @@ a:hover{
     color: #292929;
 }
 
+/************************************/
 
+.div3 input{
+    margin-top: -10px !important;
+}
+
+
+.div3 h2{
+    font-size: 26px;
+    font-family: Montserrat;
+    color: white;
+   text-align: center;
+   letter-spacing: 1px;
+}
+
+.div3 label{
+    font-family:Montserrat;
+    letter-spacing: 1px;
+    color: #e33b3a;
+    font-size: 16px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    
+}
+
+.div3 .field{
+    background-color: transparent;
+    border: none;
+    border-bottom:  1px solid white;
+    border-radius: 0;
+    color: white;
+    font-family: Montserrat;
+    font-size: 14px;
+    text-align: center;
+    text-align: left;
+    letter-spacing: 1px;
+}
+
+.div3 .field:focus{
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.div3 .username{
+    background-color: transparent;
+    border: none;
+    font-size: 22px;
+    font-family: Montserrat;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-top: 5px !important;
+}
+
+.div3 .username:focus{
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+
+.div3 b{
+    font-family:Montserrat;
+    font-size: 12px;
+    color: white;
+    font-weight: lighter;
+
+}
+
+.div3 p{
+    font-family:Montserrat;
+    font-size: 16px;
+    color: white;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.div3 .email{
+    font-weight: bold;
+}
+
+#notice{
+    color: #e33b3a;
+}
