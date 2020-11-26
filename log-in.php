@@ -24,14 +24,17 @@
 <body>
 
     <div class="log-in d-flex justify-content-center" >
-    <div class="floating-cont d-flex flex-row flex-wrap flex-row-reverse  m-0 p-0 ">
+    <div class="floating-cont d-flex flex-row flex-wrap flex-row-reverse col-md-8 col-12  m-0 p-0 ">
         <div class="div2 col-xl-8 col-md-8 col-sm-12 col-xs-12 overflow-auto ">
             <form action = "log-in.php" method = "post" class=" p-5 ">
                 <div class="container p-xl-8">
-                    <div class="back row mt-3">
-                        <i class="fa fa-arrow-left fa-1x"></i>
-                        <a href="index.php"> Go back to homepage</a>
-                    </div>
+                    
+                    <!-- CHANGES -->
+                            <a href="index.php" class="mx-auto d-flex flex-column justify-content-center col-lg-8 col-12 mx-auto p-0" >
+                                <img src="/images/gobook_logo-01.png" alt="GOBOOK" class="mx-auto col-8" > 
+                            </a>
+                             <p class=" mb-3 text-center">Log into your account! </p>
+                    <!-- CHANGES -->
                     <h1 class=" my-1">LOGIN</h1>
                   
                     <div class="form-group ">
