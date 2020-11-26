@@ -78,6 +78,65 @@
     </div>
     </div>
     
+    <!--
+    NOTES
+    BY: RHEMA MIRANDA
+    SCOPE: MODAL/ FORGOT PASSWORD
+-->
+<div class="modal demo-popup " tabindex="-1"  role="dialog"  aria-hidden="true">
+    <div class="modal-dialog modal-md modal-dialog-centered ">
+        <div class="modal-content  d-flex justify-content-center div4 p-2">
+           
+            <div class="d-flex justify-content-end col-12 mt-2">
+                <i class="fa fa-close pr-3" data-dismiss="modal" aria-hidden="true"></i>
+            </div>
+            <div class="top d-flex flex-column justify-content-center col-lg-8 col-12 mx-auto p-0">
+                <h1 class="mb-0 mt-2 p-0">FORGOT PASSWORD?</h1>
+            </div>
+            <p class="m-auto col-lg-10 col-12">Please enter the email you used to sign up and we'll send you a link to reset it.</p>
+            <form class="mx-auto mt-2 col-lg-10 col-12">
+                <label>Your Email</label>
+                <input type="text" class="form-control field mt-1" value="username123@gmail.com">
+                <b>You've entered an invalid email</b>
+            </form>
+
+                <div class="mx-auto mt-3 mb-3 col-lg-10 col-12">
+                    <button data-dismiss="modal" data-toggle="modal" data-target=".demo-popup2" class="btn btn-default m-0 col-12">SEND RECOVERY EMAIL</button>
+                </div>
+            
+                <p class="m-auto col-lg-10 col-12">Just remembered?</p>
+                <a class="mb-4" href="#">LOG IN</a>
+
+        </div>
+    </div>
+</div>   
+
+<!--
+    NOTES
+    BY: RHEMA MIRANDA
+    SCOPE: MODAL/ FORGOT PASSWORD > MESSAGE SENT
+-->
+<div class="modal fade demo-popup2 " tabindex="-1" role="dialog" data-backdrop="static" aria-hidden="true">
+    <div class="modal-dialog modal-md modal-dialog-centered ">
+        <div class="modal-content  d-flex justify-content-center div4 p-2">
+           
+  
+            <div class="top d-flex flex-column justify-content-center col-lg-8 col-12 mx-auto p-0">
+
+                <h1 class="mb-0 mt-2 p-0">EMAIL SENT</h1>
+
+            </div>
+            <p class="m-auto col-lg-10 col-12">A reset password link was sent to your rescue email:</p>
+            <p class="m-auto col-lg-10 col-12" id="notice">newemail.user12345@gmail.com</p> 
+                <div class="mx-auto mt-3 mb-3 col-lg-10 col-12">
+                    <button class="btn btn-default m-0 col-12">GO BACK TO HOME PAGE</button>
+                </div>
+
+        </div>
+    </div>
+</div>   
+<!-- END -->
+    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" ></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
