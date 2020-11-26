@@ -24,7 +24,7 @@ body {
 /****************    SIGN UP     ****************/
 /*************************************************/
 .sign-up{
-    background-image:url("images/bg1.png");
+    background-image:url("/images/bg1.png");
     background-color:   #121212;
     background-attachment: scroll;
     background-repeat: no-repeat;
@@ -59,7 +59,7 @@ body {
 
 .div2{
     position: relative;
-    background-color:#222325 ;
+    background-color:#292929 ;
     background-attachment: scroll;
     width: auto;
     margin: 0 0 !important;
@@ -124,21 +124,26 @@ body {
 
 
 .form-control{
-    box-shadow: none;
-    border-radius: 0;
     background-color: transparent;
-    border: 2px solid white;
-    font-family:Montserrat;
+    border: none;
+    border-bottom:  1px solid white;
+    border-radius: 0;
     color: white;
-    margin-top: -10px;
+    font-family: Montserrat;
+    font-size: 14px;
+    text-align: center;
+    text-align: left;
+    letter-spacing: 1px;
 }
 
 .form-control:focus{
     box-shadow: none;
     background-color: transparent;
-    border: 2px solid white;
     font-family:Montserrat;
     color: white;
+    background-color: transparent;
+    border: none;
+    border-bottom:  1px solid white;
 }
 
 .sign-up .back{
@@ -174,19 +179,19 @@ body {
 
 .log-in  label{
     font-family:Montserrat;
-    color: white;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 15px;
     letter-spacing: 1px;
+    color: #e33b3a;
+    font-size: 16px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    margin-bottom: -10px !important;
 }
 
 .log-in  h1 {
     font-family:Bebas Neue;
     text-transform: uppercase;
     color: white;
-    font-size: 60px;
- 
+    font-size: 48px;
 }
 
 .log-in  p {
@@ -352,7 +357,6 @@ body {
     background-color: rgb(59, 59, 59);
     border: none !important;
 }
-
 #ver_resend:active{
     background-color: rgb(59, 59, 59) !important;
     border: none !important;
@@ -362,7 +366,6 @@ body {
     background-color: gray;
     border: none !important;
 }
-
 .div3 button{
     
     border:1px solid #e33b3a;
@@ -397,13 +400,13 @@ input[type=number] {
 
 
 /********************************************************/
-/******************MODAL: LOGOUT*************************/
+/******************    MODALS   *************************/
 /********************************************************/
 /********************************************************/
 
 
 .modal{
-    background-color:  rgba(255, 255, 255, 0.4);
+    background-color:  rgba(15, 15, 15, 0.897);
     overflow-y: auto !important;
    }
 .modal-content{
@@ -415,19 +418,28 @@ input[type=number] {
        border-bottom: 0px solid white;
        margin: 10px 0;
 }
-   
-.pic{
-       border-radius: 50px;
-       width: 100px;
-       height: 100px;
-       background-color: whiite;
-       overflow: hidden;
-}
+
 .div4 h1{
        font-size: 35px;
        color: white;
       text-align: center;
       letter-spacing: 1.5px;
+}
+
+.div4 h2{
+    font-size: 26px;
+    font-family: Montserrat;
+    color: white;
+   text-align: center;
+   letter-spacing: 1px;
+}
+
+.div4 h3{
+    font-size: 29px;
+    font-family: Bebas Neue;
+    color: white;
+   text-align: center;
+   letter-spacing: 1px;
 }
    
 .div4 a{
@@ -465,13 +477,7 @@ input[type=number] {
     margin-top: -10px !important;
 }
 
-.div4 h2{
-    font-size: 26px;
-    font-family: Montserrat;
-    color: white;
-   text-align: center;
-   letter-spacing: 1px;
-}
+
 
 .div4 label{
     font-family:Montserrat;
