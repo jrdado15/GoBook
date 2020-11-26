@@ -37,6 +37,11 @@
     <div class="ver-page d-flex justify-content-center" >
     <div class="div3 col-lg-8 col-xs-12 d-flex flex-column justify-content-center m-0 p-0 ">
         <div class="p-lg-5">
+            <!-- CHANGES -->
+                    <a href="index.php" class="mx-auto d-flex flex-column justify-content-center col-lg-4 col-8 mx-auto p-0" >
+                        <img src="/images/gobook_logo-01.png" alt="GOBOOK" class="mx-auto col-8" > 
+                    </a>
+            <!-- CHANGES -->
             <h1>Verify your email address</h1>
             <p>You're almost there! We sent a verification code to</p>
             <form class="d-flex flex-row  mx-auto col-md-10 col-xs-12">
@@ -45,9 +50,10 @@
             
             <p class="mt-3 mx-md-4">Just click on the link in that email.</p>
 
-            <p class="mt-3 mx-md-4">If the email doesn't arrive soon, check your spam folder or have us resend it again.</p>
+             <p class="mt-3 mx-md-4">Just click on the link in that email. If the email doesn't arrive soon, check your spam folder or have us resend it again.</p>
+
             <div class="d-flex justify-content-center mt-2">
-                <button class="btn btn-secondary" id="ver_resend">RESEND</button>
+                <button class="btn btn-default">RESEND</button>
             </div>
         </div>
     </div>
