@@ -45,7 +45,7 @@
             <h1>Verify your email address</h1>
             <p>You're almost there! We sent a verification code to</p>
             <form class="d-flex flex-row  mx-auto col-md-10 col-xs-12">
-                <input type="email" class="form-control" id="exampleInputEmail1"  placeholder = "<?php echo $_SESSION['email'];?>">
+                <input type="email" class="form-control" id="exampleInputEmail1" readonly value = "<?php echo $_SESSION['email'];?>">
             </form>
             
             <p class="mt-3 mx-md-4">Just click on the link in that email.</p>
