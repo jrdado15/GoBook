@@ -348,6 +348,21 @@ body {
     background-color: transparent;
 }
 
+#ver_resend{
+    background-color: rgb(59, 59, 59);
+    border: none !important;
+}
+
+#ver_resend:active{
+    background-color: rgb(59, 59, 59) !important;
+    border: none !important;
+}
+
+#ver_resend:hover{
+    background-color: gray;
+    border: none !important;
+}
+
 .div3 button{
     
     border:1px solid #e33b3a;
