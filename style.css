@@ -610,3 +610,152 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+
+/********************************************************/
+/******************MODAL: LOGOUT*************************/
+/********************************************************/
+/********************************************************/
+
+
+.modal{
+    background-color:  rgba(255, 255, 255, 0.4);
+    overflow-y: auto !important;
+   }
+.modal-content{
+       border-radius: 0;
+       background-color: #292929;
+      border: none;
+}
+.div4 .top{
+       border-bottom: 0px solid white;
+       margin: 10px 0;
+}
+   
+.pic{
+       border-radius: 50px;
+       width: 100px;
+       height: 100px;
+       background-color: whiite;
+       overflow: hidden;
+}
+.div4 h1{
+       font-size: 35px;
+       color: white;
+      text-align: center;
+      letter-spacing: 1.5px;
+}
+   
+.div4 a{
+       font-family:Montserrat;
+       font-size: 14px;
+       text-align: center;
+       font-weight: lighter;
+       text-decoration: underline;
+   
+}
+   
+.div4 i{
+       color: white;
+       font-size: 32px;
+}
+   
+.div4 button{
+       background-color:#e33b3a;
+       border-radius: 0;
+       overflow: hidden;   
+       margin: auto;
+       font-family:Bebas Neue;
+       font-size: 22px;
+       letter-spacing: 1px;
+       color: #292929;
+       box-shadow: none !important;
+}
+.div4 button:active{
+       background-color:white;
+       color: #292929;
+}
+   
+
+.div4 input{
+    margin-top: -10px !important;
+}
+
+.div4 h2{
+    font-size: 26px;
+    font-family: Montserrat;
+    color: white;
+   text-align: center;
+   letter-spacing: 1px;
+}
+
+.div4 label{
+    font-family:Montserrat;
+    letter-spacing: 1px;
+    color: #e33b3a;
+    font-size: 16px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    
+}
+
+.div4 .field{
+    background-color: transparent;
+    border: none;
+    border-bottom:  1px solid white;
+    border-radius: 0;
+    color: white;
+    font-family: Montserrat;
+    font-size: 14px;
+    text-align: center;
+    text-align: left;
+    letter-spacing: 1px;
+}
+
+.div4 .field:focus{
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.div4 .username{
+    background-color: transparent;
+    border: none;
+    font-size: 22px;
+    font-family: Montserrat;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-top: 5px !important;
+}
+
+.div4 .username:focus{
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.div4 b{
+    font-family:Montserrat;
+    font-size: 12px;
+    color: white;
+    font-weight: lighter;
+
+}
+
+.div4 p{
+    font-family:Montserrat;
+    font-size: 16px;
+    color: white;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+#notice{
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: underline;
+}
