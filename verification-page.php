@@ -45,7 +45,10 @@
             
             <p class="mt-3 mx-md-4">Just click on the link in that email.</p>
 
-            <p class="mt-3 mx-md-4">If the email doesn't arrive soon, check your spam folder or have us <a href="#">send it again.</a></p>
+            <p class="mt-3 mx-md-4">If the email doesn't arrive soon, check your spam folder or have us resend it again.</p>
+            <div class="d-flex justify-content-center mt-2">
+                <button class="btn btn-secondary" id="ver_resend">RESEND</button>
+            </div>
         </div>
     </div>
     </div>
