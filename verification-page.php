@@ -15,11 +15,13 @@
             exit();
         }
     }
-    //redirects user to homepage if no user is logged in
-    if(!isset($_SESSION['userId'])){
-        header('location: index.php');
-        exit();
+    
+    if(isset($_POST['ver_resend'])){
+        $email = $_SESSION['email'];
+        $token = $_SESSION['token'];
+        sendVerificationEmail($email, $token);
     }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,11 +51,13 @@
             </form>
             
             <p class="mt-3 mx-md-4">Just click on the link in that email.</p>
-
+            
             <p class="mt-3 mx-md-4">If the email doesn't arrive soon, check your spam folder or have us resend it again.</p>
-            <div class="d-flex justify-content-center mt-2">
-                <button class="btn btn-secondary" id="ver_resend">RESEND</button>
-            </div>
+            <form method="post">
+                <div class="d-flex justify-content-center mt-2">
+                    <button class="btn btn-secondary" name ="ver_resend">RESEND</button>
+                </div>
+            </form>
         </div>
     </div>
     </div>

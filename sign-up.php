@@ -3,7 +3,6 @@
 
     //
     include 'includes/verify_otp.php';
-    //include 'includes/emailcontroller.php';
     
     //verifies user email address
     if(isset($_GET['token'])){
@@ -47,7 +46,7 @@
                 <div class="container px-md-2 p-1">
                 <!-- CHANGES -->
                     <a href="index.php" class="mx-auto d-flex flex-column justify-content-center col-md-8 col-8 mx-auto mt-0 p-0" >
-                        <img src="images/gobook_logo-01.png" alt="GOBOOK" class="mx-auto col-8" > 
+                        <img src="images/gobook_logo-02.png" alt="GOBOOK" class="mx-auto col-8" > 
                     </a>
                     <p class="mt-0 mb-3 text-center">Register your account</p>
                 <!-- CHANGES -->

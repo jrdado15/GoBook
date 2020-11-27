@@ -79,6 +79,7 @@ if(isset($_POST['signup'])){
         $_SESSION['userId'] = $username;
         $_SESSION['usertype'] = $usertype;
         $_SESSION['email'] = $email;
+        $_SESSION['token'] = $token;
         $_SESSION['verified'] = $verified;
 
         //functions call to send a verification email

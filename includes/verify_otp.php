@@ -19,5 +19,5 @@ function verifyUser($token){
         }
     }
 }
-
+                  
 ?>
