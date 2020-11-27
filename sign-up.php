@@ -44,16 +44,20 @@
 <body>
 
     <div class="sign-up d-flex justify-content-center" >
-    <div class="floating-cont d-flex flex-row flex-wrap flex-row-reverse  m-0 p-0 ">
-        <div class="div2 col-xl-8 col-md-8 col-sm-12 col-xs-12 overflow-auto ">
+    <!-- CHANGES -->
+    <div class="floating-cont d-flex flex-row flex-wrap flex-row-reverse col-lg-8 col-sm-10 col-12 m-0 p-0 ">
+         <!-- CHANGES -->
+        <div class="div2 col-md-8 col-xs-12 overflow-auto ">
             <form action = "sign-up.php" method = "post" class=" p-5 ">
-                <div class="container p-xl-5">
-                    <div class="back row mt-3">
-                        <i class="fa fa-arrow-left fa-1x"></i>
-                        <a  href="index.php"> Go back to homepage</a>
-                    </div>
-                    <h1 class="my-1">Welcome to GOBOOK</h1>
-                    <p class="m-0">Register your account</p>
+               <!-- CHANGES -->
+                <div class="container px-md-2 p-1">
+                <!-- CHANGES -->
+                    <a href="index.php" class="mx-auto d-flex flex-column justify-content-center col-md-8 col-8 mx-auto mt-0 p-0" >
+                        <img src="/images/gobook_logo-01.png" alt="GOBOOK" class="mx-auto col-8" > 
+                    </a>
+                    <p class="mt-0 mb-3 text-center">Register your account</p>
+                <!-- CHANGES -->
+                    
                     <div class="form-group">
                         <label>Email:</label>
                         <input name = "email" class="form-control" type="email" placeholder="Enter email" value = "<?php echo $email; ?>">
@@ -115,9 +119,12 @@
                    
                     <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
-                    <label class="form-check-label text-left" for="exampleCheck1">Agree to our Terms, Data Policy and Cookies Policy</label>
+                    <!-- CHANGES - ID -->
+                    <label class="form-check-label text-left"  id="label_1" for="exampleCheck1">Agree to our Terms, Data Policy and Cookies Policy</label>
                     </div>
-                        <button data-toggle="modal" data-target=".demo-popup" name = "signup" type="submit" class="btn btn-primary">Register</button>
+                    
+                     <!-- CHANGES - CLASS -->
+                        <button data-toggle="modal" data-target=".demo-popup" name = "signup" type="submit" class="btn btn-primary col-12 mt-2">Register</button>
                     </div>
             </form>
 
@@ -129,7 +136,7 @@
     </div>
     </div>
    
-    <!--
+<!--
     NOTES
     BY: RHEMA MIRANDA
     SCOPE: MODAL/ VERIFY
