@@ -37,7 +37,7 @@ if(isset($_POST['signup'])){
     }
     if(!preg_match( "/^[a-zA-Z]+[a-zA-Z0-9._]+$/" ,$username)){
         if(strlen($username) >= 5){
-            array_push($uerrors, "Username must only contain letters, numbers, underscores and periods.");
+            array_push($uerrors, "Username must only contain alphanumeric characters.");
         }
     }
     if(empty($dob)){
