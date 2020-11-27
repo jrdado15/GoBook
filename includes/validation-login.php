@@ -38,6 +38,7 @@ if(isset($_POST['login'])){
             $_SESSION['usertype'] = $account['user_type'];
             $_SESSION['verified'] = $account['verified'];
             $_SESSION['email'] = $account['email'];
+            $_SESSION['token'] = $account['token'];
             header('location: index.php');    
         }
         else{

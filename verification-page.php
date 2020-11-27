@@ -53,17 +53,11 @@
             <p class="mt-3 mx-md-4">Just click on the link in that email.</p>
             
             <p class="mt-3 mx-md-4">If the email doesn't arrive soon, check your spam folder or have us resend it again.</p>
-<<<<<<< HEAD
             <form method="post">
                 <div class="d-flex justify-content-center mt-2">
-                    <button class="btn btn-secondary" name ="ver_resend">RESEND</button>
+                    <button data-toggle="modal" data-target=".demo-popup" class="btn btn-secondary" name ="ver_resend">RESEND</button>
                 </div>
             </form>
-=======
-            <div class="d-flex justify-content-center mt-2">
-                <button data-dismiss="modal" data-toggle="modal" class="btn btn-secondary" id="ver_resend">RESEND</button>
-            </div>
->>>>>>> 2a17c11379af7921b06753936a1da42672043668
         </div>
     </div>
     </div>
@@ -84,13 +78,9 @@
 
             </div>
             <p class="m-auto col-lg-10 col-12">A verification link was resent to:</p>
-            <p class="m-auto col-lg-10 col-12" id="notice">newemail.user12345@gmail.com</p> 
+            <p class="m-auto col-lg-10 col-12" id="notice"><?php echo $_SESSION['email']; ?></p> 
             <b class="mx-auto mt-3  col-lg-10 col-12">If the email doesn't arrive soon, check your spam folder.</b>
-            
-                <div class="mx-auto mt-3 mb-3 col-lg-10 col-12">
-                    <button class="btn btn-default m-0 col-12">GO BACK TO HOME PAGE</button>
-                </div>
-
+        
         </div>
     </div>
 </div>   
