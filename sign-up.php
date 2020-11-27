@@ -47,7 +47,7 @@
                 <div class="container px-md-2 p-1">
                 <!-- CHANGES -->
                     <a href="index.php" class="mx-auto d-flex flex-column justify-content-center col-md-8 col-8 mx-auto mt-0 p-0" >
-                        <img src="/images/gobook_logo-01.png" alt="GOBOOK" class="mx-auto col-8" > 
+                        <img src="images/gobook_logo-01.png" alt="GOBOOK" class="mx-auto col-8" > 
                     </a>
                     <p class="mt-0 mb-3 text-center">Register your account</p>
                 <!-- CHANGES -->
@@ -58,7 +58,7 @@
                         <?php if (count($eerrors) > 0) : ?>
                             <div >
                                 <?php foreach($eerrors as $error): ?>
-                                    <small class = "text-danger"><?php echo $error; ?> </small>
+                                    <small style = "font-size:12px;" class = "text-danger"><?php echo $error; ?> </small>
                                 <?php endforeach?> 
                             </div>
                         <?php endif ?>
@@ -69,7 +69,7 @@
                         <?php if (count($uerrors) > 0) : ?>
                             <div >
                                 <?php foreach($uerrors as $error): ?>
-                                    <small class = "text-danger"><?php echo $error; ?> </small>
+                                    <small style = "font-size:12px;" class = "text-danger"><?php echo $error; ?> </small>
                                 <?php endforeach?> 
                             </div>
                         <?php endif ?>
@@ -81,7 +81,7 @@
                         <?php if (count($derrors) > 0) : ?>
                             <div >
                                 <?php foreach($derrors as $error): ?>
-                                        <small class = "text-danger"><?php echo $error; ?> </small>
+                                        <small style = "font-size:12px;" class = "text-danger"><?php echo $error; ?> </small>
                                 <?php endforeach?> 
                             </div>
                       <?php endif ?>
@@ -93,7 +93,7 @@
                         <?php if (count($perrors) > 0) : ?>
                             <div >
                                 <?php foreach($perrors as $error): ?>
-                                        <small class = "text-danger"><?php echo $error; ?> </small>
+                                        <small style = "font-size:12px;" class = "text-danger"><?php echo $error; ?> </small>
                                 <?php endforeach?> 
                             </div>
                       <?php endif ?>
@@ -105,7 +105,7 @@
                         <?php if (count($cperrors) > 0) : ?>
                             <div >
                                 <?php foreach($cperrors as $error): ?>
-                                    <small class = "text-danger"><?php echo $error; ?> </small>
+                                    <small style = "font-size:12px;" class = "text-danger"><?php echo $error; ?> </small>
                                 <?php endforeach?> 
                             </div>
                         <?php endif ?>
