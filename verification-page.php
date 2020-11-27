@@ -58,18 +58,12 @@
                     <button data-toggle="modal" data-target=".demo-popup" class="btn btn-secondary" name ="ver_resend">RESEND</button>
                 </div>
             </form>
-<<<<<<< HEAD
-=======
-=======
-            <div class="d-flex justify-content-center mt-2">
-                <button data-dismiss="modal" data-toggle="modal" class="btn btn-secondary col-6" id="ver_resend">RESEND</button>
-            </div>
->>>>>>> 2a17c11379af7921b06753936a1da42672043668
             <!-- CHANGES -->
-            <div class="d-flex justify-content-center mt-3">
-                 <button class="btn btn-secondary col-6" >LOG OUT</button>
-            </div>
->>>>>>> 0a1c178cd325f804596c41feb979f56119c3b39a
+            <form action="logout.php">
+                <div class="d-flex justify-content-center mt-3">
+                    <button class="btn btn-secondary col-6" >LOG OUT</button>
+                </div>
+            </form>
         </div>
     </div>
     </div>

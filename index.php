@@ -200,6 +200,7 @@
             </div>
         </div> 
     </div>      
+    <!--fetch/display movie description from database-->
 <!--
     NOTES
     BY: RHEMA MIRANDA
