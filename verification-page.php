@@ -61,9 +61,13 @@
             </form>
 =======
             <div class="d-flex justify-content-center mt-2">
-                <button data-dismiss="modal" data-toggle="modal" class="btn btn-secondary" id="ver_resend">RESEND</button>
+                <button data-dismiss="modal" data-toggle="modal" class="btn btn-secondary col-6" id="ver_resend">RESEND</button>
             </div>
 >>>>>>> 2a17c11379af7921b06753936a1da42672043668
+            <!-- CHANGES -->
+            <div class="d-flex justify-content-center mt-3">
+                 <button class="btn btn-secondary col-6" >LOG OUT</button>
+            </div>
         </div>
     </div>
     </div>
