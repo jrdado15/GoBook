@@ -63,7 +63,7 @@
                     </div>
                    
                     <div class="forgot row justify-content-center mt-1 pt-3">
-                        <a data-toggle="modal" data-target=".demo-popup" href="#"> Forgot password?</a>
+                        <a  href="#"> Forgot password?</a>
                     </div>
                     <div class="sign row justify-content-center mt-1">
                         <a  href="sign-up.php"> Not on GOBOOK yet? Sign up</a>
