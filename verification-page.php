@@ -15,6 +15,10 @@
             exit();
         }
     }
+    if(!isset($_SESSION['userId'])){
+        header('location: index.php');
+        exit();
+    }
     
     if(isset($_POST['ver_resend'])){
         $email = $_SESSION['email'];

@@ -61,9 +61,16 @@ if(isset($_POST['signup'])){
         if($user['username'] === $username){
             array_push($uerrors, "Username already taken");
         }
+
         if($user['email'] === $email){
             array_push($eerrors, "Email already taken");
         }
+        /*
+        if($user['verified'] == 1){
+            if($user['email'] === $email){
+                array_push($eerrors, "Email already taken");
+            }
+        }*/
     }
 
 

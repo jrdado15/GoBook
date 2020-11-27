@@ -15,6 +15,7 @@ $mailer = new Swift_Mailer($transport);
 
 function sendVerificationEmail($Email, $token){
 
+    
     if(isset($_SESSION['userId'])){
         $user = $_SESSION['userId'];
     }
