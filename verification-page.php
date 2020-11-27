@@ -52,11 +52,39 @@
 
             <p class="mt-3 mx-md-4">If the email doesn't arrive soon, check your spam folder or have us resend it again.</p>
             <div class="d-flex justify-content-center mt-2">
-                <button class="btn btn-secondary" id="ver_resend">RESEND</button>
+                <button data-dismiss="modal" data-toggle="modal" class="btn btn-secondary" id="ver_resend">RESEND</button>
             </div>
         </div>
     </div>
     </div>
+    
+<!--
+    NOTES
+    BY: RHEMA MIRANDA
+    SCOPE: MODAL/ EMAIL SENT
+-->
+<div class="modal fade demo-popup " tabindex="-1" role="dialog" data-backdrop="static" aria-hidden="true">
+    <div class="modal-dialog modal-md modal-dialog-centered ">
+        <div class="modal-content  d-flex justify-content-center div4 p-2">
+           
+  
+            <div class="top d-flex flex-column justify-content-center col-lg-8 col-12 mx-auto p-0">
+
+                <h1 class="mb-0 mt-2 p-0">EMAIL SENT</h1>
+
+            </div>
+            <p class="m-auto col-lg-10 col-12">A verification link was resent to:</p>
+            <p class="m-auto col-lg-10 col-12" id="notice">newemail.user12345@gmail.com</p> 
+            <b class="mx-auto mt-3  col-lg-10 col-12">If the email doesn't arrive soon, check your spam folder or have us resend it again.</b>
+            
+                <div class="mx-auto mt-3 mb-3 col-lg-10 col-12">
+                    <button class="btn btn-default m-0 col-12">GO BACK TO HOME PAGE</button>
+                </div>
+
+        </div>
+    </div>
+</div>   
+<!-- END -->
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" ></script>
