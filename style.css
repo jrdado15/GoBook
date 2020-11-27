@@ -21,7 +21,7 @@ body {
 /****************    DIV 1     ****************/
 .div1{
     position: relative;
-    background-image:url("images/su-bg.jpg");
+    background-image:url("/images/su-bg.jpg");
     background-color: #212025 ;
     background-attachment: scroll;
     background-repeat: no-repeat;
@@ -79,9 +79,11 @@ body {
     border: none;
 }
 
+
 .div2 .btn-primary:active{
     box-shadow: none !important;
     color: #292929 !important;
+    
 }
 
 
@@ -108,6 +110,7 @@ body {
     border: none;
     border-bottom:  1px solid #292929;
 }
+
 
 .floating-cont{
     box-shadow:0px 0px 25px 2px #000000 ;
@@ -350,18 +353,34 @@ body {
     background-color: gray;
     border: none !important;
 }
-.div3 button{
+.div3 .btn-default{
     
     border:1px solid #e33b3a;
     background-color:#e33b3a;
     border-radius: 0;
     overflow: hidden;   
     margin: auto;
-    width: 50% !important;
     font-family:Bebas Neue;
     font-size: 20px;
     color: white;
     box-shadow: none !important;
+}
+
+.div3 .btn-secondary{
+    background-color:rgb(66, 65, 65) !important;
+    border-radius: 0;
+    overflow: hidden;   
+    margin: auto;
+    font-family:Bebas Neue;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: white;
+    box-shadow: none !important;
+    border: none;
+}
+
+.div3 .btn-secondary:active{
+    background-color:gray!important;
 }
 
 .div3 a{
