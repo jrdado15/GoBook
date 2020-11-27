@@ -3,7 +3,7 @@
 
     //
     include 'includes/verify_otp.php';
-    include 'includes/emailcontroller.php';
+    //include 'includes/emailcontroller.php';
     
     //verifies user email address
     if(isset($_GET['token'])){
@@ -17,12 +17,6 @@
             exit();
         }
     }
-    //redirects user to homepage if no user is logged in
-    if(!isset($_SESSION['userId'])){
-        header('location: index.php');
-        exit();
-    }
-    
     //restricts user to go back to sign up page after signing up
     if(isset($_SESSION['userId'])){
         header('location: index.php');
@@ -135,41 +129,6 @@
         
     </div>
     </div>
-   
-<!--
-    NOTES
-    BY: RHEMA MIRANDA
-    SCOPE: MODAL/ VERIFY
--->
-<div class="modal demo-popup " tabindex="-1"  role="dialog"  aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered ">
-        <div class="modal-content  d-flex justify-content-center div4 p-2">
-           
-            <div class="d-flex justify-content-end col-12 mt-2">
-                <i class="fa fa-close pr-3" data-dismiss="modal" aria-hidden="true"></i>
-            </div>
-            <div class="px-5 pb-5 pt-3">
-                <!-- CHANGES DONE -->
-                    <a href="index.php" class="d-flex flex-column justify-content-center col-md-4 col-8 mx-auto p-0" >
-                        <img src="/images/gobook_logo-01.png" alt="GOBOOK" class="mx-auto col-8" > 
-                    </a>
-                <!-- CHANGES DONE -->
-                <h1 class="mb-4">Verify your email address</h1>
-                <p>You're almost there! We sent a verification code to</p>
-                <form class="d-flex flex-row  mx-auto col-md-10 col-xs-12">
-                    <input type="email" class="form-control" id="exampleInputEmail1"  value = "<?php echo $_SESSION['email'];?>">
-                </form>
-                
-                <p class="mt-3 mx-md-4">Just click on the link in that email. If the email doesn't arrive soon, check your spam folder or have us resend it again.</p>
- 
-                <div class="d-flex justify-content-center mt-2">
-                    <button class="btn btn-default col-6">RESEND</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>   
-  
     
  <!-- END -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>

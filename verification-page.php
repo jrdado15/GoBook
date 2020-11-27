@@ -39,7 +39,7 @@
         <div class="p-lg-5">
             <!-- CHANGES -->
                     <a href="index.php" class="mx-auto d-flex flex-column justify-content-center col-md-4 col-8 mx-auto p-0" >
-                        <img src="/images/gobook_logo-01.png" alt="GOBOOK" class="mx-auto col-8" > 
+                        <img src="images/gobook_logo-01.png" alt="GOBOOK" class="mx-auto col-8" > 
                     </a>
             <!-- CHANGES -->
             <h1 class="mb-4">Verify your email address</h1>
@@ -50,10 +50,9 @@
             
             <p class="mt-3 mx-md-4">Just click on the link in that email.</p>
 
-             <p class="mt-3 mx-md-4">Just click on the link in that email. If the email doesn't arrive soon, check your spam folder or have us resend it again.</p>
-
+            <p class="mt-3 mx-md-4">If the email doesn't arrive soon, check your spam folder or have us resend it again.</p>
             <div class="d-flex justify-content-center mt-2">
-                <button class="btn btn-default">RESEND</button>
+                <button class="btn btn-secondary" id="ver_resend">RESEND</button>
             </div>
         </div>
     </div>
