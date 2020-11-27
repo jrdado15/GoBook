@@ -33,9 +33,9 @@
                             <a href="index.php" class="mx-auto d-flex flex-column justify-content-center col-lg-8 col-12 mx-auto p-0" >
                                 <img src="images/gobook_logo-02.png" alt="GOBOOK" class="mx-auto col-8" > 
                             </a>
-                             <p class=" mb-3 text-center">Log into your account! </p>
+                             <p class=" mb-1 text-center">Log into your account! </p>
                     <!-- CHANGES -->
-                    <h1 class=" my-1">LOGIN</h1>
+       
                   
                     <div class="form-group ">
                         <label>Account:</label>
