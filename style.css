@@ -18,31 +18,7 @@ body {
     padding: 0;
     
 }
-
-
-/*************************************************/
-/****************    SIGN UP     ****************/
-/*************************************************/
-.sign-up{
-    background-image:url("/images/bg1.png");
-    background-color:   #121212;
-    background-attachment: scroll;
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: cover;
-    overflow: hidden;
-    background-attachment: scroll;
-    min-height: 100vh;
-    padding: 5%;
-  
-}
-
-.floating-cont{
-    width: 75%;
-    height: auto;
- 
-}
-
+/****************    DIV 1     ****************/
 .div1{
     position: relative;
     background-image:url("/images/su-bg.jpg");
@@ -57,22 +33,112 @@ body {
     padding: 0 0 !important;
 }
 
+.div2 h1 {
+    font-family:Bebas Neue;
+    text-transform: uppercase;
+    color: white;
+    font-size: 48px;
+}
+
+/****************    DIV 2     ****************/
 .div2{
     position: relative;
-    background-color:#292929 ;
+    background-color:white ;
     background-attachment: scroll;
     width: auto;
     margin: 0 0 !important;
     padding: 0 0 !important;
 }
-
-
-.sign-up label{
+.div2 label{
     font-family:Montserrat;
-    color: white;
-    text-align: center;
-    font-size: 15px;
+    letter-spacing: 1px;
+    color: #e33b3a;
+    font-size: 16px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    margin-bottom: -10px !important;
 }
+
+.div2 p {
+    font-family:Bebas Neue; 
+    color: #292929;
+    font-size: 32px;
+    letter-spacing: 1px;
+    margin: 0;
+}
+.div2 .btn-primary{
+    background-color:#e33b3a;
+    border-radius: 0;
+    overflow: hidden;   
+    margin: auto;
+    font-family:Bebas Neue;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #292929;
+    box-shadow: none !important;
+    border: none;
+}
+
+.div2 .btn-primary:active{
+    box-shadow: none !important;
+    color: #292929 !important;
+}
+
+
+.div2 .form-control{
+    background-color: transparent;
+    border: none;
+    border-bottom:  1px solid #292929;
+    border-radius: 0;
+    color: #292929;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-align: left;
+    letter-spacing: 1px;
+}
+
+.div2 .form-control:focus{
+    box-shadow: none;
+    background-color: transparent;
+    font-family:Montserrat;
+    color: #292929;
+    background-color: transparent;
+    border: none;
+    border-bottom:  1px solid #292929;
+}
+
+.floating-cont{
+    box-shadow:0px 0px 25px 2px #000000 ;
+}
+/*************************************************/
+/****************    SIGN UP     ****************/
+/*************************************************/
+.sign-up{
+    background-color:   #292929;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    overflow: hidden;
+    background-attachment: scroll;
+    min-height: 100vh;
+    padding: 5%;
+  
+}
+
+
+#label_1{
+    font-family:Montserrat;
+    color: #292929;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: normal;
+    text-transform: none;
+}
+
 
 .sign-up .form-group {
     font-family:Montserrat;
@@ -80,23 +146,6 @@ body {
     letter-spacing: 1px;
     margin: 5px !important;
 }
-.sign-up h1 {
-    font-family:Anton;
-    text-transform: uppercase;
-    color: white;
-    font-size: 45px;
-    letter-spacing: 1px;
-}
-
-.sign-up p {
-    font-family:Merriweather; 
-    font-style: italic;
-    color: white;
-    font-size: 20px;
-    letter-spacing: 1px;
-    margin: 0;
-}
-
 
 
 .input-group {
@@ -123,28 +172,6 @@ body {
 }
 
 
-.form-control{
-    background-color: transparent;
-    border: none;
-    border-bottom:  1px solid white;
-    border-radius: 0;
-    color: white;
-    font-family: Montserrat;
-    font-size: 14px;
-    text-align: center;
-    text-align: left;
-    letter-spacing: 1px;
-}
-
-.form-control:focus{
-    box-shadow: none;
-    background-color: transparent;
-    font-family:Montserrat;
-    color: white;
-    background-color: transparent;
-    border: none;
-    border-bottom:  1px solid white;
-}
 
 .sign-up .back{
     color: white;
@@ -164,7 +191,7 @@ body {
 /****************    LOG-IN     ****************/
 /*************************************************/
 .log-in{
-    background-color:   #121212;
+    background-color:   #292929;
     background-attachment: scroll;
     background-repeat: no-repeat;
     background-position: top center;
@@ -187,21 +214,6 @@ body {
     margin-bottom: -10px !important;
 }
 
-.log-in  h1 {
-    font-family:Bebas Neue;
-    text-transform: uppercase;
-    color: white;
-    font-size: 48px;
-}
-
-.log-in  p {
-    font-family:Merriweather; 
-    font-style: italic;
-    color: white;
-    font-size: 20px;
-    letter-spacing: 1px;
-    margin: 0;
-}
 
 .log-in .floating-cont{
     width: 65%;
@@ -209,18 +221,6 @@ body {
  
 }
 
-.log-in .back{
-    color: white;
-}
-
-
-.log-in .back a{
-    font-family:Montserrat; 
-    text-transform: uppercase;
-    color: white;
-    font-size: 14px;
-    margin-left: 5px;
-}
 
 .forgot a{
     font-family:Montserrat;
@@ -228,26 +228,10 @@ body {
     letter-spacing: 1px;
     float: center;
 } 
-.log-in button{
-    background-color:#e33b3a;
-    border-radius: 0;
-    overflow: hidden;   
-    margin: auto;
-    font-family:Bebas Neue;
-    font-size: 18px;
-    letter-spacing: 1px;
-    color: #292929;
-    box-shadow: none !important;
-    border: none;
-}
-
-.log-in button:active, .log-in button:hover{
-    box-shadow: none !important;
-}
 
 .log-in .sign a{
     font-family:Montserrat; 
-    color: white;
+    color: #292929;
     font-size: 14px;
     margin-left: 5px;
 }
