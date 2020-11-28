@@ -74,14 +74,15 @@
                         <li class="nav-item ">
                             <a href="#" class="nav-link">TICKETS</a>
                         </li>
+                        <!-- checks if session userId is empty-->
                         <?php if(isset($_SESSION['userId'])) : ?>
-                                    <li class="nav-item text-uppercase d-flex"> <a href="#" data-toggle="modal" data-target=".demo-popup"class="nav-link"><?php echo $_SESSION['userId'];?></a></li>
-                                    <li class="nav-item"> <a href="logout.php" class="nav-link">LOG OUT</a></li> 
+                                <!-- display users' username -->
+                                <li class="nav-item text-uppercase d-flex"> <a href="#" data-toggle="modal" data-target=".demo-popup"class="nav-link"><?php echo $_SESSION['userId'];?></a></li>
+                                <!-- display users' username -->
                         <?php else: ?> 
                             <li class="nav-item"> <a href="log-in.php" class="nav-link">LOG IN</a></li>';
-                            <li class="nav-item"> <a href="sign-up.php" class="nav-link">SIGN UP</a></li>';
                         <?php endif ?>
-                        
+                         <!-- checks if session userId is empty-->
                     </ul>
                     
                 </div>
@@ -250,11 +251,11 @@
                     <h1 class="mb-0 mt-2 p-0">USERNAME123</h1>
                     <a data-toggle="modal" data-target=".demo-popup2"class="m-0 p-0" href="#">Account Settings</a>
                 </div>
-
+                <form action="logout.php">
                     <div class="mx-auto mt-3 mb-5 col-lg-8 col-12">
                         <button class="btn btn-default m-0 col-12">LOG OUT</button>
                     </div>
-                  
+                </form>  
             </div>
 
                 
