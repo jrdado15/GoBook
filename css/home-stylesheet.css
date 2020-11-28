@@ -321,15 +321,17 @@ a:hover{
 
 
 .modal{
- background-color:  rgba(255, 255, 255, 0.4);
+    background-color:  rgba(15, 15, 15, 0.897);
+     overflow-y: auto !important;
 }
+
 .modal-content{
     border-radius: 0;
-    background-color: #292929;
-   border: none;
+    background-color: white;
+    border: none;
 }
 .div3 .top{
-    border-bottom: 0px solid white;
+    border-bottom: 0px solid #292929;
     margin: 10px 0;
 }
 
@@ -337,12 +339,13 @@ a:hover{
     border-radius: 50px;
     width: 100px;
     height: 100px;
-    background-color: white;
+    background-color: transparent;
+    border: 2px solid #292929;
     overflow: hidden;
 }
 .div3 h1{
     font-size: 35px;
-    color: white;
+    color: #292929;
    text-align: center;
    letter-spacing: 1.5px;
 }
@@ -353,11 +356,11 @@ a:hover{
     text-align: center;
     font-weight: lighter;
     text-decoration: underline;
-    margin-top: -10px !important;
+
 }
 
 .div3 i{
-    color: white;
+    color: #292929;
     font-size: 32px;
 }
 
@@ -373,8 +376,95 @@ a:hover{
     box-shadow: none !important;
 }
 .div3 button:active{
-    background-color:white;
-    color: #292929;
+    background-color:#292929;
+    color: white;
 }
 
+/************************************/
+
+.div3 input{
+    margin-top: -10px !important;
+}
+
+
+.div3 h2{
+    font-size: 26px;
+    font-family: Montserrat;
+    color: #292929;
+   text-align: center;
+   letter-spacing: 1px;
+}
+
+.div3 label{
+    font-family:Montserrat;
+    letter-spacing: 1px;
+    color: #e33b3a;
+    font-size: 16px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    
+}
+
+.div3 .field{
+    background-color: transparent;
+    border: none;
+    border-bottom:  1px solid #292929;
+    border-radius: 0;
+    color: #292929;
+    font-family: Montserrat;
+    font-size: 14px;
+    text-align: center;
+    text-align: left;
+    letter-spacing: 1px;
+}
+
+.div3 .field:focus{
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.div3 .username{
+    background-color: transparent;
+    border: none;
+    font-size: 22px;
+    font-family: Montserrat;
+    font-weight: bold;
+    color: #292929;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-top: 5px !important;
+}
+
+.div3 .username:focus{
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+
+.div3 b{
+    font-family:Montserrat;
+    font-size: 12px;
+    color: #292929;
+    font-weight: lighter;
+
+}
+
+.div3 p{
+    font-family:Montserrat;
+    font-size: 16px;
+    color: #292929;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.div3 .email{
+    font-weight: bold;
+}
+
+#notice{
+    color: #e33b3a;
+}
 
