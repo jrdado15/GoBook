@@ -288,11 +288,12 @@ a:hover{
 } 
 
 .poster{
-    width: 100%;
-    height: auto;
-    
-}
+    height: 0;
+    object-fit: cover;
+    overflow: hidden;
+    padding-bottom: 148%;
 
+}
 .rate{
     font-family:Montserrat;
     color: gray;
