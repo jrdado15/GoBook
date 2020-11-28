@@ -75,7 +75,7 @@
                             <a href="#" class="nav-link">TICKETS</a>
                         </li>
                         <?php if(isset($_SESSION['userId'])) : ?>
-                                    <li class="nav-item text-uppercase d-flex"> <a href="#" class="nav-link"><?php echo $_SESSION['userId'];?></a></li>
+                                    <li class="nav-item text-uppercase d-flex"> <a href="#" data-toggle="modal" data-target=".demo-popup"class="nav-link"><?php echo $_SESSION['userId'];?></a></li>
                                     <li class="nav-item"> <a href="logout.php" class="nav-link">LOG OUT</a></li> 
                         <?php else: ?> 
                             <li class="nav-item"> <a href="log-in.php" class="nav-link">LOG IN</a></li>';
@@ -248,7 +248,7 @@
                       <img class="pic " src="images/062d93bab28c32b51220eecbc5392ce9.png" alt="">
                     </div>
                     <h1 class="mb-0 mt-2 p-0">USERNAME123</h1>
-                    <a class="m-0 p-0" href="#">Account Settings</a>
+                    <a data-toggle="modal" data-target=".demo-popup2"class="m-0 p-0" href="#">Account Settings</a>
                 </div>
 
                     <div class="mx-auto mt-3 mb-5 col-lg-8 col-12">
