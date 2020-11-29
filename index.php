@@ -248,7 +248,11 @@
                     <div  class="d-flex justify-content-center">
                       <img class="pic " src="images/062d93bab28c32b51220eecbc5392ce9.png" alt="">
                     </div>
-                    <h1 class="mb-0 mt-2 p-0">USERNAME123</h1>
+                    <?php if(isset($_SESSION['userId'])) : ?>
+                                <!-- display users' username -->
+                                <h1 class="mb-0 mt-2 p-0"><?php echo $_SESSION['userId'];?></h1>
+                    <?php endif ?>
+                    
                     <a data-toggle="modal" data-target=".demo-popup2"class="m-0 p-0" href="#">Account Settings</a>
                 </div>
                 <form action="logout.php">
@@ -279,20 +283,28 @@
                         <div  class="d-flex justify-content-center">
                         <img class="pic " src="images/062d93bab28c32b51220eecbc5392ce9.png" alt="">
                         </div>
-                    <input type="text" class="form-control username mt-3"  readonly value="USERNAME123">
-                    <b class="mt-0 text-center" id="err-mes">*Username not available</b>
+                     <?php if(isset($_SESSION['userId'])) : ?>
+                                <!-- display users' username -->
+                                <h1 class="mb-0 mt-2 p-0"><?php echo $_SESSION['userId'];?></h1>
+                    <?php endif ?>
                     <a class="text-center edit" href="#">edit</a>
                 </div>
                    
             
                 <form class="mx-auto mt-2 col-lg-8 col-12">
                     <label>Your Email</label>
-                    <input type="text" class="form-control field mt-1" readonly value="username123@gmail.com">
+                    <?php if(isset($_SESSION['email'])) : ?>
+                                <!-- display users' email -->
+                                <input type="text" class="form-control field mt-1" readonly value=<?php echo $_SESSION['email'];?>>
+                    <?php endif ?>
                     <a class="float-right" data-dismiss="modal" data-toggle="modal" data-target=".demo-popup4"  href="#">change</a>
                 </form>
                 <form class="mx-auto mt-2 mb-5 col-lg-8 col-12">
                     <label>Your Password</label>
-                    <input type="password" class="form-control field mt-1 dark" readonly value="password">
+                    <?php if(isset($_SESSION['password'])) : ?>
+                                <!-- display users' password -->
+                                <input type="password" class="form-control field mt-1" readonly value=<?php echo $_SESSION['password'];?>>
+                    <?php endif ?>
                     <a class="float-right" data-dismiss="modal" data-toggle="modal" data-target=".demo-popup3"  href="#">change</a>
                 </form>
             </div>
@@ -351,23 +363,36 @@
             <h1 class="mb-2 mt-2 p-0">CHANGE YOUR EMAIL ADDRESS</h1>
 
             <p class="m-0">Your current email address is</p>
-            <p class="email m-0">user12345@gmail.com</p>
-
-                <form class="mx-auto mt-2 col-lg-10 col-12">
+            <?php if(isset($_SESSION['email'])) : ?>
+                                <!-- display users' username -->
+                                <p class="email m-0"><?php echo $_SESSION['email'];?></p>
+                    <?php endif ?>
+            <form method = "post">     
+            <!-- kinukuha yung laman ng email field -->
+                <div class="mx-auto mt-2 col-lg-10 col-12">
                     <label>Enter new email address</label>
-                    <input type="text" class="form-control field mt-1 " placeholder="email address">
+                    <input name= "email_update" type="email" class="form-control field mt-1 " placeholder="email address">
                     <b>You've enter an invalid email</b>
-                </form>
-
-                <form class="mx-auto mt-2 col-lg-10 col-12">
-                    <label>Enter Password</label>
-                    <input type="password" class="form-control field mt-1 " placeholder="password">
-                    <b>You've enter a wrong password</b>
-                </form>
-                
-                <div class="mx-auto mt-3 mb-5 col-lg-10 col-12">
-                    <button class="btn btn-default m-0 col-12" data-dismiss="modal" data-toggle="modal" data-target=".demo-popup6">SAVE CHANGES</button>
                 </div>
+             <!-- kinukuha yung laman ng password field -->    
+                <div class="mx-auto mt-2 col-lg-10 col-12">
+                    <label>Enter Password</label>
+                    <input name = "password_update" type="password" class="form-control field mt-1 " placeholder="password">
+                    <?php if (count($perrors) > 0) : ?>
+                            <div >
+                                <?php foreach($perrors as $error): ?>
+                                        <small style = "font-size:12px;" class = "text-danger"><?php echo $error; ?> </small>
+                                <?php endforeach?> 
+                            </div>
+                      <?php endif ?>
+                </div>
+               
+                <div class="mx-auto mt-3 mb-5 col-lg-10 col-12">
+                    
+                    <button class="btn btn-default m-0 col-12"  name = "update_email" type= "submit">SAVE CHANGES</button>
+                    <!-- data-dismiss="modal"  data-toggle="modal" data-target=".demo-popup6" -->
+                </div>
+            </form>
         </div>
     </div>
 </div>

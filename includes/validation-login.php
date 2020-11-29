@@ -34,11 +34,13 @@ if(isset($_POST['login'])){
         if(mysqli_num_rows($results)){  
             session_start();
             $account = mysqli_fetch_assoc($results);
+            $_SESSION['id'] = $account['id'];
             $_SESSION['userId'] = $account['username'];
             $_SESSION['usertype'] = $account['user_type'];
             $_SESSION['verified'] = $account['verified'];
             $_SESSION['email'] = $account['email'];
             $_SESSION['token'] = $account['token'];
+            $_SESSION['password'] = $account['password'];
             header('location: index.php');    
         }
         else{
