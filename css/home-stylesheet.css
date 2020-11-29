@@ -446,9 +446,14 @@ a:hover{
 .div3 b{
     font-family:Montserrat;
     font-size: 12px;
-    color: #292929;
+    color: #e33b3a;
     font-weight: lighter;
 
+}
+
+#err-mes{
+    margin-top: -10px !important;
+    
 }
 
 .div3 p{
