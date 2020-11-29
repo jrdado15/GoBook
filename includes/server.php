@@ -97,30 +97,27 @@ if(isset($_POST['signup'])){
 }
     //for update_email
     if(isset($_POST['update_email'])){
-        $new_email = $_POST['email_update'];
-        $password = $_POST['password_update'];
-        $password = md5($password);
-        $currentemail = $_SESSION['email'];
-    //check passsword before updating
-        $query = "SELECT * FROM account_tbl WHERE email = '$currentemail' AND password = '$password'";
-        $results = mysqli_query($db, $query);
-       
-    //Update user's email in database
-        if(mysqli_num_rows($results) > 0 ){  
-            $account = mysqli_fetch_assoc($results);
-            $query = "UPDATE account_tbl SET email = $new_email WHERE email = '$currentemail' ";
-            mysqli_query($db, $query); 
-            $_SESSION['email'] = $new_email;
-        }
-       
-        else{
-            array_push($perrors, "Invalid credentials.");
-        }
+        if(count($perrors) == 0){
+            $new_email = $_POST['email_update'];
+            $password = $_POST['password_update'];
+            $password = md5($password);
+            $currentemail = $_SESSION['email'];
+            //$current_password = $_SESSION['password'];
+            //check passsword before updating
+            $query = "SELECT * FROM account_tbl WHERE email = '$currentemail' AND password = '$password' LIMIT 1";
+            $results = mysqli_query($db, $query);
         
-    //functions call to send a verification email
-    // sendVerificationEmail($email, $token);
-
-    // header('location: verification-page.php');
-        
-}
+            //Update user's email in database
+            if(mysqli_num_rows($results) > 0){  
+                if(mysqli_query($db, $query)){
+                    $query_update = "UPDATE account_tbl SET email = '$new_email' WHERE email = '$currentemail' ";
+                    mysqli_query($db, $query_update); 
+                    $_SESSION['email'] = $new_email;
+                }
+            }
+            else{
+                array_push($perrors, "Invalid credentials.");
+            }
+        }
+    }
     ?>
