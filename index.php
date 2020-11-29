@@ -280,6 +280,7 @@
                         <img class="pic " src="images/062d93bab28c32b51220eecbc5392ce9.png" alt="">
                         </div>
                     <input type="text" class="form-control username mt-3"  readonly value="USERNAME123">
+                    <b class="mt-0 text-center" id="err-mes">*Username not available</b>
                     <a class="text-center edit" href="#">edit</a>
                 </div>
                    
