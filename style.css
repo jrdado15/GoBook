@@ -21,7 +21,7 @@ body {
 /****************    DIV 1     ****************/
 .div1{
     position: relative;
-    background-image:url("images/su-bg.jpg");
+    background-image:url("/images/su-bg.jpg");
     background-color: #212025 ;
     background-attachment: scroll;
     background-repeat: no-repeat;
@@ -33,12 +33,6 @@ body {
     padding: 0 0 !important;
 }
 
-.div2 h1 {
-    font-family:Bebas Neue;
-    text-transform: uppercase;
-    color: white;
-    font-size: 48px;
-}
 
 /****************    DIV 2     ****************/
 .div2{
@@ -52,20 +46,53 @@ body {
 .div2 label{
     font-family:Montserrat;
     letter-spacing: 1px;
-    color: #e33b3a;
+    color: #292929;
     font-size: 16px;
     font-weight: bolder;
     text-transform: uppercase;
     margin-bottom: -10px !important;
 }
 
-.div2 p {
+
+.div2 h1 {
+    font-family:Bebas Neue;
+    text-transform: uppercase;
+    color: white;
+    font-size: 48px;
+}
+
+.div2 h2 {
     font-family:Bebas Neue; 
     color: #292929;
     font-size: 32px;
     letter-spacing: 1px;
-    margin: 0;
+    margin: 0
 }
+.div2 p {
+  /*  font-family:Bebas Neue; 
+    color: #292929;
+    font-size: 32px;
+    letter-spacing: 1px;
+    margin: 0; */
+
+    font-family:Montserrat;
+    font-size: 16px;
+    color: #292929;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+
+.div2 a{
+    font-family:Montserrat;
+    font-size: 14px;
+    letter-spacing: 1px;
+    float: center;
+    text-align:center;
+
+} 
+
 .div2 .btn-primary{
     background-color:#e33b3a;
     border-radius: 0;
@@ -95,7 +122,7 @@ body {
     color: #292929;
     font-family: Montserrat;
     font-size: 14px;
-    font-weight: bold;
+
     text-align: center;
     text-align: left;
     letter-spacing: 1px;
@@ -207,15 +234,6 @@ body {
 
 
 
-.log-in  label{
-    font-family:Montserrat;
-    letter-spacing: 1px;
-    color: #e33b3a;
-    font-size: 16px;
-    font-weight: bolder;
-    text-transform: uppercase;
-    margin-bottom: -10px !important;
-}
 
 
 .log-in .floating-cont{
