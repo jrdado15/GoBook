@@ -48,7 +48,7 @@
                     <a href="index.php" class="mx-auto d-flex flex-column justify-content-center col-md-8 col-8 mx-auto mt-0 p-0" >
                         <img src="images/gobook_logo-02.png" alt="GOBOOK" class="mx-auto col-8" > 
                     </a>
-                    <p class="mt-0 mb-3 text-center">Register your account</p>
+                    <h2 class="mt-0 mb-3 text-center">Register your account</h2>
                 <!-- CHANGES -->
                     
                     <div class="form-group">
