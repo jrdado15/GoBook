@@ -35,11 +35,11 @@
             $("#change_email").submit(function(event){
                 event.preventDefault();
                 var email_update = $("#email_update").val();
-                var password_update = $("#password_update").val();
+                var password_default = $("#password_default").val();
                 var update_email = $("#update_email").val();
                 $(".cemail-message").load("includes/update_email.php", {
                     email_update: email_update,
-                    password_update: password_update,
+                    password_default: password_default,
                     update_email: update_email
                 });
             });
@@ -419,7 +419,7 @@
              <!-- kinukuha yung laman ng password field -->    
                 <div class="mx-auto mt-2 col-lg-10 col-12">
                     <label>Enter Password</label>
-                    <input id = "password_update" name = "password_update" type="password" class="form-control field mt-1 " placeholder="password" value = "">
+                    <input id = "password_default" name = "password_default" type="password" class="form-control field mt-1 " placeholder="password" value = "">
                     <b class = "cemail-message"></b>
                     <span class = "email-success"></span>
                 </div>

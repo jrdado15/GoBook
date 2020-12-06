@@ -8,7 +8,7 @@ if(isset($_POST['update_email'])){
         session_start();
         
         $new_email = $_POST['email_update'];
-        $password = $_POST['password_update'];
+        $password = $_POST['password_default'];
         $password = md5($password);
         $currentemail = $_SESSION['email'];
 
