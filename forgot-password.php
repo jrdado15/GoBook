@@ -1,6 +1,10 @@
 <?php 
     include "includes/server.php";
 
+    if(isset($_SESSION['userId'])){
+        header('location: verification-page.php');
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

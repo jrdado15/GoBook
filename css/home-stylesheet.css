@@ -480,13 +480,21 @@ a:hover{
 }
 
 /********************************************************/
+<<<<<<< Updated upstream
 /******************MODAL: PRD OVRVW*************************/
+=======
+/******************MODAL: PRD OVRVW**********************/
+>>>>>>> Stashed changes
 /********************************************************/
 /********************************************************/
 
 
 #overview{
+<<<<<<< Updated upstream
     background-color:  rgba(63, 63, 63, 0.507);
+=======
+    background-color:  rgba(255, 255, 255, 0.068);
+>>>>>>> Stashed changes
 }
 
 #bg-mdal{
@@ -496,13 +504,20 @@ a:hover{
 }
 
 .div4{
+<<<<<<< Updated upstream
     background-color:transparent;
+=======
+    background-color:white;
+>>>>>>> Stashed changes
    
 }
 
 .div4 .mv-pstr{
     object-fit: cover;
+<<<<<<< Updated upstream
     
+=======
+>>>>>>> Stashed changes
 }
 
 .div4 img{
@@ -515,7 +530,11 @@ a:hover{
 
 .div4 h1{
     font-size: 43px;
+<<<<<<< Updated upstream
     color:  white;
+=======
+    color:  #292929;
+>>>>>>> Stashed changes
     letter-spacing: 1px;
     font-weight: bold;
     line-height: 1 ;
@@ -529,7 +548,11 @@ a:hover{
 
 .div4 h2{
     font-size: 20px;
+<<<<<<< Updated upstream
     color:  white;
+=======
+    color:  #292929;
+>>>>>>> Stashed changes
     letter-spacing: 1px;
     line-height: 1 ;
     overflow: hidden;
@@ -539,7 +562,11 @@ a:hover{
 
 .div4 p {
     font-family: Montserrat;
+<<<<<<< Updated upstream
     color:  white;
+=======
+    color:  #292929;
+>>>>>>> Stashed changes
     font-size: 16px;
     line-height: 1 ;
     font-weight: lighter;
@@ -555,20 +582,31 @@ a:hover{
 }
 
 .div4 button{
+<<<<<<< Updated upstream
     border:1px solid  white;
+=======
+    border:1px solid  #292929;
+>>>>>>> Stashed changes
     border-radius: 0;
     overflow: hidden;
     font-family:Montserrat;
     font-weight: bold; 
     letter-spacing: 1px;
+<<<<<<< Updated upstream
     color: white;
+=======
+    color:  #292929;
+>>>>>>> Stashed changes
     font-size: 16px;
     box-shadow: none !important;
 }
 
+<<<<<<< Updated upstream
 
 
 
+=======
+>>>>>>> Stashed changes
 .div4 button:hover{
     
     border:1px solid #e33b3a;
@@ -579,16 +617,26 @@ a:hover{
 
 .div4 button:active{
 
+<<<<<<< Updated upstream
     border:1px solid  white!important;
     background-color:white !important;
     color:white!important;
     box-shadow: none !important;
 }
+=======
+    border:1px solid  #292929 !important;
+    background-color:#292929 !important;
+    color: #292929!important;
+    box-shadow: none !important;
+}
+
+>>>>>>> Stashed changes
 .mdl .modal-dialog{
     min-width: 55% !important;
 }
 
 /********************************/
+<<<<<<< Updated upstream
 #divs{
     background-color: transparent;
 }
@@ -598,6 +646,14 @@ a:hover{
     padding-bottom:59% !important;
     height: 0;
     min-width: 50% !important;
+=======
+
+.videowrapper{
+    position: relative;
+    padding-bottom:59% !important;
+    height: 0;
+    min-width: 55% !important;
+>>>>>>> Stashed changes
     margin-top: -70px;
 }
 
@@ -614,4 +670,8 @@ a:hover{
     font-size: 20px;
     color: white;
 }
+<<<<<<< Updated upstream
 /*****************************/
+=======
+
+>>>>>>> Stashed changes

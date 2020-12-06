@@ -48,11 +48,10 @@ if(isset($_POST['update_email'])){
         //Update user's email in database
         if(mysqli_num_rows($results) > 0){  
             if(mysqli_query($db, $query)){
-                $query_update = "UPDATE account_tbl SET verified = 0 and email = '$new_email' WHERE email = '$currentemail' ";
+                $query_update = "UPDATE account_tbl SET verified = 0, email = '$new_email' WHERE email = '$currentemail' ";
                 mysqli_query($db, $query_update); 
                 $_SESSION['email'] = $new_email;
                 $_SESSION['verified'] = 0;
-                $_SESSION['new_email'] = true;
                 echo "<script> location.reload(true); </script>";
             }
         }

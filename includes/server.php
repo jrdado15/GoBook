@@ -196,7 +196,7 @@ if(isset($_POST['resetSubmit'])){
         array_push($perrors, "Password must at least have 8 characters.");
     }
     if($password != $password_confirm && strlen($password) > 7){
-        array_push($cperrors, "Password does not match");
+        array_push($cperrors, "Password did not match");
     }
 
     $password = md5($password);

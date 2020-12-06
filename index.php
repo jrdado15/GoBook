@@ -14,15 +14,6 @@
         } 
     }
 
-    if(isset($_POST['new_email'])){
-        if($_SESSION['verified'] == 0){
-            $email = $_SESSION['email'];
-            $token = $_SESSION['token'];
-            sendVerificationEmail($email, $token);
-            $_SESSION['new_email'] = false;
-        } 
-    }
-
 
 ?>
 
@@ -207,15 +198,19 @@
 
                 while($row = mysqli_fetch_array($query_run))
                     {
-                ?>
-                            
-                <div class="cont col-xl-3 col-lg-2 col-md-4 col-sm-4 col-xs-2 p-1">
+                ?>                 
+                <div data-dismiss="modal" data-toggle="modal" data-target=".product-overview" class="cont col-xl-3 col-lg-2 col-md-4 col-sm-4 col-xs-2 p-1">
                     <div class=" thumbnail d-flex flex-column justify-content-left">
                         <div class="overlay-effect d-flex justify-content-center align-items-center p-1"> 
                             <i class="fa fa-ticket fa-3x"></i>
                         </div>
+<<<<<<< Updated upstream
                         <div  class="poster">
                             <?php echo '<img class="cont col-xl-3 col-lg-2 col-md-4 col-sm-4 col-xs-2 p-1" src="data:image;base64,' .base64_encode($row['movie_poster']).' ">'; ?>
+=======
+                        <div class = "poster">
+                            <?php echo '<img class = "post col-12 p-0" src="data:image;base64,' .base64_encode($row['movie_poster']).' "> '; ?>
+>>>>>>> Stashed changes
                         </div>
                             <b class="title mx-4"> <?php echo $row['movie_name'];?> </b>
                             <div class="rate d-flex flex-row justify-content-between mx-2 mb-2">
@@ -224,7 +219,7 @@
                             </div> 
                         </div>
                     </div>
-                <?php
+                     <?php
                      }      
                  ?>
             </div>
@@ -469,12 +464,12 @@
     BY: RHEMA MIRANDA
     SCOPE: MODAL/ PRODUCT OVERVIEW
 -->
-<div class="modal fade product-overview mdl " id="overview" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade product-overview mdl" id="overview" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered ">
         <div class="modal-content  d-flex flex-lg-row justify-content-center  div4 ">
 
              <!--POSTER-->
-            <div class="d-flex justify-content-center col-lg-4 col-12 p-0 m-0 mv-pstr  no-gutters">
+            <div class="d-flex justify-content-center col-lg-4 col-12 p-0 m-0 mv-pstr no-gutters">
                 <img src="images/poster(10).jpg" alt="..." class="col-12 imgs">
             </div>
             
