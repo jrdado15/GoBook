@@ -214,7 +214,9 @@
                         <div class="overlay-effect d-flex justify-content-center align-items-center p-1"> 
                             <i class="fa fa-ticket fa-3x"></i>
                         </div>
-                            <?php echo '<img class="poster" src="data:image;base64,' .base64_encode($row['movie_poster']).' ">'; ?>
+                        <div  class="poster">
+                            <?php echo '<img class="cont col-xl-3 col-lg-2 col-md-4 col-sm-4 col-xs-2 p-1" src="data:image;base64,' .base64_encode($row['movie_poster']).' ">'; ?>
+                        </div>
                             <b class="title mx-4"> <?php echo $row['movie_name'];?> </b>
                             <div class="rate d-flex flex-row justify-content-between mx-2 mb-2">
                                 <b class="ml-1 float-left"> <i class="fa fa-star mt-1"></i> 3.4</b>
