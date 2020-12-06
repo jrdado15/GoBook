@@ -20,7 +20,7 @@ body {
 
 
 .navbar{
-   background-color: #292929;
+   background-color: #1d1e22;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -275,7 +275,11 @@ a:hover{
     cursor: pointer;
     
 }
-  
+
+.thumbnail:active  .overlay-effect{
+    border:5px solid   white;
+}
+
 .overlay-effect {
     position: absolute;
     background-color: rgba(0,0,0,0.50);
@@ -288,7 +292,7 @@ a:hover{
     overflow: hidden;
     color: white;
     z-index: 10;
-    border:5px solid   #e33b3a;
+    border:5px solid   white;
     padding: 5px !important;
    
 } 
