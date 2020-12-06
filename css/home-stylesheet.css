@@ -484,10 +484,14 @@ a:hover{
 }
 
 /********************************************************/
-/******************MODAL: PRD OVRVW*************************/
+/******************MODAL: PRD OVRVW**********************/
 /********************************************************/
 /********************************************************/
 
+
+#overview{
+    background-color:  rgba(255, 255, 255, 0.068);
+}
 
 #bg-mdal{
     border-radius: 0;
@@ -496,13 +500,12 @@ a:hover{
 }
 
 .div4{
-    background-color: transparent;
+    background-color:white;
    
 }
 
 .div4 .mv-pstr{
     object-fit: cover;
-    
 }
 
 .div4 img{
@@ -515,7 +518,7 @@ a:hover{
 
 .div4 h1{
     font-size: 43px;
-    color:  white;
+    color:  #292929;
     letter-spacing: 1px;
     font-weight: bold;
     line-height: 1 ;
@@ -525,23 +528,21 @@ a:hover{
     -webkit-line-clamp: 1; 
     -webkit-box-orient: vertical;
     text-align: left;
-    
 }
 
 .div4 h2{
     font-size: 20px;
-    color: white;
+    color:  #292929;
     letter-spacing: 1px;
     line-height: 1 ;
     overflow: hidden;
     text-overflow: ellipsis;
-    
+   
 }
-
 
 .div4 p {
     font-family: Montserrat;
-    color:  white;
+    color:  #292929;
     font-size: 16px;
     line-height: 1 ;
     font-weight: lighter;
@@ -550,7 +551,6 @@ a:hover{
     display: -webkit-box;
     -webkit-line-clamp: 6; 
     -webkit-box-orient: vertical;
-    
 }
 
 .div4 .rate{
@@ -558,19 +558,16 @@ a:hover{
 }
 
 .div4 button{
-    border:1px solid  white;
+    border:1px solid  #292929;
     border-radius: 0;
     overflow: hidden;
     font-family:Montserrat;
     font-weight: bold; 
     letter-spacing: 1px;
-    color:white;
+    color:  #292929;
     font-size: 16px;
     box-shadow: none !important;
 }
-
-
-
 
 .div4 button:hover{
     
@@ -582,25 +579,23 @@ a:hover{
 
 .div4 button:active{
 
-    border:1px solid  white!important;
-    background-color:white!important;
-    color:white!important;
+    border:1px solid  #292929 !important;
+    background-color:#292929 !important;
+    color: #292929!important;
     box-shadow: none !important;
 }
+
 .mdl .modal-dialog{
     min-width: 55% !important;
 }
 
 /********************************/
-#divs{
-    background-color: transparent;
-}
+
 .videowrapper{
-    background-color: transparent;
     position: relative;
     padding-bottom:59% !important;
     height: 0;
-    min-width: 50% !important;
+    min-width: 55% !important;
     margin-top: -70px;
 }
 
@@ -617,4 +612,3 @@ a:hover{
     font-size: 20px;
     color: white;
 }
-/*****************************/

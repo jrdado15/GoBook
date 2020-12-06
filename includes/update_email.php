@@ -9,7 +9,6 @@ if(isset($_POST['update_email'])){
         
         $new_email = $_POST['email_update'];
         $password = $_POST['password_default'];
-        $password = md5($password);
         $currentemail = $_SESSION['email'];
 
         $errorEmpty = false;
@@ -39,6 +38,8 @@ if(isset($_POST['update_email'])){
                 echo "<b class = 'cemail_message'>Email is already taken</b>";
             }
         }
+
+        $password = md5($password);
 
         //$current_password = $_SESSION['password'];
         //check passsword before updating
