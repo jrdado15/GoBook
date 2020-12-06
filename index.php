@@ -437,58 +437,6 @@
         </div>
     </div>
 </div>
-    
-<!--
-    NOTES
-    BY: RHEMA MIRANDA
-    SCOPE: MODAL/ PRODUCT OVERVIEW
--->
-<div class="modal fade product-overview mdl " id="overview" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered ">
-        <div class="modal-content  d-flex flex-lg-row justify-content-center  div4 ">
-
-             <!--POSTER-->
-            <div class="d-flex justify-content-center col-lg-4 col-12 p-0 m-0 mv-pstr  no-gutters">
-                <img src="images/poster(10).jpg" alt="..." class="col-12 imgs">
-            </div>
-            
-            <!--PRODUCT INFO-->
-            <div class="prd-inf d-flex flex-column justify-content-start  col-lg-8 col-12 no-gutters mx-auto p-4">
-                <div class="mv-info col-12 p-0">  
-                        <div class="prd-info">
-                        <h1 class="mb-1 ">CAPTAIN MARVEL</h1>
-                        <p class="m-0 rate"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></p>
-                        <h2 class="mt-1 mb-0">Price:P100.00</h2>
-                        <p class="mt-3 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum rem quis ab laborum eligendi, quo repellat dolorem. Ipsa vero nemo obcaecati est velit reprehenderit molestias aspernatur modi, hic laudantium at nostrum autem explicabo deleniti repellat perspiciatis veniam ad sit eum?</p>
-                        </div>
-                        <button type="button" class="btn btn-outline-secondary m-1 col-12 "  data-toggle="modal" data-target=".product-overview-1"><i class="fa fa-play"></i> TRAILER</button>   
-                        <button type="button" class="btn btn-outline-secondary m-1 col-12"><i class="fa fa-plus"></i> ADD TO CART</button>                
-                        <button type="button" class="btn btn-outline-secondary m-1 col-12"><i class="fa fa-ticket"></i> CHECK OUT</button>
-                </div>  
-            </div>
-        </div>
-    </div>
-</div>   
-
-<!--
-    NOTES
-    BY: RHEMA MIRANDA
-    SCOPE: MODAL/ TRAILER
--->
-<div class="modal product-overview-1 mdl "  tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="d-flex justify-content-end col-12 mt-2">
-        <i id="close" class="fa fa-close p-4" data-dismiss="modal" aria-hidden="true"></i>
-    </div>
-    <div class="modal-dialog modal-dialog-centered mt-0 ">
-        
-        <div class="modal-content  d-flex flex-lg-row justify-content-center  div4 mt-0 ">
-            <div class="videowrapper col-12 no-gutters">
-                <iframe src="https://www.youtube.com/embed/Z1BCujX3pw8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-          
-        </div>
-    </div>
-</div>   
 
 <!--END-->
 <!--END-->
