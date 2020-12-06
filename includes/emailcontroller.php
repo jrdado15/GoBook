@@ -48,4 +48,35 @@ function sendVerificationEmail($Email, $token){
     // Send the message
     $result = $mailer->send($message);
 }
+
+function sendPasswordResetLink($email ,$token){
+
+    global $mailer;
+    $body = '<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Verify Email</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <p>Please click on the link below to reset your password.</p>
+            <a href = "http://localhost/go_book/gobook/log-in.php?password-token=' .$token. '">
+                Reset your password.
+            </a>
+        </div>
+        
+    </body>
+    </html>';
+
+    // Create a message
+    $message = (new Swift_Message('Reset your password'))
+    ->setFrom(['gobook.scrum@gmail.com'])
+    ->setTo($email)
+    ->setBody($body,'text/html');
+    ;
+ 
+    // Send the message
+    $result = $mailer->send($message);
+}
 ?>

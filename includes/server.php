@@ -14,7 +14,7 @@ require_once 'conn.php';
 //verify the users' email
 require_once 'emailcontroller.php';
 
-
+//sign up
 if(isset($_POST['signup'])){
     $username = $_POST['username'];
     $email = $_POST['email'];
@@ -25,6 +25,9 @@ if(isset($_POST['signup'])){
     //form validation
     if(empty($email)){
         array_push($eerrors, "Email is required.");
+    }
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+        array_push($eerrors, "Email is invalid.");
     }
     if(empty($username)){
         array_push($uerrors, "Username is required.");
@@ -74,7 +77,7 @@ if(isset($_POST['signup'])){
     }
 
 
-    //Store users' credential in database
+    //Store users' credential in database after signing up
     if(count($eerrors) === 0 && count($uerrors) === 0 && count($perrors) === 0 && count($cperrors) === 0 && count($derrors) === 0){
         $password = md5($password_1); //this will encypt the password
         $token =  bin2hex(random_bytes(50));
@@ -95,29 +98,121 @@ if(isset($_POST['signup'])){
         header('location: verification-page.php');
     }     
 }
+//sign up
+
     //for update_email
-    if(isset($_POST['update_email'])){
-        if(count($perrors) == 0){
-            $new_email = $_POST['email_update'];
-            $password = $_POST['password_update'];
-            $password = md5($password);
-            $currentemail = $_SESSION['email'];
-            //$current_password = $_SESSION['password'];
-            //check passsword before updating
-            $query = "SELECT * FROM account_tbl WHERE email = '$currentemail' AND password = '$password' LIMIT 1";
-            $results = mysqli_query($db, $query);
-        
-            //Update user's email in database
-            if(mysqli_num_rows($results) > 0){  
-                if(mysqli_query($db, $query)){
-                    $query_update = "UPDATE account_tbl SET email = '$new_email' WHERE email = '$currentemail' ";
-                    mysqli_query($db, $query_update); 
-                    $_SESSION['email'] = $new_email;
-                }
-            }
-            else{
-                array_push($perrors, "Invalid credentials.");
-            }
+
+    
+//user credential validation
+if(isset($_POST['login'])){
+
+
+    $username = $_POST['username'];
+    $password = $_POST['password_1'];
+
+    if(empty($username)){
+        array_push($uerrors, "Please enter your username.");
+    }
+    if(empty($password)){
+        array_push($perrors, "Please enter your password.");
+    }
+
+
+    if(count($uerrors) == 0 && count($perrors) == 0  ){
+        $password = md5($password);
+
+        $query = "SELECT * FROM account_tbl WHERE (username = '$username' OR email = '$username') AND password = '$password'";
+        $results = mysqli_query($db, $query);
+       
+
+        if(mysqli_num_rows($results)){  
+            session_start();
+            $account = mysqli_fetch_assoc($results);
+            $_SESSION['id'] = $account['id'];
+            $_SESSION['userId'] = $account['username'];
+            $_SESSION['usertype'] = $account['user_type'];
+            $_SESSION['verified'] = $account['verified'];
+            $_SESSION['email'] = $account['email'];
+            $_SESSION['token'] = $account['token'];
+            $_SESSION['password'] = $account['password'];
+            header('location: index.php');    
+        }
+        else{
+            array_push($perrors, "Invalid credentials.");
         }
     }
-    ?>
+}
+//END
+
+// if user clicks on forgot password button
+if(isset($_POST['fSubmit'])){
+
+    $email = $_POST['fpEmail'];
+    
+    if(empty($email)){
+        array_push($eerrors, "Email is required.");
+    }
+    elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+        array_push($eerrors, "Email is invalid.");
+    }
+
+    if(count($eerrors) == 0){
+        session_start();
+        $_SESSION['email'] = $email;
+        $sql = "SELECT * FROM account_tbl WHERE email = '$email' LIMIT 1";
+        $result = mysqli_query($db, $sql);
+        $user = mysqli_fetch_assoc($result);
+        $token = $user['token'];
+        sendPasswordResetLink($email, $token);
+    }
+}
+
+function resetPassword($token){
+    global $db;
+
+    $sql = "SELECT * FROM account_tbl WHERE token = '$token' LIMIT 1";
+    $result = mysqli_query($db, $sql);
+    $user = mysqli_fetch_assoc($result);
+
+    $_SESSION['email'] = $user['email'];
+    
+    header('location: change-password.php');
+    exit(0);
+}
+
+
+//reset user password
+if(isset($_POST['resetSubmit'])){
+
+    session_start();
+
+    $password = $_POST['resetPassword'];
+    $password_confirm = $_POST['confirmResetPassword'];
+
+    if(empty($password)){
+        array_push($perrors, "Password is required.");
+    }
+    if(strlen($password) < 8 && strlen($password_confirm) >= 1 ){
+        array_push($perrors, "Password must at least have 8 characters.");
+    }
+    if($password != $password_confirm && strlen($password) > 7){
+        array_push($cperrors, "Password does not match");
+    }
+
+    $password = md5($password);
+    $email = $_SESSION['email'];
+
+    if(count($perrors) == 0 && count($cperrors) == 0){
+
+        $sql = "UPDATE account_tbl SET password = '$password' WHERE email = '$email' ";
+        $result = mysqli_query($db, $sql);
+
+        if($result){
+            header('location: log-in.php');
+            exit(0);
+        }
+    }
+
+}
+
+?>

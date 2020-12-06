@@ -1,6 +1,7 @@
 <?php 
     session_start();
     include('includes/server.php');
+    include('includes/update_email.php');
 
     if(!isset($_SESSION['userId'])){
          $_SESSION['usertype'] = 'member';
@@ -10,8 +11,19 @@
         if($_SESSION['verified'] == 0){
             header('location: verification-page.php');
             exit();
-        }
+        } 
     }
+
+    if(isset($_POST['new_email'])){
+        if($_SESSION['verified'] == 0){
+            $email = $_SESSION['email'];
+            $token = $_SESSION['token'];
+            sendVerificationEmail($email, $token);
+            $_SESSION['new_email'] = false;
+        } 
+    }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -20,13 +32,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoBook</title>
+    <link rel = "icon" href="images/icons8-ticket-100.png" type = "image"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <link rel="stylesheet" href="css/home-stylesheet.css">
-    
-  
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <script>
+        $(document).ready(function(){
+            $("#change_email").submit(function(event){
+                event.preventDefault();
+                var email_update = $("#email_update").val();
+                var password_update = $("#password_update").val();
+                var update_email = $("#update_email").val();
+                $(".cemail-message").load("includes/update_email.php", {
+                    email_update: email_update,
+                    password_update: password_update,
+                    update_email: update_email
+                });
+            });
+        });
+    </script>
 </head>
 <body>
 <!--
@@ -77,7 +104,7 @@
                         <!-- checks if session userId is empty-->
                         <?php if(isset($_SESSION['userId'])) : ?>
                                 <!-- display users' username -->
-                                <li class="nav-item text-uppercase d-flex"> <a href="#" data-toggle="modal" data-target=".demo-popup"class="nav-link"><?php echo $_SESSION['userId'];?></a></li>
+                                <li class="nav-item text-uppercase d-flex"> <a data-toggle="modal" data-target=".demo-popup"class="nav-link"><?php echo $_SESSION['userId'];?></a></li>
                                 <!-- display users' username -->
                         <?php else: ?> 
                             <li class="nav-item"> <a href="log-in.php" class="nav-link">LOG IN</a></li>';
@@ -351,7 +378,7 @@
     BY: RHEMA MIRANDA
     SCOPE: MODAL/ ACCOUNT SETTINGS 1, CHANGE EMAIL
 -->
-<div class="modal demo-popup4 " tabindex="-1" role="dialog"  aria-hidden="true">
+<div class="modal demo-popup4 " tabindex="-1" role="dialog"  aria-hidden="true" data-backdrop = "static">
     <div class="modal-dialog modal-md modal-dialog-centered ">
         <div class="modal-content  d-flex justify-content-center div3 p-2">
             
@@ -367,29 +394,26 @@
                                 <!-- display users' username -->
                                 <p class="email m-0"><?php echo $_SESSION['email'];?></p>
                     <?php endif ?>
-            <form method = "post">     
+
+
+        <form id = "change_email" method = "post" action = "">     
             <!-- kinukuha yung laman ng email field -->
                 <div class="mx-auto mt-2 col-lg-10 col-12">
                     <label>Enter new email address</label>
-                    <input name= "email_update" type="email" class="form-control field mt-1 " placeholder="email address">
-                    <b>You've enter an invalid email</b>
+                    <input id = "email_update" name= "email_update" type="email" class="form-control field mt-1 " placeholder="email address" value = "">
+                    <span class = "email-update-error"></span>
                 </div>
              <!-- kinukuha yung laman ng password field -->    
                 <div class="mx-auto mt-2 col-lg-10 col-12">
                     <label>Enter Password</label>
-                    <input name = "password_update" type="password" class="form-control field mt-1 " placeholder="password">
-                    <?php if (count($perrors) > 0) : ?>
-                            <div >
-                                <?php foreach($perrors as $error): ?>
-                                        <small style = "font-size:12px;" class = "text-danger"><?php echo $error; ?> </small>
-                                <?php endforeach?> 
-                            </div>
-                      <?php endif ?>
+                    <input id = "password_update" name = "password_update" type="password" class="form-control field mt-1 " placeholder="password" value = "">
+                    <b class = "cemail-message"></b>
+                    <span class = "email-success"></span>
                 </div>
                
                 <div class="mx-auto mt-3 mb-5 col-lg-10 col-12">
                     
-                    <button class="btn btn-default m-0 col-12"  name = "update_email" type= "submit">SAVE CHANGES</button>
+                    <button type = "submit"  class="btn btn-default m-0 col-12" id = "update_email" name = "update_email">SAVE CHANGES</button>
                     <!-- data-dismiss="modal"  data-toggle="modal" data-target=".demo-popup6" -->
                 </div>
             </form>
@@ -423,14 +447,14 @@
     BY: RHEMA MIRANDA
     SCOPE: MODAL/ ACCOUNT SETTINGS , CHANGE EMAIL > NOTIFICATION
 -->
-<div class="modal demo-popup6 " tabindex="-1" role="dialog" aria-hidden="true">
+<div id = "changeEmail-success" class="modal demo-popup6 " tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-md modal-dialog-centered ">
         <div class="modal-content  d-flex justify-content-center div3 p-2">
             <div class="d-flex justify-content-end col-12 mt-2">
                 <i class="fa fa-close pr-3" data-dismiss="modal" aria-hidden="true"></i>
             </div>
             <h1 class="mb-2 mt-4 p-0">Check your email</h1>
-            <p class=" mx-2 px-2" >Please click the link that we sent in the email below to confirm this changes.</p>> 
+            <p class=" mx-2 px-2" >Please click the link that we sent in the email below to confirm this changes.</p>
             <p class="email m-0 px-2" id="notice">newemail.user12345@gmail.com</p> 
             <a class="mb-4 "href="#">Resend Email</a>
             <a class="mb-5 "href="#">Cancel Changes</a>
@@ -485,7 +509,7 @@
             <div class="videowrapper col-12 no-gutters">
                 <iframe src="https://www.youtube.com/embed/Z1BCujX3pw8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-          
+
         </div>
     </div>
 </div>   

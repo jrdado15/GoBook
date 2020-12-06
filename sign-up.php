@@ -53,7 +53,7 @@
                     
                     <div class="form-group">
                         <label>Email:</label>
-                        <input name = "email" class="form-control" type="email" placeholder="Enter email" value = "<?php echo $email; ?>">
+                        <input name = "email" class="form-control" type="text" placeholder="Enter email" value = "<?php echo $email; ?>">
                         <?php if (count($eerrors) > 0) : ?>
                             <div >
                                 <?php foreach($eerrors as $error): ?>
