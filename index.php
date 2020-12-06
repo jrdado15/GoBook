@@ -2,6 +2,7 @@
     session_start();
     include('includes/server.php');
     include('includes/update_email.php');
+    include('includes/update_password.php');
 
     if(!isset($_SESSION['userId'])){
          $_SESSION['usertype'] = 'member';
@@ -13,16 +14,6 @@
             exit();
         } 
     }
-
-    if(isset($_POST['new_email'])){
-        if($_SESSION['verified'] == 0){
-            $email = $_SESSION['email'];
-            $token = $_SESSION['token'];
-            sendVerificationEmail($email, $token);
-            $_SESSION['new_email'] = false;
-        } 
-    }
-
 
 ?>
 
@@ -50,6 +41,24 @@
                     email_update: email_update,
                     password_update: password_update,
                     update_email: update_email
+                });
+            });
+        });
+    </script>
+    
+     <script>
+        $(document).ready(function(){
+            $("#change_password").submit(function(event){
+                event.preventDefault();
+                var password_update = $("#password_update").val();
+                var password1_update = $("#password1_update").val();
+                var password2_update = $("#password2_update").val();
+                var update_password = $("#update_password").val();
+                $(".cpassword-message").load("includes/update_password.php", {
+                    password_update: password_update,
+                    password1_update: password1_update,
+                    password2_update: password2_update,
+                    update_password: update_password
                 });
             });
         });
@@ -353,22 +362,25 @@
                 <h1 class="mb-2 mt-2 p-0">CHANGE YOUR PASSWORD</h1>
                     <form class="mx-auto mt-2 col-lg-10 col-12">
                         <label>Enter Password</label>
-                        <input type="password" class="form-control field mt-1 " placeholder="password">
-                        <b>You've enter a wrong password</b>
+                        <input type="password" class="form-control field mt-1 " placeholder="password" id= "password_update" name ="password_update">
+                        <b class = "cpassword-message"></b>
                     </form>
                     <form class="mx-auto mt-2  col-lg-10 col-12">
                         <label>Enter new Password</label>
-                        <input type="password" class="form-control field mt-1 " placeholder="new password">
-                        <b>Must have at least one uppercase or lower case</b>
+                        <input type="password" class="form-control field mt-1 " placeholder="new password" id="password1_update" name="password1_update">
+                        <b class = "cpassword-message"></b>
                     </form>
                     <form class="mx-auto mt-1 col-lg-10 col-12">
                         <label>Re-enter new Password</label>
-                        <input type="password" class="form-control field mt-1 " placeholder="re-enter password">
-                        <b>Password did not match</b>
+                        <input type="password" class="form-control field mt-1 " placeholder="re-enter password" id="password2_update" name="password2_update">
+                        <b class = "cpassword-message"></b>
                     </form>
+                    <form id = "change_password" method = "post" action = "">    
                     <div class="mx-auto mt-3 mb-5 col-lg-10 col-12">
-                        <button class="btn btn-default m-0 col-12" data-dismiss="modal" data-toggle="modal" data-target=".demo-popup5">SAVE CHANGES</button>
+                        <button class="btn btn-default m-0 col-12"  id = "update_password" name = "update_password" type ="submit">SAVE CHANGES</button>
                     </div>
+                    </form>
+                    <!-- data-dismiss="modal" data-toggle="modal" data-target=".demo-popup5"  -->
             </div>
         </div>
     </div>
