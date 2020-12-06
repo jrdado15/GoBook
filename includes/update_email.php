@@ -52,7 +52,6 @@ if(isset($_POST['update_email'])){
                 mysqli_query($db, $query_update); 
                 $_SESSION['email'] = $new_email;
                 $_SESSION['verified'] = 0;
-                $_SESSION['new_email'] = true;
                 echo "<script> location.reload(true); </script>";
             }
         }

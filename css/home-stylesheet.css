@@ -20,7 +20,7 @@ body {
 
 
 .navbar{
-   background-color: #292929;
+   background-color: #1d1e22;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -217,24 +217,30 @@ a:hover{
     border:1px solid  #292929;
     border-radius: 0;
     font-size: 18px;
+    box-shadow: none !important;
 }
 
 .search button{
-    border:1px solid  #292929;
+    
     border-radius: 0;
     background-color:  #292929;
     color: white;
     font-size: 18px;
+    box-shadow: none !important;
+    border:1px solid  #292929;
 }
 
 .search button:hover{
+    border:1px solid  #292929;
     background-color: #e33b3a !important;
-    border:1px solid  #e33b3a;
+    box-shadow: none !important;
 }
 .search button:active{
+    border:1px solid  #292929;
     background-color: #e33b3a !important;
-    border:1px solid  #e33b3a;
+    box-shadow: none !important;
 }
+
 
 .mov-list .row{
     margin: 0;
@@ -269,7 +275,11 @@ a:hover{
     cursor: pointer;
     
 }
-  
+
+.thumbnail:active  .overlay-effect{
+    border:5px solid   white;
+}
+
 .overlay-effect {
     position: absolute;
     background-color: rgba(0,0,0,0.50);
@@ -282,7 +292,7 @@ a:hover{
     overflow: hidden;
     color: white;
     z-index: 10;
-    border:5px solid   #e33b3a;
+    border:5px solid   white;
     padding: 5px !important;
    
 } 
@@ -473,3 +483,138 @@ a:hover{
     color: #e33b3a;
 }
 
+/********************************************************/
+/******************MODAL: PRD OVRVW*************************/
+/********************************************************/
+/********************************************************/
+
+
+#bg-mdal{
+    border-radius: 0;
+    background-color: #292929;
+    border: none;
+}
+
+.div4{
+    background-color: transparent;
+   
+}
+
+.div4 .mv-pstr{
+    object-fit: cover;
+    
+}
+
+.div4 img{
+    width: auto !important;
+}
+
+.div4 .prd-info{
+    height: 57%;
+}
+
+.div4 h1{
+    font-size: 43px;
+    color:  white;
+    letter-spacing: 1px;
+    font-weight: bold;
+    line-height: 1 ;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; 
+    -webkit-box-orient: vertical;
+    text-align: left;
+    
+}
+
+.div4 h2{
+    font-size: 20px;
+    color: white;
+    letter-spacing: 1px;
+    line-height: 1 ;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+}
+
+
+.div4 p {
+    font-family: Montserrat;
+    color:  white;
+    font-size: 16px;
+    line-height: 1 ;
+    font-weight: lighter;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 6; 
+    -webkit-box-orient: vertical;
+    
+}
+
+.div4 .rate{
+    color:  #e33b3a;
+}
+
+.div4 button{
+    border:1px solid  white;
+    border-radius: 0;
+    overflow: hidden;
+    font-family:Montserrat;
+    font-weight: bold; 
+    letter-spacing: 1px;
+    color:white;
+    font-size: 16px;
+    box-shadow: none !important;
+}
+
+
+
+
+.div4 button:hover{
+    
+    border:1px solid #e33b3a;
+    background-color: #e33b3a !important;
+    box-shadow: none !important;
+    
+}
+
+.div4 button:active{
+
+    border:1px solid  white!important;
+    background-color:white!important;
+    color:white!important;
+    box-shadow: none !important;
+}
+.mdl .modal-dialog{
+    min-width: 55% !important;
+}
+
+/********************************/
+#divs{
+    background-color: transparent;
+}
+.videowrapper{
+    background-color: transparent;
+    position: relative;
+    padding-bottom:59% !important;
+    height: 0;
+    min-width: 50% !important;
+    margin-top: -70px;
+}
+
+.videowrapper iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+
+#close{
+    font-size: 20px;
+    color: white;
+}
+/*****************************/

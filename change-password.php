@@ -1,6 +1,5 @@
 <?php 
-    include ('includes/server.php');
-    session_start();
+    include('includes/server.php'); 
 
     if(isset($_SESSION['userId'])){
         header('location: index.php');
@@ -14,9 +13,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title >Change Password • GOBOOK</title>
+    <link rel = "icon" href="images/icons8-ticket-100.png" type = "image"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <script>
+        $(window).load(function(){
+        $('#success').modal('show');
+        });
+    </script>
 
 </head>
 <body>
@@ -28,7 +34,9 @@
         <div class="div4 col-lg-8 col-xs-12 d-flex flex-column justify-content-center m-0 p-0 ">
             <div class="p-lg-5">
                 <div class="d-flex flex-column justify-content-center mx-auto">
-                <img src="images/gobook_logo-01.png" alt="GOBOOK" class="mx-auto col-3 mb-1" > 
+                <a href="index.php" class="mx-auto d-flex flex-column justify-content-center col-lg-8 col-12 mx-auto p-0" >
+                    <img src="images/gobook_logo-01.png" alt="GOBOOK" class="mx-auto col-8" > 
+                </a>
                 <h1>Reset your password</h1>
                 <p>Please choose  new password to finish signing in.</p>
                 </div>
@@ -36,14 +44,33 @@
                  <form action="change-password.php" method = "post" class="mx-auto mt-2  col-lg-8 col-12">
                     <label>Enter new Password</label>
                     <input name = "resetPassword" type="password" class="form-control field mt-1 " placeholder="new password">
-                    <b>Must have at least one uppercase or lower case</b>
-           
+                    <?php if (count($perrors) > 0) : ?>
+                                <div >
+                                    <?php foreach($perrors as $error): ?>
+                                        <b class = "text-danger"><?php echo $error; ?> </b>
+                                    <?php endforeach?> 
+                                </div>
+                    <?php endif ?>
+                    <br>
                     <label>Re-enter new Password</label>
                     <input name = "confirmResetPassword" type="password" class="form-control field mt-1 " placeholder="re-enter password">
-                    <b>Password did not match</b>
-
+                    <?php if (count($cperrors) > 0) : ?>
+                                <div >
+                                    <?php foreach($cperrors as $error): ?>
+                                        <b class = "text-danger"><?php echo $error; ?> </b>
+                                    <?php endforeach?> 
+                                </div>
+                    <?php endif ?>
+                    <br>
                     <div class="d-flex justify-content-center mt-2 mx-auto col-lg-8 col-12">
-                        <button name = "resetSubmit" type = "submit"  data-toggle="modal" data-target=".demo-popup" class="btn btn-default col-12">RESET MY PASSWORD</button>
+                        <button name = "resetSubmit" type = "submit" class="btn btn-default col-12">RESET MY PASSWORD</button>
+                        <script>
+                         $('#success').modal({
+                            show: 'false'
+                        }); 
+                        </script>
+                        
+                        <!-- data-toggle="modal" data-target=".demo-popup" -->
                     </div>
                 </form>
                        
@@ -57,7 +84,7 @@
     SCOPE: MODAL/ ACCOUNT SETTINGS 1, LOG OUT
 -->
 
-<div class="modal fade demo-popup"  data-backdrop="static" tabindex="-1" role="dialog"  aria-hidden="true">
+<div id = "success" class="modal fade demo-popup"  data-backdrop="static" tabindex="-1" role="dialog"  aria-hidden="true">
     <div class="modal-dialog modal-md modal-dialog-centered ">
         <div class="modal-content  d-flex justify-content-center div4 p-2">
             

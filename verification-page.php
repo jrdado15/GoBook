@@ -59,7 +59,7 @@
             <p class="mt-3 mx-md-4">If the email doesn't arrive soon, check your spam folder or have us resend it again.</p>
             <form method="post">
                 <div class="d-flex justify-content-center mt-2">
-                    <button data-toggle="modal" data-target=".demo-popup" class="btn btn-secondary" name ="ver_resend">RESEND</button>
+                    <button data-toggle="modal" data-target=".demo-popup" class="btn btn-secondary col-6" name ="ver_resend">RESEND</button>
                 </div>
             </form>
             <!-- CHANGES -->
