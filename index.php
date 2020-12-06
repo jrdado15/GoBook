@@ -182,7 +182,7 @@
                     {
                 ?>
                             
-                <div data-dismiss="modal" data-toggle="modal" data-target=".product-overview" class="cont col-xl-3 col-lg-2 col-md-4 col-sm-4 col-xs-2 p-1">
+                <div class="cont col-xl-3 col-lg-2 col-md-4 col-sm-4 col-xs-2 p-1">
                     <div class=" thumbnail d-flex flex-column justify-content-left">
                         <div class="overlay-effect d-flex justify-content-center align-items-center p-1"> 
                             <i class="fa fa-ticket fa-3x"></i>
