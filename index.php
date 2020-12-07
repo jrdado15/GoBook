@@ -324,7 +324,7 @@
                                 <!-- display users' username -->
                                 <h1 class="mb-0 mt-2 p-0"><?php echo $_SESSION['userId'];?></h1>
                     <?php endif ?>
-                    <a class="text-center edit" href="#">edit</a>
+                    <a class="text-center edit" data-dismiss="modal" data-toggle="modal" data-target=".demo-popup7" href="#">edit</a>
                 </div>
                    
             
@@ -347,7 +347,32 @@
             </div>
         </div>
     </div>
-
+<!--
+    NOTES
+    BY: RHEMA MIRANDA
+    SCOPE: MODAL/ CHANGE USERNAME
+-->
+<div class="modal demo-popup7 " tabindex="-1" role="dialog"  aria-hidden="true">
+    <div class="modal-dialog modal-md modal-dialog-centered ">
+        <div class="modal-content  d-flex justify-content-center div3 p-2">
+           
+            <div class="d-flex justify-content-end col-12 mt-2">
+                <i class="fa fa-close pr-3" data-dismiss="modal" aria-hidden="true"></i>
+            </div>
+            <div class="top d-flex flex-column justify-content-center col-lg-8 col-12 mx-auto p-0">
+                <h1 class="mb-2 mt-2 p-0">CHANGE USERNAME</h1>
+                    <div  class="d-flex justify-content-center">
+                    <img class="pic " src="images/062d93bab28c32b51220eecbc5392ce9.png" alt="">
+                    </div>
+                <input type="text" class="form-control username mt-3 mb-0" value="USERNAME123">
+                <b class="mt-0 text-center" id="err-mes">*Username not available</b>
+                <div class="mx-auto mt-3 mb-5 col-lg-10 col-12">
+                    <button class="btn btn-default m-0 col-12" data-dismiss="modal" data-toggle="modal" data-target=".demo-popup2" >SAVE CHANGES</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!--
     NOTES
     BY: RHEMA MIRANDA
