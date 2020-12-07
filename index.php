@@ -1,8 +1,10 @@
 <?php 
     session_start();
     include('includes/server.php');
+    include('includes/update_username.php');
     include('includes/update_email.php');
     include('includes/update_password.php');
+    
 
     if(!isset($_SESSION['userId'])){
          $_SESSION['usertype'] = 'member';
@@ -30,6 +32,23 @@
     <link rel="stylesheet" href="css/home-stylesheet.css">
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <!-- for change username -->
+    <script>
+        $(document).ready(function(){
+            $("#change_username").submit(function(event){
+                event.preventDefault();
+                var username_update = $("#username_update").val();
+                var password_forusername = $("#password_forusername").val();
+                var update_username = $("#update_username").val();
+                $(".cusername-message").load("includes/update_username.php", {
+                    username_update: username_update,
+                    password_forusername: password_forusername,
+                    update_username: update_username
+                });
+            });
+        });
+    </script>
+    <!-- for change email -->
     <script>
         $(document).ready(function(){
             $("#change_email").submit(function(event){
@@ -45,7 +64,7 @@
             });
         });
     </script>
-    
+    <!-- for change password-->
      <script>
         $(document).ready(function(){
             $("#change_password").submit(function(event){
@@ -361,14 +380,31 @@
             </div>
             <div class="top d-flex flex-column justify-content-center col-lg-8 col-12 mx-auto p-0">
                 <h1 class="mb-2 mt-2 p-0">CHANGE USERNAME</h1>
-                    <div  class="d-flex justify-content-center">
+                <div  class="d-flex justify-content-center">
                     <img class="pic " src="images/062d93bab28c32b51220eecbc5392ce9.png" alt="">
-                    </div>
-                <input type="text" class="form-control username mt-3 mb-0" value="USERNAME123">
-                <b class="mt-0 text-center" id="err-mes">*Username not available</b>
-                <div class="mx-auto mt-3 mb-5 col-lg-10 col-12">
-                    <button class="btn btn-default m-0 col-12" data-dismiss="modal" data-toggle="modal" data-target=".demo-popup2" >SAVE CHANGES</button>
+                <!-- display users' username -->
+                <p class="m-0">Your current username is</p>
+                    <?php if(isset($_SESSION['userId'])) : ?>
+                                <p class="email m-0"><?php echo $_SESSION['userId'];?></p>
+                    <?php endif ?>
                 </div>
+                <!-- kinukuha lamang ng username field for new username -->
+                    <form class="mx-auto mt-2  col-lg-10 col-12">
+                        <label>Enter new Username</label>
+                        <input type="text" class="form-control field mt-1 " placeholder="new username" id="username_update" name="username_update">
+                        
+                    </form>
+                <!-- kinukuha password -->
+                <div class="mx-auto mt-2 col-lg-10 col-12">
+                    <label>Enter Password</label>
+                    <input id = "password_forusername" name = "password_forusername" type="password" class="form-control field mt-1 " placeholder="password" value = "">
+                    <b class = "cusername-message"></b>
+                </div>
+                    <form id = "change_username" method = "post" action = "">    
+                    <div class="mx-auto mt-3 mb-5 col-lg-10 col-12">
+                        <button class="btn btn-default m-0 col-12"  id = "update_username" name = "update_username" type ="submit" >SAVE CHANGES</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -389,12 +425,12 @@
                     <form class="mx-auto mt-2 col-lg-10 col-12">
                         <label>Enter Password</label>
                         <input type="password" class="form-control field mt-1 " placeholder="password" id= "password_update" name ="password_update">
-                        <b class = "cpassword-message"></b>
+                        
                     </form>
                     <form class="mx-auto mt-2  col-lg-10 col-12">
                         <label>Enter new Password</label>
                         <input type="password" class="form-control field mt-1 " placeholder="new password" id="password1_update" name="password1_update">
-                        <b class = "cpassword-message"></b>
+                        
                     </form>
                     <form class="mx-auto mt-1 col-lg-10 col-12">
                         <label>Re-enter new Password</label>
