@@ -46,10 +46,6 @@ if(isset($_POST['update_username'])){
                 echo "<b class = 'cusername-message'> Username must only contain alphanumeric characters.</b>";
             }
         }
-        elseif($new_username === $currentusername)
-        {
-            echo "<b class = 'cusername_message'>Put different username, </b>";
-        }
         elseif($user){
             if($user['username'] === $new_username){
                 echo "<b class = 'cusername_message'>Username is already taken</b>";
