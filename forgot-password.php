@@ -47,7 +47,7 @@
                         <button data-toggle='modal' data-target='.demo-popup2'name = "fSubmit"  type="submit" class="col-12 mt-3 btn btn-primary">RESEND RECOVERY EMAIL</button> 
                         <div class="d-flex flex-column justify-content-center m-auto">
                             <p class="m-auto ">Just remembered?</p>
-                            <a class="m-auto" href="#">LOG IN</a>
+                            <a class="m-auto" href="log-in.php">LOG IN</a>
                         </div>
                     </form>
 

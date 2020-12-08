@@ -104,8 +104,9 @@
             <nav class="navbar navbar-expand-md navbar-dark">
                 <div class="container-fluid mx-5">
                     <div class="row ">
-                        <img class="navbar-brand align-middle mr-3" src="images/gobook_logo-01.png"  alt="GOBOOK"/>
-                           
+                        <a href="index.php">
+                            <img class="navbar-brand align-middle mr-3" src="images/gobook_logo-01.png"  alt="GOBOOK"/> 
+                        </a>
                     </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent"  aria-controls="navbarSupportedContent"
