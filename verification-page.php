@@ -26,6 +26,14 @@
         sendVerificationEmail($email, $token);
     }
     
+    if(isset($_SESSION['change-email'])){
+        $email = $_SESSION['email'];
+        $token = $_SESSION['token'];
+        sendVerificationEmail($email, $token);
+        $_SESSION['change-email'] = false;
+    }
+    
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
