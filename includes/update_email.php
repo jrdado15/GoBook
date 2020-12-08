@@ -15,6 +15,12 @@ if(isset($_POST['update_email'])){
         $errorEmail = false;
         $errorPassword = false;
 
+        //query to check if entered email already exist in db
+        $user_check_query = "SELECT * FROM account_tbl WHERE email = '$new_email' LIMIT 1";
+        $results = mysqli_query($db, $user_check_query);
+        $user = mysqli_fetch_assoc($results);
+        //end
+
         if(empty($new_email)){
             echo "<b class = 'cemail_message'> Fill in all fields</b>";
             $errorEmpty = true;
@@ -28,40 +34,38 @@ if(isset($_POST['update_email'])){
         elseif(!filter_var($new_email, FILTER_VALIDATE_EMAIL)){
             echo "<b class = 'cemail_message'> Invalid Email</b>";
         }
-
-        $user_check_query = "SELECT * FROM account_tbl WHERE email = '$new_email' LIMIT 1";
-        $results = mysqli_query($db, $user_check_query);
-        $user = mysqli_fetch_assoc($results);
-
-        if($user){
+        elseif($user){
             if($user['email'] === $new_email){
                 echo "<b class = 'cemail_message'>Email is already taken</b>";
             }
         }
-
-        $password = md5($password);
-
-        //$current_password = $_SESSION['password'];
-        //check passsword before updating
-        $query = "SELECT * FROM account_tbl WHERE email = '$currentemail' AND password = '$password' LIMIT 1";
-        $results = mysqli_query($db, $query);
-    
-        //Update user's email in database
-        if(mysqli_num_rows($results) > 0){  
-            if(mysqli_query($db, $query)){
-                $query_update = "UPDATE account_tbl SET verified = 0, email = '$new_email' WHERE email = '$currentemail' ";
-                mysqli_query($db, $query_update); 
-                $_SESSION['email'] = $new_email;
-                $_SESSION['verified'] = 0;
-                echo "<script> location.reload(true); </script>";
-            }
-        }
         else{
-            if($password != '' && $new_email != ''){
-                $errorPassword = true;
-                echo "<b class = 'cemail_message'> Invalid password</b>";
+            $password = md5($password);
+    
+            //$current_password = $_SESSION['password'];
+            //check passsword before updating
+            $query = "SELECT * FROM account_tbl WHERE email = '$currentemail' AND password = '$password' LIMIT 1";
+            $results = mysqli_query($db, $query);
+        
+            //Update user's email in database
+            if(mysqli_num_rows($results) > 0){  
+                if(mysqli_query($db, $query)){
+                    $query_update = "UPDATE account_tbl SET verified = 0, email = '$new_email' WHERE email = '$currentemail' ";
+                    mysqli_query($db, $query_update); 
+                    $_SESSION['email'] = $new_email;
+                    $_SESSION['verified'] = 0;
+                    echo "<script> location.reload(true); </script>";
+                }
+            }
+            else{
+                if($password != '' && $new_email != ''){
+                    $errorPassword = true;
+                    echo "<b class = 'cemail_message'> Invalid password</b>";
+                }
             }
         }
+
+       
 
 }
 ?>
