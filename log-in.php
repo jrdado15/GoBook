@@ -39,7 +39,7 @@
                                 <a href="index.php" class="mx-auto d-flex flex-column justify-content-center col-lg-8 col-12 mx-auto p-0" >
                                     <img src="images/gobook_logo-02.png" alt="GOBOOK" class="mx-auto col-8" > 
                                 </a>
-                                <p class=" mb-1 text-center">Log into your account! </p>
+                                <h2 class=" mb-1 text-center">Log into your account! </h2>
                         <!-- CHANGES -->
         
                     
