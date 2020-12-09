@@ -46,7 +46,7 @@ body {
 .div2 label{
     font-family:Montserrat;
     letter-spacing: 1px;
-    color: #292929;
+    color: #27282d;
     font-size: 16px;
     font-weight: bolder;
     text-transform: uppercase;
@@ -63,26 +63,29 @@ body {
 
 .div2 h2 {
     font-family:Bebas Neue; 
-    color: #292929;
+    color: #27282d;
     font-size: 32px;
     letter-spacing: 1px;
     margin: 0
 }
 .div2 p {
-  /*  font-family:Bebas Neue; 
-    color: #292929;
-    font-size: 32px;
-    letter-spacing: 1px;
-    margin: 0; */
 
     font-family:Montserrat;
     font-size: 16px;
-    color: #292929;
+    color: #27282d;
     font-weight: lighter;
     letter-spacing: 1px;
-    text-align: center;
+    text-align: center; 
 }
 
+.div2 h2{
+    font-family:Bebas Neue; 
+    color: #27282d;
+    font-size: 32px;
+    letter-spacing: 1px;
+    margin: 0; 
+
+}
 
 .div2 a{
     font-family:Montserrat;
@@ -95,13 +98,13 @@ body {
 
 .div2 .btn-primary{
     background-color:#e33b3a;
-    border-radius: 0;
+    border-radius: 10px;
     overflow: hidden;   
     margin: auto;
     font-family:Bebas Neue;
     font-size: 18px;
     letter-spacing: 1px;
-    color: #292929;
+    color: #27282d;
     box-shadow: none !important;
     border: none;
 }
@@ -109,7 +112,7 @@ body {
 
 .div2 .btn-primary:active{
     box-shadow: none !important;
-    color: #292929 !important;
+    color: #27282d !important;
     
 }
 
@@ -117,9 +120,9 @@ body {
 .div2 .form-control{
     background-color: transparent;
     border: none;
-    border-bottom:  1px solid #292929;
+    border-bottom:  1px solid #27282d;
     border-radius: 0;
-    color: #292929;
+    color: #27282d;
     font-family: Montserrat;
     font-size: 14px;
 
@@ -132,10 +135,10 @@ body {
     box-shadow: none;
     background-color: transparent;
     font-family:Montserrat;
-    color: #292929;
+    color: #27282d;
     background-color: transparent;
     border: none;
-    border-bottom:  1px solid #292929;
+    border-bottom:  1px solid #27282d;
 }
 
 
@@ -146,7 +149,7 @@ body {
 /****************    SIGN UP     ****************/
 /*************************************************/
 .sign-up{
-    background-color:   #292929;
+    background-color:   #27282d;
     background-attachment: scroll;
     background-repeat: no-repeat;
     background-position: top center;
@@ -161,7 +164,7 @@ body {
 
 #label_1{
     font-family:Montserrat;
-    color: #292929;
+    color: #27282d;
     text-align: center;
     font-size: 12px;
     font-weight: 500;
@@ -221,7 +224,7 @@ body {
 /****************    LOG-IN     ****************/
 /*************************************************/
 .log-in{
-    background-color:   #292929;
+    background-color:   #27282d;
     background-attachment: scroll;
     background-repeat: no-repeat;
     background-position: top center;
@@ -252,7 +255,7 @@ body {
 
 .log-in .sign a{
     font-family:Montserrat; 
-    color: #292929;
+    color: #27282d;
     font-size: 14px;
     margin-left: 5px;
 }
@@ -269,7 +272,7 @@ body {
 /*************************************************/
 .ver-page{
    
-    background-color:   #292929;
+    background-color:   #27282d;
     background-attachment: scroll;
     background-repeat: no-repeat;
     background-position: top center;
@@ -284,7 +287,7 @@ body {
 
 .div3{
     position: relative;
-    background-color:#292929 ;
+    background-color:#27282d ;
     background-attachment: scroll;
     width: auto;
     margin: 0 0 !important;
@@ -375,7 +378,7 @@ body {
     
     border:1px solid #e33b3a;
     background-color:#e33b3a;
-    border-radius: 0;
+    border-radius: 10px;
     overflow: hidden;   
     margin: auto;
     font-family:Bebas Neue;
@@ -386,7 +389,7 @@ body {
 
 .div3 .btn-secondary{
     background-color:rgb(66, 65, 65) !important;
-    border-radius: 0;
+    border-radius: 10px;
     overflow: hidden;   
     margin: auto;
     font-family:Bebas Neue;
@@ -432,7 +435,7 @@ input[type=number] {
    }
 .modal-content{
        border-radius: 0;
-       background-color: #292929;
+       background-color: #27282d;
       border: none;
 }
 .div4 .top{
@@ -479,18 +482,18 @@ input[type=number] {
    
 .div4 button{
        background-color:#e33b3a;
-       border-radius: 0;
+       border-radius: 10px;
        overflow: hidden;   
        margin: auto;
        font-family:Bebas Neue;
        font-size: 22px;
        letter-spacing: 1px;
-       color: #292929;
+       color: #27282d;
        box-shadow: none !important;
 }
 .div4 button:active{
        background-color:white;
-       color: #292929;
+       color: #27282d;
 }
    
 
@@ -503,7 +506,7 @@ input[type=number] {
 .div4 label{
     font-family:Montserrat;
     letter-spacing: 1px;
-    color: #e33b3a;
+    color: #27282d;
     font-size: 16px;
     font-weight: bolder;
     text-transform: uppercase;
