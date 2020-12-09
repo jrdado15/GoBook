@@ -20,7 +20,7 @@ body {
 
 
 .navbar{
-   background-color: #1d1e22;
+   background-color: #27282d;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -43,7 +43,6 @@ body {
     color: white;
     letter-spacing: 1px;   
     text-decoration: none;
-    background-image: linear-gradient(#e33b3a,#e33b3a), linear-gradient(transparent, transparent);
     background-size: 0 2px, auto;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -53,8 +52,8 @@ body {
 }
 
 a:hover{
-    background-size: 95% 2px, auto;
-    color: #e33b3a;
+    border-radius: 5px;
+    background-color:  #e33b3a;
 }
 
 .header .row{
@@ -131,15 +130,15 @@ a:hover{
 .carousel-caption .row button{
     
     border:1px solid white;
-    border-radius: 0;
     overflow: hidden;
-
+    background:  white;
     font-family:Montserrat;
     font-weight: bold; 
     letter-spacing: 1px;
-    color: white;
+    color: #27282d;
     font-size: 16px;
     box-shadow: none !important;
+    border-radius: 10px;
 }
 
 .carousel-caption .row button:hover{
@@ -147,6 +146,7 @@ a:hover{
     border:1px solid #e33b3a;
     background-color: #e33b3a !important;
     box-shadow: none !important;
+    color: white;
 }
 
 .carousel-caption .row button:active{
@@ -164,7 +164,7 @@ a:hover{
 /********************************************************/
 
 .footer{
-    background-color: #292929;
+    background-color:  #27282d;
     
 }
 
@@ -210,35 +210,52 @@ a:hover{
 
 .dropdown .btn{
     font-size: 30px;
-    color: #292929;
+    color:  #27282d;
 }
 
 .search input{
-    border:1px solid  #292929;
-    border-radius: 0;
+    
+    border:1px solid   #27282d;
+    border-radius: 10px;
     font-size: 18px;
     box-shadow: none !important;
+    border-radius: 10px 0 0 10px;
+    border-right:none ;
+    margin-right: -6px;
+    
+}
+
+.search input:active{
+    
+    border:1px solid   #27282d !important;
+    border-right:none ;
+    
 }
 
 .search button{
     
     border-radius: 0;
-    background-color:  #292929;
+    background-color:   #27282d;
     color: white;
     font-size: 18px;
     box-shadow: none !important;
-    border:1px solid  #292929;
+    border:1px solid   #27282d;
+    border-left: none;
+    border-radius: 0 10px 10px 0;
 }
 
 .search button:hover{
-    border:1px solid  #292929;
+
     background-color: #e33b3a !important;
     box-shadow: none !important;
+    
 }
 .search button:active{
-    border:1px solid  #292929;
+
     background-color: #e33b3a !important;
     box-shadow: none !important;
+
+
 }
 
 
@@ -253,63 +270,97 @@ a:hover{
     font-weight: 600; 
     color: white;
     text-align: center;
-    font-size: 15px;
+    font-size: 16px;
     letter-spacing: 1px;
     text-overflow: ellipsis;
     overflow: hidden; 
     white-space: nowrap;
-    margin: 5px 7px ;
+    margin: 5px 7px 2px 7px;
 }
-
-
 
 .thumbnail{
-    background-color: #292929;   
-    
+    background-color:  #27282d;   
+    border-radius: 15px ;
 }
 
 
-.thumbnail:hover  .overlay-effect{
-   
+.thumbnail:hover  .overlay-effect{ 
     opacity: 1;
-    cursor: pointer;
+    cursor: pointer;    
+    transform: rotateX(-180deg);
+   
     
 }
 
 .thumbnail:active  .overlay-effect{
     border:5px solid   white;
+    transform: rotateX(180deg);
+    
 }
 
 .overlay-effect {
     position: absolute;
-    background-color: rgba(0,0,0,0.50);
+    background-color:  #27282d;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     opacity: 0;
-    transition: .5s ease;
+   
     overflow: hidden;
     color: white;
     z-index: 10;
     border:5px solid   white;
     padding: 5px !important;
-   
+    border-radius: 18px ;
 } 
+
+.overlay-effect:after {
+    content: "";
+    position: absolute !important;
+    z-index: 100;
+    bottom: 0;
+    
+    border-left: #fff 40px solid;
+    border-bottom: #fff 30px solid;
+    -moz-border-radius: 20px  20px 0 0;
+    -webkit-border-radius: 20px  20px 0 0;
+    border-radius:  20px  20px 0 0;
+}
+
+.overlay-effect:before {
+    content: "";
+    position: absolute !important;
+    z-index: 100;
+    top: 0;
+
+    border-left: #fff 40px solid;
+    border-bottom: #fff 30px solid;
+    -moz-border-radius: 20px 0 0 0px;
+    -webkit-border-radius: 20px 0 0 0px;
+    border-radius: 0  0 20px  20px;
+}
+
+
+.overlay-effect i{
+    color: white;
+
+}
 
 .poster{
     height: 0;
     object-fit: cover;
     overflow: hidden;
     padding-bottom: 148%;
-
+    border-radius: 15px 15px  0 0;
 }
+
 .rate{
-    font-family:Montserrat;
-    color: gray;
-    font-weight: 500;
+    font-family: Montserrat;
+    color: white;
+    font-weight: 400;
     font-size: 14px;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
 }
 
 .form-control:focus {
@@ -340,8 +391,12 @@ a:hover{
     background-color: white;
     border: none;
 }
+
+.div3{
+    border-radius: 18px;
+}
 .div3 .top{
-    border-bottom: 0px solid #292929;
+    border-bottom: 0px solid  #27282d;
     margin: 10px 0;
 }
 
@@ -350,12 +405,12 @@ a:hover{
     width: 100px;
     height: 100px;
     background-color: transparent;
-    border: 2px solid #292929;
+    border: 2px solid  #27282d;
     overflow: hidden;
 }
 .div3 h1{
     font-size: 35px;
-    color: #292929;
+    color:  #27282d;
    text-align: center;
    letter-spacing: 1.5px;
 }
@@ -370,23 +425,23 @@ a:hover{
 }
 
 .div3 i{
-    color: #292929;
+    color:  #27282d;
     font-size: 32px;
 }
 
 .div3 button{
     background-color:#e33b3a;
-    border-radius: 0;
+    border-radius: 10px;
     overflow: hidden;   
     margin: auto;
     font-family:Bebas Neue;
     font-size: 22px;
     letter-spacing: 1px;
-    color: #292929;
+    color:  white;
     box-shadow: none !important;
 }
 .div3 button:active{
-    background-color:#292929;
+    background-color: #27282d;
     color: white;
 }
 
@@ -400,7 +455,7 @@ a:hover{
 .div3 h2{
     font-size: 26px;
     font-family: Montserrat;
-    color: #292929;
+    color:  #27282d;
    text-align: center;
    letter-spacing: 1px;
 }
@@ -408,7 +463,7 @@ a:hover{
 .div3 label{
     font-family:Montserrat;
     letter-spacing: 1px;
-    color: #e33b3a;
+    color:#27282d;
     font-size: 16px;
     font-weight: bolder;
     text-transform: uppercase;
@@ -418,9 +473,9 @@ a:hover{
 .div3 .field{
     background-color: transparent;
     border: none;
-    border-bottom:  1px solid #292929;
+    border-bottom:  1px solid  #27282d;
     border-radius: 0;
-    color: #292929;
+    color:  #27282d;
     font-family: Montserrat;
     font-size: 14px;
     text-align: center;
@@ -440,7 +495,7 @@ a:hover{
     font-size: 22px;
     font-family: Montserrat;
     font-weight: bold;
-    color: #292929;
+    color:  #27282d;
     text-align: center;
     letter-spacing: 1px;
     margin-top: 5px !important;
@@ -469,7 +524,7 @@ a:hover{
 .div3 p{
     font-family:Montserrat;
     font-size: 16px;
-    color: #292929;
+    color:  #27282d;
     font-weight: lighter;
     letter-spacing: 1px;
     text-align: center;
@@ -490,26 +545,32 @@ a:hover{
 
 
 #overview{
-    background-color:  rgba(255, 255, 255, 0.068);
+    background-color:  rgba(88, 87, 87, 0.322);
+   
 }
 
 #bg-mdal{
     border-radius: 0;
-    background-color: #292929;
+    background-color:  #27282d;
     border: none;
 }
 
 .div4{
     background-color:white;
-   
+    border-radius: 18px;
+
+    
 }
 
 .div4 .mv-pstr{
     object-fit: cover;
+    
 }
 
 .div4 img{
     width: auto !important;
+    border-radius: 18px 0 0 18px;
+    
 }
 
 .div4 .prd-info{
@@ -518,7 +579,7 @@ a:hover{
 
 .div4 h1{
     font-size: 43px;
-    color:  #292929;
+    color:   #27282d;
     letter-spacing: 1px;
     font-weight: bold;
     line-height: 1 ;
@@ -532,7 +593,7 @@ a:hover{
 
 .div4 h2{
     font-size: 20px;
-    color:  #292929;
+    color:   #27282d;
     letter-spacing: 1px;
     line-height: 1 ;
     overflow: hidden;
@@ -542,7 +603,7 @@ a:hover{
 
 .div4 p {
     font-family: Montserrat;
-    color:  #292929;
+    color:   #27282d;
     font-size: 16px;
     line-height: 1 ;
     font-weight: lighter;
@@ -558,15 +619,17 @@ a:hover{
 }
 
 .div4 button{
-    border:1px solid  #292929;
-    border-radius: 0;
+    border:1px solid  #27282d ;
+    border-radius: 10px;
     overflow: hidden;
     font-family:Montserrat;
     font-weight: bold; 
     letter-spacing: 1px;
-    color:  #292929;
+    color:   white;
     font-size: 16px;
     box-shadow: none !important;
+    background-color:  #27282d;
+    
 }
 
 .div4 button:hover{
@@ -579,9 +642,9 @@ a:hover{
 
 .div4 button:active{
 
-    border:1px solid  #292929 !important;
-    background-color:#292929 !important;
-    color: #292929!important;
+    border:1px solid   #27282d !important;
+    background-color: white !important;
+    color:  #27282d!important;
     box-shadow: none !important;
 }
 
@@ -590,13 +653,18 @@ a:hover{
 }
 
 /********************************/
-
+#overview2{
+    overflow-y: hidden !important;
+}
 .videowrapper{
     position: relative;
-    padding-bottom:59% !important;
+    padding-bottom:54% !important;
     height: 0;
     min-width: 55% !important;
     margin-top: -70px;
+    border-radius: 18px;
+    background-color: transparent;
+    border: transparent;
 }
 
 .videowrapper iframe{
@@ -605,8 +673,9 @@ a:hover{
     left: 0;
     width: 100%;
     height: 100%;
-    
+    border-radius: 18px
 }
+
 
 #close{
     font-size: 20px;
