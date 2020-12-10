@@ -1,5 +1,6 @@
 <?php 
     include "includes/server.php";
+    session_start();
 
     if(isset($_SESSION['userId'])){
         header('location: verification-page.php');
@@ -25,12 +26,11 @@
         <div class="div2 col-xl-8 col-md-8 col-sm-12 col-xs-12 overflow-auto ">
             <div class="p-5 ">
                 <div class="container p-xl-8">
-                    
-
                     <a href="index.php" class="mx-auto d-flex flex-column justify-content-center col-lg-8 col-12 mx-auto p-0" >
                         <img src="images/gobook_logo-02.png" alt="GOBOOK" class="mx-auto col-8" > 
                     </a>
                      <h2 class=" mb-1 text-center">FORGOT PASSWORD </h2>
+                     <br>
                     <!--<p class="mx-auto mt-0 mb-2">Please enter the email you used to sign up and we'll send you a link to reset it.</p>-->
                     <form method = "post" action="forgot-password.php">
                         <div class="form-group ">
@@ -44,6 +44,7 @@
                                 </div>
                             <?php endif ?>
                         </div>
+                        
                         <button data-toggle='modal' data-target='.demo-popup2'name = "fSubmit"  type="submit" class="col-12 mt-3 btn btn-primary">RESEND RECOVERY EMAIL</button> 
                         <div class="d-flex flex-column justify-content-center m-auto">
                             <p class="m-auto ">Just remembered?</p>
@@ -66,21 +67,21 @@
     BY: RHEMA MIRANDA
     SCOPE: MODAL/ FORGOT PASSWORD > MESSAGE SENT
 -->
-<div class="modal fade demo-popup2 " tabindex="-1" role="dialog" data-backdrop="static" aria-hidden="true">
-    <div class="modal-dialog modal-md modal-dialog-centered ">
-        <div class="modal-content  d-flex justify-content-center div4 p-2">
-           
-  
-            <div class="top d-flex flex-column justify-content-center col-lg-8 col-12 mx-auto p-0">
 
-                <h1 class="mb-0 mt-2 p-0">EMAIL SENT</h1>
+    <div id = "myModal" class="modal fade demo-popup2 " tabindex="-1" role="dialog" data-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog modal-md modal-dialog-centered ">
+            <div class="modal-content  d-flex justify-content-center div4 p-2">
+            
+    
+                <div class="top d-flex flex-column justify-content-center col-lg-8 col-12 mx-auto p-0">
 
+                    <h1 class="mb-0 mt-2 p-0">EMAIL SENT</h1>
+
+                </div>
+                <p class="m-auto col-lg-10 col-12">A reset password link was sent to your rescue email</p>
             </div>
-            <p class="m-auto col-lg-10 col-12">A reset password link was sent to your rescue email:</p>
-            <p class="m-auto col-lg-10 col-12" id="notice"><?php echo $email;?></p> 
         </div>
-    </div>
-</div>   
+    </div>  
 <!-- END -->
 
 <!-- END -->

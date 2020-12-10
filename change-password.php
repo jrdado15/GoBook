@@ -63,14 +63,14 @@
                     <?php endif ?>
                     <br>
                     <div class="d-flex justify-content-center mt-2 mx-auto col-lg-8 col-12">
-                        <button name = "resetSubmit" type = "submit" class="btn btn-default col-12">RESET MY PASSWORD</button>
+                        <button data-toggle="modal" data-target=".demo-popup" name = "resetSubmit" type = "submit" class="btn btn-default col-12">RESET MY PASSWORD</button>
                         <script>
                          $('#success').modal({
                             show: 'false'
                         }); 
                         </script>
                         
-                        <!-- data-toggle="modal" data-target=".demo-popup" -->
+                        
                     </div>
                 </form>
                        

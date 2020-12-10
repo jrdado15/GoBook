@@ -51,12 +51,10 @@ if(isset($_POST['update_password'])){
                     $query_update = "UPDATE account_tbl SET password='$password1' WHERE email = '$currentemail' ";
                     mysqli_query($db, $query_update); 
                     $_SESSION['password'] = $password1;
-                
                     echo "<script> location.reload(true); </script>";
                 }
             }
             else{
-
                     $errorPassword = true;
                     echo "<b class = 'cemail_message'> Invalid password</b>";
                 }  

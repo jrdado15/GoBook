@@ -146,6 +146,7 @@ if(isset($_POST['login'])){
 
 // if user clicks on forgot password button
 if(isset($_POST['fSubmit'])){
+    
 
     $email = $_POST['fpEmail'];
     
@@ -157,8 +158,6 @@ if(isset($_POST['fSubmit'])){
     }
 
     if(count($eerrors) == 0){
-        session_start();
-        $_SESSION['email'] = $email;
         $sql = "SELECT * FROM account_tbl WHERE email = '$email' LIMIT 1";
         $result = mysqli_query($db, $sql);
         $user = mysqli_fetch_assoc($result);
@@ -192,10 +191,10 @@ if(isset($_POST['resetSubmit'])){
     if(empty($password)){
         array_push($perrors, "Password is required.");
     }
-    if(strlen($password) < 8 && strlen($password_confirm) >= 1 ){
+    elseif(strlen($password) < 8 && strlen($password_confirm) >= 1 ){
         array_push($perrors, "Password must at least have 8 characters.");
     }
-    if($password != $password_confirm && strlen($password) > 7){
+    elseif($password != $password_confirm && strlen($password) > 7){
         array_push($cperrors, "Password did not match");
     }
 
