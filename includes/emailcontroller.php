@@ -12,7 +12,7 @@ $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465, 'ssl'))
 // Create the Mailer using your created Transport
 $mailer = new Swift_Mailer($transport);
 
-
+//function for sending an email verification
 function sendVerificationEmail($Email, $token){
 
     
@@ -49,6 +49,7 @@ function sendVerificationEmail($Email, $token){
     $result = $mailer->send($message);
 }
 
+//function for sending an email to reset password
 function sendPasswordResetLink($email ,$token){
 
     global $mailer;

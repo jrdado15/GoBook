@@ -2,13 +2,13 @@
     session_start();
     include('includes/server.php');
     include('includes/update_username.php');
-    include('includes/update_email.php');
     include('includes/update_password.php');
     
 
     if(!isset($_SESSION['userId'])){
          $_SESSION['usertype'] = 'member';
     }
+    
     //restricts user to skip email verification
     if(isset($_SESSION['userId'])){
         if($_SESSION['verified'] == 0){
@@ -44,22 +44,6 @@
                     username_update: username_update,
                     password_forusername: password_forusername,
                     update_username: update_username
-                });
-            });
-        });
-    </script>
-    <!-- for change email -->
-    <script>
-        $(document).ready(function(){
-            $("#change_email").submit(function(event){
-                event.preventDefault();
-                var email_update = $("#email_update").val();
-                var password_default = $("#password_default").val();
-                var update_email = $("#update_email").val();
-                $(".cemail-message").load("includes/update_email.php", {
-                    email_update: email_update,
-                    password_default: password_default,
-                    update_email: update_email
                 });
             });
         });
@@ -237,12 +221,12 @@
                 while($row = mysqli_fetch_array($query_run))
                     {
                 ?>                 
-                <div data-dismiss="modal" data-toggle="modal" data-target=".product-overview" class="cont col-xl-3 col-lg-2 col-md-4 col-sm-4 col-xs-2 p-1">
+                <div id = '<?php echo $row["movie_id"]?>' data-dismiss="modal" data-toggle="modal" data-target=".product-overview" class="movie_trailer view_data cont col-xl-3 col-lg-2 col-md-4 col-sm-4 col-xs-2 p-1">
                     <div class=" thumbnail d-flex flex-column justify-content-left">
                         <div class="overlay-effect d-flex justify-content-center align-items-center p-1"> 
                             <i class="fa fa-ticket fa-3x"></i>
                         </div>
-                        <div  class="poster">
+                        <div class="poster">
                             <?php echo '<img class="post col-12 p-0" src="data:image;base64,' .base64_encode($row['movie_poster']).' ">'; ?>
                         </div>
                             <b class="title mx-4"> <?php echo $row['movie_name'];?> </b>
@@ -347,15 +331,6 @@
                     <a class="text-center edit" data-dismiss="modal" data-toggle="modal" data-target=".demo-popup7" href="#">edit</a>
                 </div>
                    
-            
-                <form class="mx-auto mt-2 col-lg-8 col-12">
-                    <label>Your Email</label>
-                    <?php if(isset($_SESSION['email'])) : ?>
-                                <!-- display users' email -->
-                                <input type="text" class="form-control field mt-1" readonly value=<?php echo $_SESSION['email'];?>>
-                    <?php endif ?>
-                    <a class="float-right" data-dismiss="modal" data-toggle="modal" data-target=".demo-popup4"  href="#">change</a>
-                </form>
                 <form class="mx-auto mt-2 mb-5 col-lg-8 col-12">
                     <label>Your Password</label>
                     <?php if(isset($_SESSION['password'])) : ?>
@@ -448,54 +423,6 @@
         </div>
     </div>
 
-<!--
-    NOTES
-    BY: RHEMA MIRANDA
-    SCOPE: MODAL/ ACCOUNT SETTINGS 1, CHANGE EMAIL
--->
-<div class="modal demo-popup4 " tabindex="-1" role="dialog"  aria-hidden="true" data-backdrop = "static">
-    <div class="modal-dialog modal-md modal-dialog-centered ">
-        <div class="modal-content  d-flex justify-content-center div3 p-2">
-            
-            <div class="d-flex justify-content-end col-12 mt-2">
-                <i class="fa fa-close pr-3" data-dismiss="modal" aria-hidden="true"></i>
-            </div>
-
-            
-            <h1 class="mb-2 mt-2 p-0">CHANGE YOUR EMAIL ADDRESS</h1>
-
-            <p class="m-0">Your current email address is</p>
-            <?php if(isset($_SESSION['email'])) : ?>
-                                <!-- display users' username -->
-                                <p class="email m-0"><?php echo $_SESSION['email'];?></p>
-                    <?php endif ?>
-
-
-        <form id = "change_email" method = "post" action = "">     
-            <!-- kinukuha yung laman ng email field -->
-                <div class="mx-auto mt-2 col-lg-10 col-12">
-                    <label>Enter new email address</label>
-                    <input id = "email_update" name= "email_update" type="email" class="form-control field mt-1 " placeholder="email address" value = "">
-                    <span class = "email-update-error"></span>
-                </div>
-             <!-- kinukuha yung laman ng password field -->    
-                <div class="mx-auto mt-2 col-lg-10 col-12">
-                    <label>Enter Password</label>
-                    <input id = "password_default" name = "password_default" type="password" class="form-control field mt-1 " placeholder="password" value = "">
-                    <b class = "cemail-message"></b>
-                    <span class = "email-success"></span>
-                </div>
-               
-                <div class="mx-auto mt-3 mb-5 col-lg-10 col-12">
-                    
-                    <button type = "submit"  class="btn btn-default m-0 col-12" id = "update_email" name = "update_email">SAVE CHANGES</button>
-                    <!-- data-dismiss="modal"  data-toggle="modal" data-target=".demo-popup6" -->
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
 
 <!--
     NOTES
@@ -516,27 +443,6 @@
     </div>
 </div>
 
-
-<!--
-    NOTES
-    BY: RHEMA MIRANDA
-    SCOPE: MODAL/ ACCOUNT SETTINGS , CHANGE EMAIL > NOTIFICATION
--->
-<div id = "changeEmail-success" class="modal demo-popup6 " tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-md modal-dialog-centered ">
-        <div class="modal-content  d-flex justify-content-center div3 p-2">
-            <div class="d-flex justify-content-end col-12 mt-2">
-                <i class="fa fa-close pr-3" data-dismiss="modal" aria-hidden="true"></i>
-            </div>
-            <h1 class="mb-2 mt-4 p-0">Check your email</h1>
-            <p class=" mx-2 px-2" >Please click the link that we sent in the email below to confirm this changes.</p>
-            <p class="email m-0 px-2" id="notice">newemail.user12345@gmail.com</p> 
-            <a class="mb-4 "href="#">Resend Email</a>
-            <a class="mb-5 "href="#">Cancel Changes</a>
-        </div>
-    </div>
-</div>
-    
 <!--
     NOTES
     BY: RHEMA MIRANDA
@@ -544,28 +450,8 @@
 -->
 <div class="modal fade product-overview mdl" id="overview" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered ">
-        <div class="modal-content  d-flex flex-lg-row justify-content-center  div4 ">
-
-             <!--POSTER-->
-            <div class="d-flex justify-content-center col-lg-4 col-12 p-0 m-0 mv-pstr no-gutters">
-                <img src="images/poster(10).jpg" alt="..." class="col-12 imgs">
+            <div id = "movie_detail" class=" modal-content  d-flex flex-lg-row justify-content-center  div4 ">
             </div>
-            
-            <!--PRODUCT INFO-->
-            <div class="prd-inf d-flex flex-column justify-content-start  col-lg-8 col-12 no-gutters mx-auto p-4">
-                <div class="mv-info col-12 p-0">  
-                        <div class="prd-info">
-                        <h1 class="mb-1 ">CAPTAIN MARVEL</h1>
-                        <p class="m-0 rate"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></p>
-                        <h2 class="mt-1 mb-0">Price:P100.00</h2>
-                        <p class="mt-3 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum rem quis ab laborum eligendi, quo repellat dolorem. Ipsa vero nemo obcaecati est velit reprehenderit molestias aspernatur modi, hic laudantium at nostrum autem explicabo deleniti repellat perspiciatis veniam ad sit eum?</p>
-                        </div>
-                        <button type="button" class="btn btn-outline-secondary m-1 col-12 "  data-toggle="modal" data-target=".product-overview-1"><i class="fa fa-play"></i> TRAILER</button>   
-                        <button type="button" class="btn btn-outline-secondary m-1 col-12"><i class="fa fa-plus"></i> ADD TO CART</button>                
-                        <button type="button" class="btn btn-outline-secondary m-1 col-12"><i class="fa fa-ticket"></i> CHECK OUT</button>
-                </div>  
-            </div>
-        </div>
     </div>
 </div>   
 
@@ -581,10 +467,9 @@
     <div class="modal-dialog modal-dialog-centered mt-0 ">
         
         <div class="modal-content  d-flex flex-lg-row justify-content-center  div4 mt-0 ">
-            <div class="videowrapper col-12 no-gutters">
-                <iframe src="https://www.youtube.com/embed/Z1BCujX3pw8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div id = "trailer" class="videowrapper col-12 no-gutters">
+                
             </div>
-
         </div>
     </div>
 </div>   
@@ -592,6 +477,40 @@
 <!--END-->
 <!--END-->
 <!--END-->
+    
+    <!-- fetch and display product overview -->
+    <script>
+        $(document).ready(function(){
+            $('.view_data').click(function(){
+                var movie_id = $(this).attr("id");
+                $.ajax({
+                    url: "includes/product_overview.php",
+                    method: "post",
+                    data: {movie_id: movie_id},
+                    success:function(data){
+                        $('#movie_detail').html(data);
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- fetch and display product overview movie trailer-->
+    <script>
+        $(document).ready(function(){
+            $('.movie_trailer').click(function(){
+                var movie_id1 = $(this).attr("id");
+                $.ajax({
+                    url: "includes/product_overview.php",
+                    method: "post",
+                    data: {movie_id1: movie_id1},
+                    success:function(data){
+                        $('#trailer').html(data);
+                    }
+                });
+            });
+        });
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" ></script>

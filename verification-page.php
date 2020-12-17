@@ -15,25 +15,19 @@
             exit();
         }
     }
+
+    //restricts user from going to verification page if not logged in
     if(!isset($_SESSION['userId'])){
         header('location: index.php');
         exit();
     }
     
+    //resends email after pressing resend button
     if(isset($_POST['ver_resend'])){
         $email = $_SESSION['email'];
         $token = $_SESSION['token'];
         sendVerificationEmail($email, $token);
     }
-    
-    if(isset($_SESSION['change-email'])){
-        $email = $_SESSION['email'];
-        $token = $_SESSION['token'];
-        sendVerificationEmail($email, $token);
-        $_SESSION['change-email'] = false;
-    }
-    
-    
 ?>
 <!DOCTYPE html>
 <html lang="en">
