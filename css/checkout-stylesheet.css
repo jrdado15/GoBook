@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body { 
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Bebas Neue', cursive;
+    background-color:  #27282d;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    background-color: #27282d;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+ 
+.navbar-brand {
+    height:60px !important;
+    width: auto ;
+    margin: 0 0 0 0;
+}
+
+.navbar-dark .nav-item{
+    padding-left: 10px;
+}
+
+.nav-item a{ 
+    font-family:Montserrat;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 1px;   
+    text-decoration: none;
+    background-size: 0 2px, auto;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    transition: all .2s ease-out;
+    line-height: 90%;
+    
+}
+
+a:hover{
+    border-radius: 5px;
+    background-color:  #e33b3a;
+}
+
+.header .row{
+    margin: 5% 10% 10% 10%;
+}
+
+.header h1{
+    font-family:Montserrat;
+    text-transform: uppercase;
+    font-weight: bolder; 
+    font-size: 34px;
+    color: white;   
+}
+
+.navbar{
+    margin:0;
+    padding: 0;
+}
+.navbar-toggler{
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
+.navbar-toggler:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+/****************************/
+
+.co-cont{
+    letter-spacing: 1px;
+    line-height: 1 ;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/****************/
+.left-div{
+    background-color:  white;
+    color: #27282d;
+    border-radius: 18px;
+}
+
+.left-div img{
+     object-fit: cover;
+     object-position: 50% ;
+     height: 50vh;
+     opacity: 0.8;
+     background-color: gray;
+     border-radius: 18px  18px  0 0;
+}
+
+.left-div h1{
+    font-family: Bebas Neue;
+    font-size: 30px;
+    color: #27282d;
+    letter-spacing: 0px;
+}
+
+.left-div h2{
+    font-family: Montserrat;
+    font-size: 14px;
+    color: #27282d;
+    font-weight: 500;
+    margin-top: -8px !important;
+    letter-spacing: -0.3px;
+}
+
+.left-div h3{
+    font-family: Bebas Neue;
+    font-size: 16px;
+    color: #27282d;
+    text-transform: uppercase;
+}
+
+.left-div p{
+    font-family: Montserrat;
+    font-size: 14px;
+    color: #27282d;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+}
+
+.left-div .line{
+    height: 20px;
+    background-color:   white;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    z-index: 10;
+} 
+
+.left-div .line:before{
+    content: "";
+    position: absolute !important;
+    z-index: 100;
+    left: 0;
+    border-right: #27282d 10px solid;
+    border-bottom: #27282d 20px solid;
+    -moz-border-radius:0 20px 20px 0 ;
+    -webkit-border-radius: 0 20px 20px 0 ;
+    border-radius:0 20px 20px 0 ;
+}
+
+.left-div .line:after{
+    content: "";
+    position: absolute !important;
+    z-index: 100;
+    right: 0;
+    
+    border-right:#27282d 10px solid;
+    border-bottom: #27282d 20px solid;
+    -moz-border-radius:20px 0 0 20px ;
+    -webkit-border-radius:20px 0 0 20px ;
+    border-radius:20px 0 0 20px ;
+}
+
+.left-div .dash{
+    border-top: 3px dashed #27282d;
+}
+
+.left-div button{
+    border:1px solid #e33b3a;
+    background-color: #e33b3a !important;
+    box-shadow: none !important;
+    color: #27282d;
+    font-size: 20px;
+}
+
+.left-div:hover{
+    color: white;
+}
+.left-div button:active{
+    border:1px solid #27282d;
+    background-color: #27282d !important;
+    box-shadow: none !important;
+    color: white;
+}
+/*******************
+RIGHT DIV
+********************/
+
+
+.right-div .form-group{
+    border: #27282d !important;
+    box-shadow: none !important;
+    font-family: Montserrat !important;
+    font-size: 14px;
+    color: white !important;
+    outline: none !important;
+}
+
+.right-div h1{
+    font-family: Bebas Neue;
+    font-size: 40px;
+    color: white;
+    letter-spacing: 0px;
+}
+
+.right-div h2{
+    font-family: Bebas Neue;
+    font-size: 20px;
+    color: white;
+    letter-spacing: 0px;
+}
+
+.right-div h3{
+    font-family: Bebas Neue;
+    font-size: 15px;
+    color: white;
+    letter-spacing: 0px;
+   
+}
+
+/*******************
+.select2
+********************/
+.bootstrap-select .dropdown-toggle:focus {
+    outline: none!important;
+}
+
+.select2-container{
+    color: #27282d !important;
+    font-family: Montserrat !important;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    outline: none !important;
+}
+
+select:focus {
+   outline-color: transparent;
+}
+
+.select2-results__option--highlighted{
+    background-color: #e33b3a !important;
+}
+
+.select2-search input{
+    height: 30px;
+    box-shadow: none !important;
+    outline: none;
+    color: #27282d;
+    font-family: Montserrat !important;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    border: 1.5px solid #27282d  !important;
+    padding: 0 10px;
+}
+
+
+.select2-container .select2-selection--single {
+    height: 30px;
+    border-radius: 3px;
+    border: 1px solid white;
+    outline: none !important;
+}
+
+.no-search .select2-search {
+    display:none;
+}
+
+/*******************
+select
+********************/
+
+
+.form-control{
+    font-family: Montserrat !important;
+    font-size: 14px;
+    color:#27282d;
+    letter-spacing: -0.3px;
+    box-shadow: none !important;
+    outline: none !important;
+    border: none !important;
+}
+
+.form-control:focus{
+    box-shadow: none !important;
+    outline: none !important;
+    
+}
+
+
+
+
+/*******************
+datepicker
+********************/
+
+.form-control[readonly] {
+    background-color: white;
+    opacity: 1;
+    color: #27282d;
+    border: 1px solid #27282d;
+}
+
+.pro-button {
+    background-color: #27282d;
+    border-color: #27282d;
+}
+
+.pro-button:focus {
+    outline: none !important;
+    background-color: #27282d;
+    border-color: #27282d;
+    box-shadow: 0 0 0 0.2rem rgb(255, 255, 255) !important
+}
+
+.pro-button:active {
+    outline: none !important;
+    background-color: #27282d !important;
+    border-color: #27282d !important
+}
+
+.pro-button:hover {
+    background-color: #27282d;
+    border-color: #27282d;
+}
+
+label {
+    font-weight: 54px;
+}
+
+/*******************
+seat
+********************/
+
+.screen{
+    height: 10px;
+    background-color: white;
+    border-radius: 90% 90% 0 0 ;
+    box-shadow:0 20px 80px white;
+}
+.seat{
+    min-height: 20px !important;
+    width: 10% !important;
+    background-color: white;
+    border-radius: 50% 50% 2px 2px;
+    margin: 0 2px;
+}
+
+.seat:hover{
+    background-color: gray;
+}
+
+.seat:active{
+    background-color: #e33b3a;
+}
+
+.invisible, .invisible:hover , .invisible:active{
+    background-color: transparent !important;
+} 
+
+.taken, .taken:hover , .taken:active{
+    background-color: #3a45e3;
+}
+
+.selected, .selected:hover , .selected:active{
+    background-color: #e33b3a;
+}
+
+.available, .available:hover , .available:active{
+    background-color: white;
+}
+
+label{
+    font-family: Montserrat;
+    color: white;
+    font-size: 15px;
+}
+
