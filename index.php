@@ -105,7 +105,7 @@
                     <ul class="navbar-nav align-middle ml-auto">
                        
                         <li class="nav-item active">
-                            <a href="#" class="nav-link">HOME</a>
+                            <a href="index.php" class="nav-link">HOME</a>
                         </li>
                       
                         <li class="nav-item ">
@@ -139,33 +139,19 @@
     *MOVIE SYNOPSYS SHOULD NOT EXCEED INTO 60 CHARACTERS: .carousel-caption > .row > caption > p
 
 -->
-
-    <div id="slides" class="carousel slide" data-ride="carousel">
- 
-        <ol class="carousel-indicators">   
-            
-            <li data-target="#slides" data-slide-to="0" class="active"></li>  
-            <li data-target="#slides" data-slide-to="1"></li>  
-           
-        </ol>  
-        <div class="carousel-inner">  
-            <div class="carousel-item active">    
-                <img src="images/header(2).jpg" alt="...." >  
+                         
+        <div id="slides" class="carousel slide" data-ride="carousel">
+    
+            <ol class="carousel-indicators">   
                 
-                <div class="carousel-caption">
-                    <div class="row  p-0 m-0 justify-content-center ">
-                        <div  class="caption column align-self-start">
-                            <h1 >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia!</h1>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero ullam magni facilis optio minus voluptate eveniet qui consequatur, eligendi dignissimos enim assumenda perferendis corporis eaque quam inventore eos distinctio cumque. Obcaecati esse, possimus ullam quos aperiam labore ut alias minus deserunt. Consectetur ipsam at vel autem optio delectus, cum nam, voluptatum deleniti repellat, cupiditate dolore.</p>
-                        </div>
-                        <button type="button" class="btn btn-outline-secondary m-1 col-lg-3 col-md-12 "><i class="fa fa-play"></i> TRAILER</button>   
-                        <button type="button" class="btn btn-outline-secondary m-1 col-lg-3 col-md-12 "><i class="fa fa-plus"></i> ADD TO CART</button>                
-                        <button type="button" class="btn btn-outline-secondary m-1 col-lg-3 col-md-12 "><i class="fa fa-ticket"></i> CHECK OUT</button>
-                        </div>
-                </div>
-            </div>
-            <div class="carousel-item" style="width: 100%">  
-                <img src="images/header(5).jpg" alt="....">
+                <li data-target="#slides" data-slide-to="0" class="active"></li>  
+                <li data-target="#slides" data-slide-to="1"></li>  
+            
+            </ol>  
+            <div class="carousel-inner">  
+                <div class="carousel-item active">    
+                    <img src="images/header(2).jpg" alt="...." >  
+                    
                     <div class="carousel-caption">
                         <div class="row  p-0 m-0 justify-content-center ">
                             <div  class="caption column align-self-start">
@@ -175,12 +161,26 @@
                             <button type="button" class="btn btn-outline-secondary m-1 col-lg-3 col-md-12 "><i class="fa fa-play"></i> TRAILER</button>   
                             <button type="button" class="btn btn-outline-secondary m-1 col-lg-3 col-md-12 "><i class="fa fa-plus"></i> ADD TO CART</button>                
                             <button type="button" class="btn btn-outline-secondary m-1 col-lg-3 col-md-12 "><i class="fa fa-ticket"></i> CHECK OUT</button>
-                        </div>
+                            </div>
                     </div>
-            </div>  
-        </div> 
-  
-    </div>   
+                </div>
+                <div class="carousel-item" style="width: 100%">  
+                    <img src="images/header(5).jpg" alt="....">
+                        <div class="carousel-caption">
+                            <div class="row  p-0 m-0 justify-content-center ">
+                                <div  class="caption column align-self-start">
+                                    <h1 >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia!</h1>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero ullam magni facilis optio minus voluptate eveniet qui consequatur, eligendi dignissimos enim assumenda perferendis corporis eaque quam inventore eos distinctio cumque. Obcaecati esse, possimus ullam quos aperiam labore ut alias minus deserunt. Consectetur ipsam at vel autem optio delectus, cum nam, voluptatum deleniti repellat, cupiditate dolore.</p>
+                                </div>
+                                <button type="button" class="btn btn-outline-secondary m-1 col-lg-3 col-md-12 "><i class="fa fa-play"></i> TRAILER</button>   
+                                <button type="button" class="btn btn-outline-secondary m-1 col-lg-3 col-md-12 "><i class="fa fa-plus"></i> ADD TO CART</button>                
+                                <button type="button" class="btn btn-outline-secondary m-1 col-lg-3 col-md-12 "><i class="fa fa-ticket"></i> CHECK OUT</button>
+                            </div>
+                        </div>
+                </div>  
+            </div> 
+    
+        </div>
     
 
 <!--
@@ -191,58 +191,111 @@
 
 -->
 <div class="product container my-3">
-    <div class="d-flex flex-sm-row flex-column justify-content-between">
-        <div class="dropdown p-0">
-            <button class=" btn btn-lg dropdown-toggle p-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Now Showing
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item disabled" href="#">Now Showing</a>
-            <a class="dropdown-item" href="#">Coming Soon</a>
 
+    <div class="d-flex flex-sm-row flex-column justify-content-between">
+            <div class="dropdown p-0">
+                <button class=" btn btn-lg dropdown-toggle p-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Now Showing
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item disabled" href="#">Now Showing</a>
+                <a class="dropdown-item" href="#">Coming Soon</a>
+                </div>
             </div>
-            
-        </div>
         <div class="search form-inline justify-content-center">
-            <input class=" form-control col-10 " type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-secondary col-2 " type="submit"> <i class="mr-md-3 fa fa-search"></i></button>
+            <form method = "post" action="">
+                <input name = "search-keyword" class= "form-control col-10 " type="search" placeholder="Search" aria-label="Search">
+                <button name = "search-btn" class="btn btn-outline-secondary col-2 " type="submit"> <i class="mr-md-3 fa fa-search"></i></button>
+            </form>
         </div>
     </div>
 
     <!--fetch/display movie description from database-->
-    <div class=" mov-list my-3">
-            <div class="row justify-content-md-start justify-content-xs-center ">
-                <?php 
-                require_once 'includes/conn.php';
+    <?php if(!isset($_POST['search-btn'])) :?>
+        <div class=" mov-list my-3">
+                <div class="row justify-content-md-start justify-content-xs-center ">
+                    <?php 
+                    require_once 'includes/conn.php';
 
-                $query = "SELECT * FROM `movie_tbl`";
-                $query_run = mysqli_query($db, $query);
+                    $query = "SELECT * FROM `movie_tbl`";
+                    $query_run = mysqli_query($db, $query);
 
-                while($row = mysqli_fetch_array($query_run))
-                    {
-                ?>                 
-                <div id = '<?php echo $row["movie_id"]?>' data-dismiss="modal" data-toggle="modal" data-target=".product-overview" class="movie_trailer view_data cont col-xl-3 col-lg-2 col-md-4 col-sm-4 col-xs-2 p-1">
-                    <div class=" thumbnail d-flex flex-column justify-content-left">
-                        <div class="overlay-effect d-flex justify-content-center align-items-center p-1"> 
-                            <i class="fa fa-ticket fa-3x"></i>
+                    while($row = mysqli_fetch_array($query_run))
+                        {
+                    ?>                 
+                    <div id = '<?php echo $row["movie_id"]?>' data-dismiss="modal" data-toggle="modal" data-target=".product-overview" class="movie_trailer view_data cont col-xl-3 col-lg-2 col-md-4 col-sm-4 col-xs-2 p-1">
+                        <div class=" thumbnail d-flex flex-column justify-content-left">
+                            <div class="overlay-effect d-flex justify-content-center align-items-center p-1"> 
+                                <i class="fa fa-ticket fa-3x"></i>
+                            </div>
+                            <div class="poster">
+                                <?php echo '<img class="post col-12 p-0" src="data:image;base64,' .base64_encode($row['movie_poster']).' ">'; ?>
+                            </div>
+                                <b class="title mx-4"> <?php echo $row['movie_name'];?> </b>
+                                <div class="rate d-flex flex-row justify-content-between mx-2 mb-2">
+                                    <b class="ml-1 float-left"> <i class="fa fa-star mt-1"></i> 3.4</b>
+                                    <b class="align-self-center"> P<?php echo $row['movie_price']; ?></b>
+                                </div> 
+                            </div>
                         </div>
-                        <div class="poster">
-                            <?php echo '<img class="post col-12 p-0" src="data:image;base64,' .base64_encode($row['movie_poster']).' ">'; ?>
-                        </div>
-                            <b class="title mx-4"> <?php echo $row['movie_name'];?> </b>
-                            <div class="rate d-flex flex-row justify-content-between mx-2 mb-2">
-                                <b class="ml-1 float-left"> <i class="fa fa-star mt-1"></i> 3.4</b>
-                                <b class="align-self-center"> P<?php echo $row['movie_price']; ?></b>
-                            </div> 
-                        </div>
+                        <?php
+                        }      
+                    ?>
+                </div>
+            </div> 
+        </div>
+    <?php endif; ?>      
+    <!--end-->
+
+    <!-- displays movies according to user keyword input -->
+    <?php if(isset($_POST['search-btn'])) :?>
+        <div class=" mov-list my-3">
+                <div class="row justify-content-md-start justify-content-xs-center ">
+                    <?php 
+                    require_once 'includes/conn.php';
+
+                    $str = $_POST['search-keyword'];
+
+                    $query = "SELECT * FROM `movie_tbl` WHERE `movie_name` LIKE '%{$str}%'";
+
+                    $query_run = mysqli_query($db, $query);
+                    $count = mysqli_num_rows($query_run);
+
+                    //checks if entered keyword is existing in the database
+                    if($count == 0){
+                        ?>
+                            <p id = "not-found-mes">Sorry, no movie matched the keyword "<?php echo $str;?>"</p>
+                        <?php
+                    }
+                    else{
+                        while($row = mysqli_fetch_array($query_run))
+                            {
+                        ?>                 
+                        <div id = '<?php echo $row["movie_id"]?>' data-dismiss="modal" data-toggle="modal" data-target=".product-overview" class="movie_trailer view_data cont col-xl-3 col-lg-2 col-md-4 col-sm-4 col-xs-2 p-1">
+                            <div class=" thumbnail d-flex flex-column justify-content-left">
+                                <div class="overlay-effect d-flex justify-content-center align-items-center p-1"> 
+                                    <i class="fa fa-ticket fa-3x"></i>
+                                </div>
+                                <div class="poster">
+                                    <?php echo '<img class="post col-12 p-0" src="data:image;base64,' .base64_encode($row['movie_poster']).' ">'; ?>
+                                </div>
+                                    <b class="title mx-4"> <?php echo $row['movie_name'];?> </b>
+                                    <div class="rate d-flex flex-row justify-content-between mx-2 mb-2">
+                                        <b class="ml-1 float-left"> <i class="fa fa-star mt-1"></i> 3.4</b>
+                                        <b class="align-self-center"> P<?php echo $row['movie_price']; ?></b>
+                                    </div> 
+                                </div>
+                            </div>
+                            <?php
+                            }    
+                        }  
+                        ?>
                     </div>
-                     <?php
-                     }      
-                 ?>
-            </div>
-        </div> 
-    </div>      
-    <!--fetch/display movie description from database-->
+                </div> 
+        </div>
+    <?php endif; ?>  
+    <!--end-->
+
 <!--
     NOTES
     BY: RHEMA MIRANDA
@@ -450,7 +503,8 @@
 -->
 <div class="modal fade product-overview mdl" id="overview" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered ">
-            <div id = "movie_detail" class=" modal-content  d-flex flex-lg-row justify-content-center  div4 ">
+            <!-- displays movie_details from movie detail id, defined in product_overview.php -->
+            <div id = "movie_detail" class="modal-content  d-flex flex-lg-row justify-content-center  div4 ">
             </div>
     </div>
 </div>   
@@ -465,7 +519,7 @@
         <i id="close" class="fa fa-close p-4" data-dismiss="modal" aria-hidden="true"></i>
     </div>
     <div class="modal-dialog modal-dialog-centered mt-0 ">
-        
+        <!-- displays movie trailer from movie-content id, defined in product_overview.php -->
         <div class="modal-content  d-flex flex-lg-row justify-content-center  div4 mt-0 ">
             <div id = "trailer" class="videowrapper col-12 no-gutters">
                 

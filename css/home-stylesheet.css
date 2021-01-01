@@ -543,6 +543,9 @@ a:hover{
 /********************************************************/
 /********************************************************/
 
+.product{
+    min-width: 40vh;
+}
 
 #overview{
     background-color:  rgba(88, 87, 87, 0.322);
@@ -681,3 +684,10 @@ a:hover{
     font-size: 20px;
     color: white;
 }
+
+#not-found-mes{
+    font-family:Montserrat !important;
+    color:#e33b3a !important;
+    font-size: 16px;
+ }
+
