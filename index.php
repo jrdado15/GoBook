@@ -213,6 +213,7 @@
     <!--fetch/display movie description from database-->
     <?php if(!isset($_POST['search-btn'])) :?>
         <div class=" mov-list my-3">
+            <p class="not-found-mes">Sorry, no movie matched the keyword ”yay”</p>
                 <div class="row justify-content-md-start justify-content-xs-center ">
                     <?php 
                     require_once 'includes/conn.php';
@@ -527,6 +528,42 @@
         </div>
     </div>
 </div>   
+    
+<!--
+    NOTES
+    BY: RHEMA MIRANDA
+    SCOPE: MODAL/ CHANGE PICTURE
+-->
+<div class="modal demo-popup8 " tabindex="-1" role="dialog"  aria-hidden="true">
+    <div class="modal-dialog modal-md modal-dialog-centered ">
+        <div class="modal-content  d-flex justify-content-center div3 p-2">
+            <div class="d-flex justify-content-end col-12 mt-2">
+                <i class="fa fa-close pr-3" data-dismiss="modal" aria-hidden="true"></i>
+            </div>
+                <div class="top d-flex flex-column justify-content-center col-lg-8 col-12 mx-auto p-0">
+                    <h1 class="mb-2 mt-2 p-0">CHANGE PICTURE</h1>
+                </div>
+                  <div class = "container">
+                      <div class ="row col-12 mx-auto" >
+                          <div class ="col-12 form-div ">
+                              <form action ="index.php" method ="post" enctype ="multipart/form-data" class="col-12 mx-auto ">
+                                      <div class="form-group column col-12 mx-auto justify-content-center">
+                                          <div  class="d-flex justify-content-center">
+                                              <img  id="profileDisplay" src="images/sign-up-bg.jpg" alt="">
+                                          </div>
+                                          <label for="profileImage" class="text-center col-12 mx-auto mt-2 ">Profile Image</label>
+                                          <input type ="file" name='profileImage' id="profileImage" style="display: none;">
+                                          <button type ="submit" name="save-user" class="btn mx-auto mt-3 col-12">Save Changes</button>
+                                      </div>
+                                       
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+        </div>
+    </div>
+  </div>
+  
 
 <!--END-->
 <!--END-->
