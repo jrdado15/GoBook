@@ -220,7 +220,7 @@
                 </div>
             <?php else:?>
                 <h3>
-                    Result movie search
+                    Results for: <?php echo $_POST['search-keyword'];?>
                 </h3>
             <?php endif; ?>
         <div class="ml-auto search form-inline justify-content-center">
