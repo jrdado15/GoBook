@@ -208,16 +208,22 @@
 <div class="product container my-3">
 
     <div class="d-flex flex-sm-row flex-column justify-content-between">
-            <div class="dropdown p-0">
-                <button class=" btn btn-lg dropdown-toggle p-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Now Showing
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item disabled" href="#">Now Showing</a>
-                <a class="dropdown-item" href="#">Coming Soon</a>
+            <?php if(!isset($_POST['search-btn'])): ?>
+                <div class="dropdown p-0">
+                    <button class=" btn btn-lg dropdown-toggle p-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Now Showing
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item disabled" href="#">Now Showing</a>
+                    <a class="dropdown-item" href="#">Coming Soon</a>
+                    </div>
                 </div>
-            </div>
-        <div class="search form-inline justify-content-center">
+            <?php else:?>
+                <h3>
+                    Result movie search
+                </h3>
+            <?php endif; ?>
+        <div class="ml-auto search form-inline justify-content-center">
             <form method = "post" action="">
                 <input name = "search-keyword" class= "form-control col-10 " type="search" placeholder="Search" aria-label="Search">
                 <button name = "search-btn" class="btn btn-outline-secondary col-2 " type="submit"> <i class="mr-md-3 fa fa-search"></i></button>
