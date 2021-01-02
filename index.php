@@ -228,7 +228,6 @@
     <!--fetch/display movie description from database-->
     <?php if(!isset($_POST['search-btn'])) :?>
         <div class=" mov-list my-3">
-            <p class="not-found-mes">Sorry, no movie matched the keyword ”yay”</p>
                 <div class="row justify-content-md-start justify-content-xs-center ">
                     <?php 
                     require_once 'includes/conn.php';
@@ -280,7 +279,7 @@
                     //checks if entered keyword is existing in the database
                     if($count == 0){
                         ?>
-                            <p id = "not-found-mes">Sorry, no movie matched the keyword "<?php echo $str;?>"</p>
+                            <p class="not-found-mes">Sorry, no movie matched the keyword "<?php echo $str;?>"</p>
                         <?php
                     }
                     else{
