@@ -141,45 +141,60 @@
 -->
                          
         <div id="slides" class="carousel slide" data-ride="carousel">
-    
-            <ol class="carousel-indicators">   
-                
-                <li data-target="#slides" data-slide-to="0" class="active"></li>  
-                <li data-target="#slides" data-slide-to="1"></li>  
-            
-            </ol>  
-            <div class="carousel-inner">  
-                <div class="carousel-item active">    
-                    <img src="images/header(2).jpg" alt="...." >  
-                    
-                    <div class="carousel-caption">
-                        <div class="row  p-0 m-0 justify-content-center ">
-                            <div  class="caption column align-self-start">
-                                <h1 >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia!</h1>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero ullam magni facilis optio minus voluptate eveniet qui consequatur, eligendi dignissimos enim assumenda perferendis corporis eaque quam inventore eos distinctio cumque. Obcaecati esse, possimus ullam quos aperiam labore ut alias minus deserunt. Consectetur ipsam at vel autem optio delectus, cum nam, voluptatum deleniti repellat, cupiditate dolore.</p>
-                            </div>
-                            <button type="button" class="btn btn-outline-secondary m-1 col-lg-3 col-md-12 "><i class="fa fa-play"></i> TRAILER</button>   
-                            <button type="button" class="btn btn-outline-secondary m-1 col-lg-3 col-md-12 "><i class="fa fa-plus"></i> ADD TO CART</button>                
-                            <button type="button" class="btn btn-outline-secondary m-1 col-lg-3 col-md-12 "><i class="fa fa-ticket"></i> CHECK OUT</button>
-                            </div>
-                    </div>
+                <div>
+                <ol class="carousel-indicators">  
+                <?php
+                    require_once 'includes/conn.php';
+                    $query = "SELECT * FROM `movie_tbl` WHERE `carousel` = 1";
+                    $query_run = mysqli_query($db, $query);
+                    $active = "active";
+                    $count = 0;
+                    $active = "active";
+                    while($row = mysqli_fetch_array($query_run))
+                        {
+                ?>
+                            <li data-target="#slides" data-slide-to = <?php echo $count; ?> class="<?php echo $active; ?>"></li> 
+                <?php
+                    $count++; 
+                    $active = "";
+                    }
+                ?>
+                </ol> 
                 </div>
-                <div class="carousel-item" style="width: 100%">  
-                    <img src="images/header(5).jpg" alt="....">
-                        <div class="carousel-caption">
-                            <div class="row  p-0 m-0 justify-content-center ">
-                                <div  class="caption column align-self-start">
-                                    <h1 >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia!</h1>
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero ullam magni facilis optio minus voluptate eveniet qui consequatur, eligendi dignissimos enim assumenda perferendis corporis eaque quam inventore eos distinctio cumque. Obcaecati esse, possimus ullam quos aperiam labore ut alias minus deserunt. Consectetur ipsam at vel autem optio delectus, cum nam, voluptatum deleniti repellat, cupiditate dolore.</p>
+
+                    <!-- 
+               
+                -->
+            <!-- fetch and display movies that has a value of 1(true) from carousel column in database -->
+            <div class="carousel-inner">  
+                <?php 
+                    require_once 'includes/conn.php';
+                    $query = "SELECT * FROM `movie_tbl` WHERE `carousel` = 1";
+                    $query_run = mysqli_query($db, $query);
+                    $active = "active";
+                    while($row = mysqli_fetch_array($query_run))
+                        {
+                    ?>    
+                        <div class="carousel-item <?php echo $active;?>">    
+                            <?php echo '<img src="data:image;base64,' .base64_encode($row['banner']).' ">'; ?>         
+                            <div class="carousel-caption active">
+                                <div class="row  p-0 m-0 justify-content-center ">
+                                    <div  class="caption column align-self-start">
+                                        <h1 ><?php echo $row['movie_name']; ?></h1>
+                                        <p><?php echo $row['movie_desc']; ?></p>
+                                    </div>
+                                    <button id = '<?php echo $row["movie_id"]?>' type="button" data-toggle="modal" data-target=".product-overview-1" class="movie_trailer  btn btn-outline-secondary m-1 col-lg-3 col-md-12 "><i class="fa fa-play"></i> TRAILER</button>   
+                                    <button type="button" class="btn btn-outline-secondary m-1 col-lg-3 col-md-12 "><i class="fa fa-plus"></i> ADD TO CART</button>                
+                                    <button type="button" class="btn btn-outline-secondary m-1 col-lg-3 col-md-12 "><i class="fa fa-ticket"></i> CHECK OUT</button>
                                 </div>
-                                <button type="button" class="btn btn-outline-secondary m-1 col-lg-3 col-md-12 "><i class="fa fa-play"></i> TRAILER</button>   
-                                <button type="button" class="btn btn-outline-secondary m-1 col-lg-3 col-md-12 "><i class="fa fa-plus"></i> ADD TO CART</button>                
-                                <button type="button" class="btn btn-outline-secondary m-1 col-lg-3 col-md-12 "><i class="fa fa-ticket"></i> CHECK OUT</button>
                             </div>
                         </div>
-                </div>  
+                    <?php
+                        $active = ""; 
+                        } 
+                    ?>
+                <!-- end -->
             </div> 
-    
         </div>
     
 
@@ -312,7 +327,7 @@
                 <div class="column m-0 p-0">
                 <h3>Contact us</h3>
                 <div><i class="fa fa-phone mr-1"></i><a>+8802 2093</a></div>
-                <div><i class="fa fa-envelope mr-1 "></i><a>gobook@mail.com</a> </div>
+                <div><i class="fa fa-envelope mr-1 "></i><a>gobook.scrum@gmail.com</a> </div>
                 <div><i class="fa fa-map-marker mr-1 "></i> <a> ABCD Bldg. 2 Ermita, Manila Philippines</a> </div>
             </div>
             </div>
