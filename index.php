@@ -3,6 +3,7 @@
     include('includes/server.php');
     include('includes/update_username.php');
     include('includes/update_password.php');
+    include('includes/processForm.php');
     
 
     if(!isset($_SESSION['userId'])){
@@ -30,6 +31,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <link rel="stylesheet" href="css/home-stylesheet.css">
+    <link rel="stylesheet" href="css/FORCHANGINGPICTURE.css">
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- for change username -->
@@ -66,6 +68,26 @@
             });
         });
     </script>
+    
+     <!-- FOR CHANGE PICTURE -->
+     <script>
+        function triggerClick() {
+            document.querySelector('#profileImage').click();
+        }
+
+        function displayImage(e) {
+            if (e.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    document.querySelector('#profileDisplay3').setAttribute('src', e.target.result);
+                }
+
+                reader.readAsDataURL(e.files[0]);
+            }
+        }
+</script>
+
 </head>
 <body>
 <!--
@@ -361,7 +383,7 @@
                 </div>
                 <div class="top d-flex flex-column justify-content-center col-lg-8 col-12 mx-auto p-0">
                     <div  class="d-flex justify-content-center">
-                      <img class="pic " src="images/062d93bab28c32b51220eecbc5392ce9.png" alt="">
+                    <img id="profileDisplay1"  src="images/<?php echo $_SESSION['profile_image']; ?>">
                     </div>
                     <?php if(isset($_SESSION['userId'])) : ?>
                                 <!-- display users' username -->
@@ -395,14 +417,16 @@
                 </div>
                 <div class="top d-flex flex-column justify-content-center col-lg-8 col-12 mx-auto p-0">
                     <h1 class="mb-2 mt-2 p-0">ACCOUNT SETTINGS</h1>
+                        <!-- display users' picture -->
                         <div  class="d-flex justify-content-center">
-                        <img class="pic " src="images/062d93bab28c32b51220eecbc5392ce9.png" alt="">
+                        <img id="profileDisplay1"  src="images/<?php echo $_SESSION['profile_image']; ?>">
                         </div>
                      <?php if(isset($_SESSION['userId'])) : ?>
                                 <!-- display users' username -->
                                 <h1 class="mb-0 mt-2 p-0"><?php echo $_SESSION['userId'];?></h1>
                     <?php endif ?>
-                    <a class="text-center edit" data-dismiss="modal" data-toggle="modal" data-target=".demo-popup7" href="#">edit</a>
+                    <a class="text-center edit" data-dismiss="modal" data-toggle="modal" data-target=".demo-popup8" href="#">Chane Picture</a>
+                    <a class="text-center edit" data-dismiss="modal" data-toggle="modal" data-target=".demo-popup7" href="#">Change Username</a>
                 </div>
                    
                 <form class="mx-auto mt-2 mb-5 col-lg-8 col-12">
@@ -431,9 +455,10 @@
             <div class="top d-flex flex-column justify-content-center col-lg-8 col-12 mx-auto p-0">
                 <h1 class="mb-2 mt-2 p-0">CHANGE USERNAME</h1>
                 <div  class="d-flex justify-content-center">
-                    <img class="pic " src="images/062d93bab28c32b51220eecbc5392ce9.png" alt="">
                 <!-- display users' username -->
                 <p class="m-0">Your current username is</p>
+                </div>
+                <div  class="d-flex justify-content-center">    
                     <?php if(isset($_SESSION['userId'])) : ?>
                                 <p class="email m-0"><?php echo $_SESSION['userId'];?></p>
                     <?php endif ?>
@@ -496,7 +521,43 @@
             </div>
         </div>
     </div>
-
+   
+<!--
+    NOTES
+    BY: RHEMA MIRANDA
+    SCOPE: MODAL/ CHANGE PICTURE
+-->
+<div class="modal demo-popup8 " tabindex="-1" role="dialog"  aria-hidden="true">
+    <div class="modal-dialog modal-md modal-dialog-centered ">
+        <div class="modal-content  d-flex justify-content-center div3 p-2">
+            <div class="d-flex justify-content-end col-12 mt-2">
+                <i class="fa fa-close pr-3" data-dismiss="modal" aria-hidden="true"></i>
+            </div>
+                <div class="top d-flex flex-column justify-content-center col-lg-8 col-12 mx-auto p-0">
+                    <h1 class="mb-2 mt-2 p-0">CHANGE PICTURE</h1>
+                </div>
+                  <div class = "container">
+                      <div class ="row col-12 mx-auto" >
+                          <div class ="col-12 form-div ">
+                              <form action ="index.php" method ="post" enctype ="multipart/form-data" class="col-12 mx-auto ">
+                                      <div class="form-group column col-12 mx-auto justify-content-center">
+                                      <!-- display users' picture -->
+                                      <div  class="d-flex justify-content-center">
+                                            <img src="images/<?php echo $_SESSION['profile_image'];?>" onclick="triggerClick()" id="profileDisplay3">
+                                      </div>
+                                      <label for="profileImage" class="text-center col-12 mx-auto mt-2 ">Profile Picture</label>
+                                          <input type ="file" name="profileImage" onchange="displayImage(this)" id="profileImage" style="display: none;">
+                                          <button type ="submit" name="save-user" class="btn mx-auto mt-3 col-12">Save Changes</button>
+                                      </div>
+                                      
+                             
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+        </div>
+    </div>
+  </div>
 
 <!--
     NOTES
@@ -549,41 +610,6 @@
     </div>
 </div>   
     
-<!--
-    NOTES
-    BY: RHEMA MIRANDA
-    SCOPE: MODAL/ CHANGE PICTURE
--->
-<div class="modal demo-popup8 " tabindex="-1" role="dialog"  aria-hidden="true">
-    <div class="modal-dialog modal-md modal-dialog-centered ">
-        <div class="modal-content  d-flex justify-content-center div3 p-2">
-            <div class="d-flex justify-content-end col-12 mt-2">
-                <i class="fa fa-close pr-3" data-dismiss="modal" aria-hidden="true"></i>
-            </div>
-                <div class="top d-flex flex-column justify-content-center col-lg-8 col-12 mx-auto p-0">
-                    <h1 class="mb-2 mt-2 p-0">CHANGE PICTURE</h1>
-                </div>
-                  <div class = "container">
-                      <div class ="row col-12 mx-auto" >
-                          <div class ="col-12 form-div ">
-                              <form action ="index.php" method ="post" enctype ="multipart/form-data" class="col-12 mx-auto ">
-                                      <div class="form-group column col-12 mx-auto justify-content-center">
-                                          <div  class="d-flex justify-content-center">
-                                              <img  id="profileDisplay" src="images/sign-up-bg.jpg" alt="">
-                                          </div>
-                                          <label for="profileImage" class="text-center col-12 mx-auto mt-2 ">Profile Image</label>
-                                          <input type ="file" name='profileImage' id="profileImage" style="display: none;">
-                                          <button type ="submit" name="save-user" class="btn mx-auto mt-3 col-12">Save Changes</button>
-                                      </div>
-                                       
-                              </form>
-                          </div>
-                      </div>
-                  </div>
-        </div>
-    </div>
-  </div>
-  
 
 <!--END-->
 <!--END-->
@@ -650,6 +676,7 @@
     });  
         });
     </script>
+    
    
   
 </body>

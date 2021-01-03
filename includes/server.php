@@ -92,6 +92,7 @@ if(isset($_POST['signup'])){
         $_SESSION['token'] = $token;
         $_SESSION['verified'] = $verified;
 
+
         //functions call to send a verification email
         sendVerificationEmail($email, $token);
 
