@@ -383,8 +383,21 @@
                 </div>
                 <div class="top d-flex flex-column justify-content-center col-lg-8 col-12 mx-auto p-0">
                     <div  class="d-flex justify-content-center">
-                    <img id="profileDisplay1"  src="images/<?php echo $_SESSION['profile_image']; ?>">
+                    <!-- display users' picture every log-in-->
+                    <?php
+                        $username = $_SESSION['userId'];
+                        $query = "SELECT * FROM account_tbl WHERE username = '$username' LIMIT 1";
+                        $results = mysqli_query($db, $query);
+                        
+                        if(mysqli_num_rows($results))
+                        {
+                            $row = mysqli_fetch_assoc($results);
+                            $profilepicture = $row['profile_image'];
+                        }
+                    ?>
+                    <img id="profileDisplay1" src="images/<?php echo $profilepicture; ?>">
                     </div>
+                    
                     <?php if(isset($_SESSION['userId'])) : ?>
                                 <!-- display users' username -->
                                 <h1 class="mb-0 mt-2 p-0"><?php echo $_SESSION['userId'];?></h1>
@@ -417,9 +430,21 @@
                 </div>
                 <div class="top d-flex flex-column justify-content-center col-lg-8 col-12 mx-auto p-0">
                     <h1 class="mb-2 mt-2 p-0">ACCOUNT SETTINGS</h1>
-                        <!-- display users' picture -->
                         <div  class="d-flex justify-content-center">
-                        <img id="profileDisplay1"  src="images/<?php echo $_SESSION['profile_image']; ?>">
+                         <!-- display users' picture every log-in-->
+                        <?php
+                        $username = $_SESSION['userId'];
+                        $query = "SELECT * FROM account_tbl WHERE username = '$username' LIMIT 1";
+                        $results = mysqli_query($db, $query);
+                        
+                        if(mysqli_num_rows($results))
+                        {
+                            $row = mysqli_fetch_assoc($results);
+                            $profilepicture = $row['profile_image'];
+                        }
+                       ?>
+                        <!-- display users' picture -->
+                        <img id="profileDisplay1"  src="images/<?php echo $profilepicture; ?>">
                         </div>
                      <?php if(isset($_SESSION['userId'])) : ?>
                                 <!-- display users' username -->
@@ -541,9 +566,21 @@
                           <div class ="col-12 form-div ">
                               <form action ="index.php" method ="post" enctype ="multipart/form-data" class="col-12 mx-auto ">
                                       <div class="form-group column col-12 mx-auto justify-content-center">
+                                      <!-- display users' picture every log-in-->
+                                      <?php
+                                      $username = $_SESSION['userId'];
+                                      $query = "SELECT * FROM account_tbl WHERE username = '$username' LIMIT 1";
+                                      $results = mysqli_query($db, $query);
+                        
+                                        if(mysqli_num_rows($results))
+                                        {
+                                        $row = mysqli_fetch_assoc($results);
+                                        $profilepicture = $row['profile_image'];
+                                        }
+                                        ?>
                                       <!-- display users' picture -->
                                       <div  class="d-flex justify-content-center">
-                                            <img src="images/<?php echo $_SESSION['profile_image'];?>" onclick="triggerClick()" id="profileDisplay3">
+                                            <img src="images/<?php echo $profilepicture;?>" onclick="triggerClick()" id="profileDisplay3">
                                       </div>
                                       <label for="profileImage" class="text-center col-12 mx-auto mt-2 ">Profile Picture</label>
                                           <input type ="file" name="profileImage" onchange="displayImage(this)" id="profileImage" style="display: none;">
