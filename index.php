@@ -90,22 +90,7 @@
 
 </head>
 <body>
-<!--
-    NOTES
-    BY: RHEMA MIRANDA
-    SCOPE: HEADER
-
-    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-80" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children dropdown active menu-item-80 nav-item"><a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link" id="menu-item-dropdown-80"><i class="fa fa-bars"></i></a>
-                            <ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-80" role="menu">
-                                <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1147" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-324 current_page_item active menu-item-1147 nav-item"><a title="Host a screening" href="https://www.thesocialdilemma.com/the-film/virtual-tour/host-a-screening/" class="dropdown-item">Host a screening</a></li>
-                                <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-490" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-490 nav-item"><a title="Contact" href="https://www.thesocialdilemma.com/contact/" class="dropdown-item">Contact</a></li>
-                                <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1151" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1151 nav-item"><a title="Donate" href="https://www.denverfilm.org/social-dilemma/" class="dropdown-item">Donate</a></li>
-                                <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-125" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-125 nav-item"><a title="Press" href="https://www.thesocialdilemma.com/press/" class="dropdown-item">Press</a></li>
-                            </ul>
-                        </li>
--->
-
-  
+<!-- HEADER -->
  
             <nav class="navbar navbar-expand-md navbar-dark">
                 <div class="container-fluid mx-5">
@@ -153,14 +138,7 @@
             </nav>
 
 
-<!--
-    NOTES
-    BY: RHEMA MIRANDA
-    SCOPE: HEADER > CAROUSEL
-    *MOVIE TITLE SHOULD NOT EXCEED INTO 15 CHARACTERS: .carousel-caption > .row > caption > h1
-    *MOVIE SYNOPSYS SHOULD NOT EXCEED INTO 60 CHARACTERS: .carousel-caption > .row > caption > p
-
--->
+<!-- HEADER > CAROUSEL -->
                          
         <div id="slides" class="carousel slide" data-ride="carousel">
                 <div>
@@ -220,13 +198,7 @@
         </div>
     
 
-<!--
-    NOTES
-    BY: RHEMA MIRANDA
-    SCOPE: PRODUCT SLIDER
-
-
--->
+<!--PRODUCT CARDS-->
 <div class="product container my-3">
 
     <div class="d-flex flex-sm-row flex-column justify-content-between">
@@ -339,11 +311,7 @@
     <?php endif; ?>  
     <!--end-->
 
-<!--
-    NOTES
-    BY: RHEMA MIRANDA
-    SCOPE: FOOTER
--->  
+<!-- FOOTER -->  
     <div class="footer container-fluid ">
         <div class="row justify-content-between p-5">
             <div class="block col-xl-4 col-lg-3 m-2">
@@ -369,11 +337,7 @@
             </div>
         </div>
     </div>  
-<!--
-    NOTES
-    BY: RHEMA MIRANDA
-    SCOPE: MODAL/ ACCOUNT SETTINGS 1, LOG OUT
--->
+<!-- MODAL/ ACCOUNT SETTINGS 1, LOG OUT-->
     <div class="modal fade demo-popup " tabindex="-1" role="dialog"  aria-hidden="true">
         <div class="modal-dialog modal-md modal-dialog-centered ">
             <div class="modal-content  d-flex justify-content-center div3 p-2">
@@ -416,11 +380,7 @@
         </div>
         
     </div>
- <!--
-    NOTES
-    BY: RHEMA MIRANDA
-    SCOPE: MODAL/ ACCOUNT SETTINGS 2, USER INFO
--->
+ <!-- MODAL/ ACCOUNT SETTINGS 2, USER INFO -->
     <div class="modal demo-popup2 " tabindex="-1" role="dialog"  aria-hidden="true">
         <div class="modal-dialog modal-md modal-dialog-centered ">
             <div class="modal-content  d-flex justify-content-center div3 p-2">
@@ -465,11 +425,7 @@
             </div>
         </div>
     </div>
-<!--
-    NOTES
-    BY: RHEMA MIRANDA
-    SCOPE: MODAL/ CHANGE USERNAME
--->
+<!-- MODAL/ CHANGE USERNAME -->
 <div class="modal demo-popup7 " tabindex="-1" role="dialog"  aria-hidden="true">
     <div class="modal-dialog modal-md modal-dialog-centered ">
         <div class="modal-content  d-flex justify-content-center div3 p-2">
@@ -509,11 +465,7 @@
         </div>
     </div>
 </div>
-<!--
-    NOTES
-    BY: RHEMA MIRANDA
-    SCOPE: MODAL/ ACCOUNT SETTINGS 1, CHANGE PASSWORD
--->
+<!-- MODAL/ ACCOUNT SETTINGS 1, CHANGE PASSWORD -->
     <div class="modal demo-popup3 " tabindex="-1" role="dialog"  aria-hidden="true">
         <div class="modal-dialog modal-md modal-dialog-centered ">
             <div class="modal-content  d-flex justify-content-center div3 p-2">
@@ -547,11 +499,7 @@
         </div>
     </div>
    
-<!--
-    NOTES
-    BY: RHEMA MIRANDA
-    SCOPE: MODAL/ CHANGE PICTURE
--->
+<!-- MODAL/ CHANGE PICTURE -->
 <div class="modal demo-popup8 " tabindex="-1" role="dialog"  aria-hidden="true">
     <div class="modal-dialog modal-md modal-dialog-centered ">
         <div class="modal-content  d-flex justify-content-center div3 p-2">
@@ -596,11 +544,7 @@
     </div>
   </div>
 
-<!--
-    NOTES
-    BY: RHEMA MIRANDA
-    SCOPE: MODAL/ ACCOUNT SETTINGS , CHANGE PASSWORD > NOTIFICATION
--->
+<!-- MODAL/ ACCOUNT SETTINGS , CHANGE PASSWORD > NOTIFICATION -->
 <div class="modal demo-popup5 " tabindex="-1" role="dialog" data-backdrop="static" aria-hidden="true">
     <div class="modal-dialog modal-md modal-dialog-centered ">
         <div class="modal-content  d-flex justify-content-center div3 p-2">
@@ -615,11 +559,7 @@
     </div>
 </div>
 
-<!--
-    NOTES
-    BY: RHEMA MIRANDA
-    SCOPE: MODAL/ PRODUCT OVERVIEW
--->
+<!-- MODAL/ PRODUCT OVERVIEW -->
 <div class="modal fade product-overview mdl" id="overview" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered ">
             <!-- displays movie_details from movie detail id, defined in product_overview.php -->
@@ -628,11 +568,7 @@
     </div>
 </div>   
 
-<!--
-    NOTES
-    BY: RHEMA MIRANDA
-    SCOPE: MODAL/ TRAILER
--->
+<!-- MODAL/ TRAILER -->
 <div class="modal product-overview-1 mdl "  tabindex="-1" role="dialog" aria-hidden="true">
     <div class="d-flex justify-content-end col-12 mt-2">
         <i id="close" class="fa fa-close p-4" data-dismiss="modal" aria-hidden="true"></i>
