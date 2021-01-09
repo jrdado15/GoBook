@@ -500,3 +500,15 @@ label{
     border: 2px solid #27282d;
     color: #27282d;
 }
+
+
+.footer h1{
+    font-family: Bebas Neue !important;
+    font-size: 25px !important;
+}
+
+.footer p, .footer span{
+    font-family: Montserrat !important;
+    font-size: 15px !important;
+    letter-spacing: -0.3px;
+}
