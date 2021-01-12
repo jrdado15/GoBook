@@ -194,6 +194,56 @@ a:hover{
 }
 
 
+.left-div label{
+    font-family: Bebas Neue !important;
+    font-size: 16px;
+    color: #27282d;
+}
+
+.left-div .pay-info{
+    font-family: Montserrat !important;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    color: #27282d;
+
+    border-radius: 0;
+    border-bottom: 1px solid #27282d !important;
+    margin-top: -10px;
+}
+
+.footer{
+    color: white !important;
+}
+
+#oc-t{
+    color: white;
+}
+
+.left-div .post2{
+    object-fit: cover;
+    object-position: 50% ;
+    height: 30vh;
+    opacity: 0.8;
+    background-color: gray;
+    border-radius: 18px  18px  0 0;
+}
+
+.left-div .cancel{
+    background-color: #27282d;
+    color: white;
+    box-shadow: none !important;
+    border: 2px solid #27282d;
+    font-size: 18px;
+}
+
+.left-div .cancel:active{
+    background-color: white;
+    color: #27282d;
+    border: 2px solid #27282d;
+    box-shadow: none !important;
+    font-size: 18px;
+}
+
 /*******************
 RIGHT DIV
 ********************/
@@ -228,6 +278,56 @@ RIGHT DIV
     color: white;
     letter-spacing: 0px;
    
+}
+
+
+.right-div .btn-default{
+    border:1px solid #e33b3a;
+    background-color: #e33b3a !important;
+    box-shadow: none !important;
+    color: #27282d;
+    font-size: 20px;
+
+}
+
+.right-div .btn-default:active{
+    border:1px solid #27282d;
+    background-color: #27282d !important;
+    box-shadow: none !important;
+    color: white;
+}
+
+
+.right-div .pay_icon {
+    background-color: #27282d !important;
+    box-shadow: none !important;
+    border:2px solid white !important;
+} 
+
+.right-div .pay_icon:active {
+    border:2px solid #3a45e33d !important;
+    
+} 
+
+.right-div .pay_method .active {
+    border:2px solid #3a45e33d !important;
+    
+}  
+
+.right-div .pay_icon img{
+    width: 100% !important;
+    height: 70% !important;
+    object-position: center;
+    background-color: transparent;
+
+} 
+
+.right-div h4{
+    font-family: Montserrat;
+    color: white;
+    font-size: 20px;
+    letter-spacing: -0.3px;
+    margin-top: -10px !important;
 }
 
 /*******************
@@ -381,6 +481,14 @@ seat
     background-color: white;
 }
 
+.num{
+    min-height: 20px !important;
+    width: 10% !important;
+    border-radius: 50% 50% 2px 2px;
+    margin: 0 2px;
+    color: white;
+    text-align: center;
+} 
 label{
     font-family: Montserrat;
     color: white;
@@ -389,79 +497,7 @@ label{
 
 /**********************/
 
-.right-div .pay_icon {
-    background-color: #27282d !important;
-    box-shadow: none !important;
-    border:2px solid white !important;
-} 
-
-.right-div .pay_icon:active {
-    border:2px solid #3a45e33d !important;
-    
-} 
-
-.right-div .pay_method .active {
-    border:2px solid #3a45e33d !important;
-    
-}  
-
-.right-div .pay_icon img{
-    width: 100% !important;
-    height: 70% !important;
-    object-position: center;
-    background-color: transparent;
-
-} 
-
-.left-div label{
-    font-family: Bebas Neue !important;
-    font-size: 16px;
-    color: #27282d;
-}
-
-.left-div .pay-info{
-    font-family: Montserrat !important;
-    font-size: 14px;
-    letter-spacing: -0.3px;
-    color: #27282d;
-
-    border-radius: 0;
-    border-bottom: 1px solid #27282d !important;
-    margin-top: -10px;
-}
-
-.footer{
-    color: white !important;
-}
-
-#oc-t{
-    color: white;
-}
-
-.left-div .post2{
-    object-fit: cover;
-    object-position: 50% ;
-    height: 30vh;
-    opacity: 0.8;
-    background-color: gray;
-    border-radius: 18px  18px  0 0;
-}
-
-.left-div .cancel{
-    background-color: #27282d;
-    color: white;
-    box-shadow: none !important;
-    border: 2px solid #27282d;
-    font-size: 18px;
-}
-
-.left-div .cancel:active{
-    background-color: white;
-    color: #27282d;
-    border: 2px solid #27282d;
-    box-shadow: none !important;
-    font-size: 18px;
-}
+/*******************************/
 
 .modal-content{
     background-color: white !important;
