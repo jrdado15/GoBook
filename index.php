@@ -184,8 +184,15 @@
                                         <p><?php echo $row['movie_desc']; ?></p>
                                     </div>
                                     <button id = '<?php echo $row["movie_id"]?>' type="button" data-toggle="modal" data-target=".product-overview-1" class="movie_trailer  btn btn-outline-secondary m-1 col-lg-3 col-md-12 "><i class="fa fa-play"></i> TRAILER</button>   
-                                    <button type="button" class="btn btn-outline-secondary m-1 col-lg-3 col-md-12 "><i class="fa fa-plus"></i> ADD TO CART</button>                
-                                    <button type="button" class="btn btn-outline-secondary m-1 col-lg-3 col-md-12 "><i class="fa fa-ticket"></i> CHECK OUT</button>
+                                    <button type="button" class="btn btn-outline-secondary m-1 col-lg-3 col-md-12 "><i class="fa fa-plus"></i> ADD TO CART</button>
+                                    <?php $movie_id = $row["movie_id"];
+                                        // encrypt movie id before passing it on the url
+                                         $movie_id += 100123;
+                                    ?>
+                                    <form class="col-lg-3 col-md-12" method = "post" action = "<?php if(isset($_SESSION["userId"])){ echo 'booking-process.php?movie_id='.$movie_id.'';} else echo 'log-in.php'; ?>" >
+                                        <button class="m-1 btn-outline-secondary btn col-md-12" type="submit" ><i class="fa fa-ticket"></i> CHECK OUT</button>
+                                    </form>
+
                                 </div>
                             </div>
                         </div>
@@ -196,6 +203,7 @@
                 <!-- end -->
             </div> 
         </div>
+        
     
 
 <!--PRODUCT CARDS-->
@@ -588,6 +596,7 @@
 <!--END-->
 <!--END-->
     
+    
     <!-- fetch and display product overview -->
     <script>
         $(document).ready(function(){
@@ -621,8 +630,9 @@
             });
         });
     </script>
+    
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" ></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
     <script src="js/JQuery3.3.1.js"></script>

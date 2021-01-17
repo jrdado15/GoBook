@@ -1,12 +1,14 @@
 <?php
 
 require_once 'conn.php';
+session_start();
 
 //display product overview throgh view_data class
 if(isset($_POST["movie_id"])){
     $output = '';
+    $movie_id = $_POST["movie_id"];
     
-    $query = "SELECT * FROM movie_tbl WHERE movie_id = '".$_POST["movie_id"]."'";
+    $query = "SELECT * FROM movie_tbl WHERE movie_id = '$movie_id'";
     $result = mysqli_query($db, $query);
     while($row = mysqli_fetch_array($result)){
         $output .= '<div class="d-flex justify-content-center col-lg-4 col-12 p-0 m-0 mv-pstr no-gutters">
@@ -21,8 +23,20 @@ if(isset($_POST["movie_id"])){
                                     <p class="mt-3 ">'.$row['movie_desc'].'</p>
                                 </div>
                                 <button type="button" class= "btn btn-outline-secondary m-1 col-12 "data-toggle="modal" data-target=".product-overview-1"><i class="fa fa-play"></i> TRAILER</button>   
-                                <button type="button" class="btn btn-outline-secondary m-1 col-12"><i class="fa fa-plus"></i> ADD TO CART</button>                
-                                <button type="button" class="btn btn-outline-secondary m-1 col-12"><i class="fa fa-ticket"></i> CHECK OUT</button>
+                                <button type="button" class="btn btn-outline-secondary m-1 col-12"><i class="fa fa-plus"></i> ADD TO CART</button>
+                                <form method = "post" action = "'; 
+                                if(isset($_SESSION["userId"])) {
+                                    // encrypt movie id
+                                    $movie_id += 100123;
+                                    $output .= 'booking-process.php?movie_id='.$movie_id.'"';
+                                } 
+                                if(!isset($_SESSION["userId"])){
+                                    $output .= 'log-in.php"';
+                                }   
+
+                                $output .= '>               
+                                <button type="submit" class="btn btn-outline-secondary m-1 col-12"><i class="fa fa-ticket"></i> CHECK OUT</button>
+                                </form>
                         </div>  
                     </div>';
     }

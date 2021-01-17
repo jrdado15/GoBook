@@ -30,7 +30,7 @@ function sendVerificationEmail($Email, $token){
     <body>
         <div class="wrapper">
             <p>Hi '.$user.', <br><br>Thank you for signing up on our website. Please click on the link below to verify your email.</p>
-            <a href = "http://localhost/go_book/gobook/verification-page.php?token=' .$token. '">
+            <a href = "http://4615e811990e.ngrok.io/go_book/gobook/verification-page.php?token='.$token.'">
                 Verify your email address.
             </a>
         </div>
@@ -62,7 +62,7 @@ function sendPasswordResetLink($email ,$token){
     <body>
         <div class="wrapper">
             <p>Please click on the link below to reset your password.</p>
-            <a href = "http://localhost/go_book/gobook/log-in.php?password-token=' .$token. '">
+            <a href = "http://4615e811990e.ngrok.io/go_book/gobook/log-in.php?password-token='.$token.'">
                 Reset your password.
             </a>
         </div>
