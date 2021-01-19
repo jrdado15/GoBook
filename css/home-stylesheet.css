@@ -1,16 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 body { 
     font-family: 'Montserrat', sans-serif;
-    font-family: 'Merriweather', serif;
-    font-family: 'Montserrat Subrayada', sans-serif;
-    font-family: 'Anton', sans-serif;
     font-family: 'Bebas Neue', cursive;
-
 }
 
 *{
@@ -18,7 +11,9 @@ body {
     padding: 0;
 }
 
-
+/****************************
+   -- NAVIGATION BAR --
+****************************/
 .navbar{
    background-color: #27282d;
     display: flex;
@@ -83,10 +78,9 @@ a:hover{
     box-shadow: none;
 }
 
-/********************************************************/
-/********************************************************/
-/********************************************************/
-/********************************************************/
+/****************************
+       -- CAROUSEL --
+****************************/
 
 .carousel-item {
     height: 70vh !important;
@@ -115,7 +109,6 @@ a:hover{
     height: 40px !important;
     overflow: hidden;
     text-overflow: ellipsis;
-    
 }
 
 .caption p{
@@ -142,7 +135,6 @@ a:hover{
 }
 
 .carousel-caption .row button:hover{
-    
     border:1px solid #e33b3a;
     background-color: #e33b3a !important;
     box-shadow: none !important;
@@ -150,7 +142,6 @@ a:hover{
 }
 
 .carousel-caption .row button:active{
-
     border:1px solid white !important;
     background-color:white !important;
     color:#e33b3a!important;
@@ -158,14 +149,12 @@ a:hover{
 }
 
 
-/********************************************************/
-/********************************************************/
-/********************************************************/
-/********************************************************/
+/****************************
+       -- FOOTER --
+****************************/
 
 .footer{
     background-color:  #27282d;
-    
 }
 
 .block h3{
@@ -174,8 +163,6 @@ a:hover{
     font-weight: bolder;
     font-size: 16px;
 }
-
-
 
 .block p{
     font-family:Montserrat;
@@ -201,8 +188,9 @@ a:hover{
     font-size: 30px;
 }
 
-
-/*************************************/
+/****************************
+       -- PRODUCT --
+****************************/
 
 .dropdown{
     background-color: transparent !important;
@@ -214,7 +202,6 @@ a:hover{
 }
 
 .search input{
-    
     border:1px solid   #27282d;
     border-radius: 10px;
     font-size: 18px;
@@ -226,14 +213,11 @@ a:hover{
 }
 
 .search input:active{
-    
     border:1px solid   #27282d !important;
     border-right:none ;
-    
 }
 
 .search button{
-    
     border-radius: 0;
     background-color:   #27282d;
     color: white;
@@ -245,17 +229,13 @@ a:hover{
 }
 
 .search button:hover{
-
     background-color: #e33b3a !important;
     box-shadow: none !important;
     
 }
 .search button:active{
-
     background-color: #e33b3a !important;
     box-shadow: none !important;
-
-
 }
 
 
@@ -288,14 +268,11 @@ a:hover{
     opacity: 1;
     cursor: pointer;    
     transform: rotateX(-180deg);
-   
-    
 }
 
 .thumbnail:active  .overlay-effect{
     border:5px solid   white;
     transform: rotateX(180deg);
-    
 }
 
 .overlay-effect {
@@ -341,10 +318,8 @@ a:hover{
     border-radius: 0  0 20px  20px;
 }
 
-
 .overlay-effect i{
     color: white;
-
 }
 
 .poster{
@@ -375,15 +350,14 @@ a:hover{
 }
 
 
-/********************************************************/
-/******************MODAL: LOGOUT*************************/
-/********************************************************/
-/********************************************************/
-
+/****************************
+     -- MODAL / LOGOUT --
+            DIV3
+****************************/
 
 .modal{
     background-color:  rgba(15, 15, 15, 0.897);
-     overflow-y: auto !important;
+    overflow-y: auto !important;
 }
 
 .modal-content{
@@ -395,6 +369,7 @@ a:hover{
 .div3{
     border-radius: 18px;
 }
+
 .div3 .top{
     border-bottom: 0px solid  #27282d;
     margin: 10px 0;
@@ -408,6 +383,7 @@ a:hover{
     border: 2px solid  #27282d;
     overflow: hidden;
 }
+
 .div3 h1{
     font-size: 35px;
     color:  #27282d;
@@ -421,7 +397,6 @@ a:hover{
     text-align: center;
     font-weight: lighter;
     text-decoration: underline;
-
 }
 
 .div3 i{
@@ -445,8 +420,6 @@ a:hover{
     color: white;
 }
 
-/************************************/
-
 .div3 input{
     margin-top: -10px !important;
 }
@@ -467,7 +440,6 @@ a:hover{
     font-size: 16px;
     font-weight: bolder;
     text-transform: uppercase;
-    
 }
 
 .div3 .field{
@@ -507,13 +479,11 @@ a:hover{
     background-color: transparent;
 }
 
-
 .div3 b{
     font-family:Montserrat;
     font-size: 12px;
     color: #e33b3a;
     font-weight: lighter;
-
 }
 
 #err-mes{
@@ -538,10 +508,10 @@ a:hover{
     color: #e33b3a;
 }
 
-/********************************************************/
-/******************MODAL: PRD OVRVW**********************/
-/********************************************************/
-/********************************************************/
+/****************************
+  -- MODAL / PROD OVERVIEW --
+            DIV4
+****************************/
 
 .product{
     min-width: 40vh;
@@ -549,7 +519,6 @@ a:hover{
 
 #overview{
     background-color:  rgba(88, 87, 87, 0.322);
-   
 }
 
 #bg-mdal{
@@ -561,19 +530,15 @@ a:hover{
 .div4{
     background-color:white;
     border-radius: 18px;
-
-    
 }
 
 .div4 .mv-pstr{
     object-fit: cover;
-    
 }
 
 .div4 img{
     width: auto !important;
     border-radius: 18px 0 0 18px;
-    
 }
 
 .div4 .prd-info{
@@ -601,7 +566,6 @@ a:hover{
     line-height: 1 ;
     overflow: hidden;
     text-overflow: ellipsis;
-   
 }
 
 .div4 p {
@@ -632,19 +596,15 @@ a:hover{
     font-size: 16px;
     box-shadow: none !important;
     background-color:  #27282d;
-    
 }
 
 .div4 button:hover{
-    
     border:1px solid #e33b3a;
     background-color: #e33b3a !important;
     box-shadow: none !important;
-    
 }
 
 .div4 button:active{
-
     border:1px solid   #27282d !important;
     background-color: white !important;
     color:  #27282d!important;
@@ -655,7 +615,6 @@ a:hover{
     min-width: 55% !important;
 }
 
-/********************************/
 #overview2{
     overflow-y: hidden !important;
 }
@@ -679,7 +638,6 @@ a:hover{
     border-radius: 18px
 }
 
-
 #close{
     font-size: 20px;
     color: white;
@@ -690,7 +648,6 @@ a:hover{
     color:#e33b3a !important;
     font-size: 16px;
  }
-
 
 #profileDisplay{
     border-radius: 50px;
@@ -703,8 +660,7 @@ a:hover{
     justify-self: center !important;
 }
 
-
- .product{
+.product{
     min-height: 50vh;
- }
+}
 
