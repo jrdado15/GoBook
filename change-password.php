@@ -26,10 +26,7 @@
 
 </head>
 <body>
-<!--
-<img class="logo" src="images/gobook_logo-01.png" alt="GOBOOK">
-
--->
+<!-- ACCOUNT SETTINGS/ CHANGE PASS -->
     <div class="ver-page d-flex justify-content-center" >
         <div class="div4 col-lg-8 col-xs-12 d-flex flex-column justify-content-center m-0 p-0 ">
             <div class="p-lg-5">
@@ -78,11 +75,7 @@
         </div>
     </div>
 
-<!--
-    NOTES
-    BY: RHEMA MIRANDA
-    SCOPE: MODAL/ ACCOUNT SETTINGS 1, LOG OUT
--->
+<!-- MODAL/ ACCOUNT SETTINGS/ CHANGE PASS / SUCCESS -->
 
 <div id = "success" class="modal fade demo-popup"  data-backdrop="static" tabindex="-1" role="dialog"  aria-hidden="true">
     <div class="modal-dialog modal-md modal-dialog-centered ">
