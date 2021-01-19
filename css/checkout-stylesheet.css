@@ -12,6 +12,10 @@ body {
     padding: 0;
 }
 
+/****************************
+   -- NAVIGATION BAR --
+****************************/
+
 .navbar{
     background-color: #27282d;
     display: flex;
@@ -41,7 +45,6 @@ body {
     background-position: bottom;
     transition: all .2s ease-out;
     line-height: 90%;
-    
 }
 
 a:hover{
@@ -76,16 +79,23 @@ a:hover{
     box-shadow: none;
 }
 
-/****************************/
+/****************************
+   -- CONFIRMATION PAGE --
+****************************/
 
 .co-cont{
     letter-spacing: 1px;
     line-height: 1 ;
     overflow: hidden;
     text-overflow: ellipsis;
+    min-height: 70vh !important;
 }
 
-/****************/
+
+/****************************
+      -- CP/ LEFT DIV --
+****************************/
+
 .left-div{
     background-color:  white;
     color: #27282d;
@@ -193,7 +203,6 @@ a:hover{
     color: white;
 }
 
-
 .left-div label{
     font-family: Bebas Neue !important;
     font-size: 16px;
@@ -244,10 +253,9 @@ a:hover{
     font-size: 18px;
 }
 
-/*******************
-RIGHT DIV
-********************/
-
+/****************************
+      -- CP/ RIGHT DIV --
+****************************/
 
 .right-div .form-group{
     border: #27282d !important;
@@ -279,7 +287,6 @@ RIGHT DIV
     letter-spacing: 0px;
    
 }
-
 
 .right-div .btn-default{
     border:1px solid #e33b3a;
@@ -330,9 +337,7 @@ RIGHT DIV
     margin-top: -10px !important;
 }
 
-/*******************
-.select2
-********************/
+
 .bootstrap-select .dropdown-toggle:focus {
     outline: none!important;
 }
@@ -365,7 +370,6 @@ select:focus {
     padding: 0 10px;
 }
 
-
 .select2-container .select2-selection--single {
     height: 30px;
     border-radius: 3px;
@@ -376,11 +380,6 @@ select:focus {
 .no-search .select2-search {
     display:none;
 }
-
-/*******************
-select
-********************/
-
 
 .form-control{
     font-family: Montserrat !important;
@@ -397,13 +396,6 @@ select
     outline: none !important;
     
 }
-
-
-
-
-/*******************
-datepicker
-********************/
 
 .form-control[readonly] {
     background-color: white;
@@ -439,9 +431,9 @@ label {
     font-weight: 54px;
 }
 
-/*******************
-seat
-********************/
+/****************************
+ -- CP/ RIGHT DIV / SEATS--
+****************************/
 
 .screen{
     height: 10px;
@@ -495,9 +487,9 @@ label{
     font-size: 15px;
 }
 
-/**********************/
-
-/*******************************/
+/****************************
+         -- MODAL --
+****************************/
 
 .modal-content{
     background-color: white !important;
@@ -537,6 +529,9 @@ label{
     color: #27282d;
 }
 
+/****************************
+         -- FOOTER --
+****************************/
 
 .footer h1{
     font-family: Bebas Neue !important;
