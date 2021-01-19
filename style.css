@@ -1,15 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-
 
 body { 
     font-family: 'Montserrat', sans-serif;
-    font-family: 'Merriweather', serif;
-    font-family: 'Montserrat Subrayada', sans-serif;
-    font-family: 'Anton', sans-serif;
     font-family: 'Bebas Neue', cursive;
 }
 
@@ -18,7 +11,11 @@ body {
     padding: 0;
     
 }
-/****************    DIV 1     ****************/
+
+/****************************
+         -- DIV 1 --
+****************************/
+
 .div1{
     position: relative;
     background-image:url("images/su-bg.jpg");
@@ -33,8 +30,9 @@ body {
     padding: 0 0 !important;
 }
 
-
-/****************    DIV 2     ****************/
+/****************************
+         -- DIV 2 --
+****************************/
 .div2{
     position: relative;
     background-color:white ;
@@ -43,6 +41,7 @@ body {
     margin: 0 0 !important;
     padding: 0 0 !important;
 }
+
 .div2 label{
     font-family:Montserrat;
     letter-spacing: 1px;
@@ -52,7 +51,6 @@ body {
     text-transform: uppercase;
     margin-bottom: -10px !important;
 }
-
 
 .div2 h1 {
     font-family:Bebas Neue;
@@ -93,7 +91,6 @@ body {
     letter-spacing: 1px;
     float: center;
     text-align:center;
-
 } 
 
 .div2 .btn-primary{
@@ -113,7 +110,6 @@ body {
 .div2 .btn-primary:active{
     box-shadow: none !important;
     color: #27282d !important;
-    
 }
 
 
@@ -141,13 +137,14 @@ body {
     border-bottom:  1px solid #27282d;
 }
 
-
 .floating-cont{
     box-shadow:0px 0px 25px 2px #000000 ;
 }
-/*************************************************/
-/****************    SIGN UP     ****************/
-/*************************************************/
+
+/****************************
+         -- SIGN UP --
+****************************/
+
 .sign-up{
     background-color:   #27282d;
     background-attachment: scroll;
@@ -158,9 +155,7 @@ body {
     background-attachment: scroll;
     min-height: 100vh;
     padding: 5%;
-  
 }
-
 
 #label_1{
     font-family:Montserrat;
@@ -172,14 +167,12 @@ body {
     text-transform: none;
 }
 
-
 .sign-up .form-group {
     font-family:Montserrat;
     font-size: 20px;
     letter-spacing: 1px;
     margin: 5px !important;
 }
-
 
 .input-group {
     font-family:Montserrat !important;
@@ -188,7 +181,6 @@ body {
     margin: 5px 0!important;
     width: 100%;
     text-decoration: none !important;
-    
 }
 
 .input-group-addon{
@@ -204,12 +196,9 @@ body {
     letter-spacing: 1px;
 }
 
-
-
 .sign-up .back{
     color: white;
 }
-
 
 .sign-up .back a{
     font-family:Montserrat; 
@@ -219,10 +208,10 @@ body {
     margin-left: 5px;
 }
 
+/****************************
+        -- LOG IN --
+****************************/
 
-/*************************************************/
-/****************    LOG-IN     ****************/
-/*************************************************/
 .log-in{
     background-color:   #27282d;
     background-attachment: scroll;
@@ -235,16 +224,10 @@ body {
     padding: 8%;
 }
 
-
-
-
-
 .log-in .floating-cont{
     width: 65%;
     height: auto;
- 
 }
-
 
 .forgot a{
     font-family:Montserrat;
@@ -267,9 +250,10 @@ body {
     margin: 0;
 }
 
-/*************************************************/
-/****************  VERIFICATION   ****************/
-/*************************************************/
+/****************************
+      -- VERIFICATION --
+****************************/
+
 .ver-page{
    
     background-color:   #27282d;
@@ -281,9 +265,7 @@ body {
     background-attachment: scroll;
     min-height: 100vh;
     padding: 5%;
-    
 }
-
 
 .div3{
     position: relative;
@@ -292,22 +274,19 @@ body {
     width: auto;
     margin: 0 0 !important;
     padding: 0 0 !important;
-    
 }
 
 .logo{
     width: 100px !important;
     height: auto !important;
-    
-    
 }
-
 
 .div3 h1{
     font-size: 32px;
     color: white;
-   text-align: center;
+    text-align: center;
 }
+
 .div3 p{
     font-family:Montserrat;
     color: white;
@@ -318,7 +297,6 @@ body {
 
 .div3 input{
     margin-top: -10px !important;
-    
 }
 
 .div3 span{
@@ -375,7 +353,6 @@ body {
     border: none !important;
 }
 .div3 .btn-default{
-    
     border:1px solid #e33b3a;
     background-color:#e33b3a;
     border-radius: 10px;
@@ -413,95 +390,95 @@ body {
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
-/* Firefox */
+/****************************
+        -- FIRE FOX --
+****************************/
 input[type=number] {
-  -moz-appearance: textfield;
+    -moz-appearance: textfield;
 }
 
-
-/********************************************************/
-/******************    MODALS   *************************/
-/********************************************************/
-/********************************************************/
-
+/****************************
+        -- MODALS --
+           DIV 4
+****************************/
 
 .modal{
     background-color:  rgba(15, 15, 15, 0.897);
     overflow-y: auto !important;
-   }
-.modal-content{
-       border-radius: 0;
-       background-color: #27282d;
-      border: none;
 }
+
+.modal-content{
+    border-radius: 0;
+    background-color: #27282d;
+    border: none;
+}
+
 .div4 .top{
-       border-bottom: 0px solid white;
-       margin: 10px 0;
+    border-bottom: 0px solid white;
+    margin: 10px 0;
 }
 
 .div4 h1{
-       font-size: 35px;
-       color: white;
-      text-align: center;
-      letter-spacing: 1.5px;
+    font-size: 35px;
+    color: white;
+    text-align: center;
+    letter-spacing: 1.5px;
 }
 
 .div4 h2{
     font-size: 26px;
     font-family: Montserrat;
     color: white;
-   text-align: center;
-   letter-spacing: 1px;
+    text-align: center;
+    letter-spacing: 1px;
 }
 
 .div4 h3{
     font-size: 29px;
     font-family: Bebas Neue;
     color: white;
-   text-align: center;
-   letter-spacing: 1px;
+    text-align: center;
+    letter-spacing: 1px;
 }
    
 .div4 a{
-       font-family:Montserrat;
-       font-size: 14px;
-       text-align: center;
-       font-weight: lighter;
-       text-decoration: underline;
-   
+    font-family:Montserrat;
+    font-size: 14px;
+    text-align: center;
+    font-weight: lighter;
+    text-decoration: underline;
+
 }
    
 .div4 i{
-       color: white;
-       font-size: 32px;
+    color: white;
+    font-size: 32px;
 }
    
 .div4 button{
-       background-color:#e33b3a;
-       border-radius: 10px;
-       overflow: hidden;   
-       margin: auto;
-       font-family:Bebas Neue;
-       font-size: 22px;
-       letter-spacing: 1px;
-       color: #27282d;
-       box-shadow: none !important;
+    background-color:#e33b3a;
+    border-radius: 10px;
+    overflow: hidden;   
+    margin: auto;
+    font-family:Bebas Neue;
+    font-size: 22px;
+    letter-spacing: 1px;
+    color: #27282d;
+    box-shadow: none !important;
 }
+
 .div4 button:active{
-       background-color:white;
-       color: #27282d;
+    background-color:white;
+    color: #27282d;
 }
    
-
 .div4 input{
     margin-top: -10px !important;
 }
-
-
 
 .div4 label{
     font-family:Montserrat;
@@ -510,7 +487,6 @@ input[type=number] {
     font-size: 16px;
     font-weight: bolder;
     text-transform: uppercase;
-    
 }
 
 .div4 .field{
