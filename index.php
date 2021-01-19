@@ -69,7 +69,7 @@
         });
     </script>
     
-     <!-- FOR CHANGE PICTURE -->
+     <!-- For change picture -->
      <script>
         function triggerClick() {
             document.querySelector('#profileImage').click();
@@ -534,7 +534,7 @@
                                         $profilepicture = $row['profile_image'];
                                         }
                                         ?>
-                                      <!-- display users' picture -->
+                                      <!-- display users' chosen picture -->
                                       <div  class="d-flex justify-content-center">
                                             <img src="images/<?php echo $profilepicture;?>" onclick="triggerClick()" id="profileDisplay3">
                                       </div>
