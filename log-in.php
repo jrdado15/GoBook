@@ -29,8 +29,11 @@
     
 </head>
 <body>
+    
+<!-- LOG-IN DIV -->
     <div class="log-in d-flex justify-content-center">
         <div class="floating-cont d-flex flex-row flex-wrap flex-row-reverse col-md-8 col-12  m-0 p-0 ">
+            <!-- DIV 2 (CONTENT) -->
             <div class="div2 col-xl-8 col-md-8 col-sm-12 col-xs-12 overflow-auto ">
                 <form action = "log-in.php" method = "post" class=" p-5 ">
                     <div class="container p-xl-8">
@@ -81,8 +84,9 @@
                 
                 </form>
             </div>
+            <!-- DIV 1 (FOR DESIGN ONLY) -->
             <div class="div1 col-xl-4 col-md-4 col-sm-12 col-xs-12">
-        </div>
+            </div>
             
         </div>
     </div>
