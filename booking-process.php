@@ -129,7 +129,7 @@ if(isset($_GET['movie_id'])){
         <div class="row justify-content-between p-5">
             <div class="block col-xl-4 col-lg-3 m-2">
                 <h3>GoBooK</h3>
-                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia exercitationem eum quis nostrum laborum ut illum reiciendis nihil velit odio aliquam neque laboriosam repellendus doloribus ducimus, officiis distinctio animi iusto.</p>
+                <p>GOBOOK brings you the fastest and easiest way to book your movie tickets for all the upcoming movies in the theatres nearby you.</p>
             </div>
             <div class="contact block col-xl-4 col-lg-3 m-2 ">
                 <div class="column m-0 p-0">
