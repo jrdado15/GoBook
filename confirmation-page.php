@@ -1,3 +1,48 @@
+<?php 
+session_start();
+
+require_once 'includes/conn.php';
+
+if(!isset($_SESSION['userId']) || !isset($_SESSION['reserved_seats']) || !isset($_SESSION['scr_id'])){
+    header('location: verification-page.php');
+    exit();
+}
+
+$count = 0;
+
+$seat_code = '';
+
+foreach($_SESSION['reserved_seats'] as $seats){
+    $query = "SELECT * FROM seat_tbl WHERE seat_id = '$seats' LIMIT 1";
+    $result = mysqli_query($db, $query);                
+    if(mysqli_num_rows($result)){  
+        $seat = mysqli_fetch_assoc($result);
+        $seat_code .= $seat['row'];  $seat_code .= '-';  $seat_code .= $seat['seat_column'];  $seat_code .= ', ';
+    }
+    $count += 1;
+}
+
+$query = "SELECT * FROM screening_tbl WHERE scr_id = ".$_SESSION["scr_id"]."";
+$result = mysqli_query($db, $query);                
+if(mysqli_num_rows($result)){  
+    $scr = mysqli_fetch_assoc($result);
+}
+
+$query = "SELECT * FROM movie_tbl WHERE movie_id = ". $scr["movie_id"]."";
+$result = mysqli_query($db, $query);                
+if(mysqli_num_rows($result)){  
+    $movie = mysqli_fetch_assoc($result);
+}
+
+$total = $count *  $movie['movie_price'];
+
+$ticket_no = '';
+
+for($i = 0; $i < 10; $i++){
+    $ticket_no .= rand(1, 9);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +55,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.38.0/css/tempusdominus-bootstrap-4.min.css" crossorigin="anonymous" />
     <link href="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1587270922/datepicker/datedropper.css" rel="stylesheet">
     <link rel="stylesheet" href="css/checkout-stylesheet.css">
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 <!--
@@ -44,11 +90,10 @@
                 <a href="#" class="nav-link">MY CART</a>
             </li>
             <li class="nav-item">
-                <a data-toggle="modal" data-target=".demo-popup" class="nav-link">LOG IN</a>
+                <a href="#" class="nav-link">TICKET</a>
             </li>
             
-        </ul>
-        
+        </ul>       
     </div>
     </div> 
     
@@ -63,25 +108,25 @@
         <div class=" col-md-10 col-8 p-1 row mb-auto mx-auto">
             <div class="col-xl-6  col-md-8 col-12 left-div p-0 row align-items-start mx-auto" id="cp" >
                 <!-- MOVIE POSTER  -->
-                <img src="images/poster(2).jpg" alt="..." class="post2 col-12 m-0 p-0">
-
+                <!-- <img src="images/poster(2).jpg" alt="..." class="post2 col-12 m-0 p-0"> -->
+                <?php echo '<img class="post2 col-12 m-0 p-0" src="data:image;base64,' .base64_encode($movie['movie_poster']).' ">'; ?> 
                  <!-- MOVIE INFO DIV  -->
                 <div class="info px-4 m-0 my-1 column">
-                    <h1 class="text-left mt-2 mb-0">Captain Marvel</h1>
-                    <h2 class="mb-0">SM Manila Cinema, Cinema 1</h2>
-                    <h1 class="m-0">3D</h1>
+                    <h1 class="text-left mt-2 mb-0"><?php echo $movie['movie_name']; ?></h1>
+                    <h2 class="mb-0"><?php echo $scr['mall_name']; ?>, Cinema <?php echo $scr['cinema_id'];?></h2>
+                    <h1 class="m-0"><?php echo $scr['quality']; ?></h1>
                 </div>
                 <div class="row col-12 m-auto px-4">
                     <h3 class="p-0 m-0 col-6">Date: </h3>
-                    <p class="m-0 col-6 text-right mb-2">Thurs, Oct 27,2021</p>
+                    <p class="m-0 col-6 text-right mb-2"><?php echo $scr['date']; ?></p>
                 </div>
                 <div class="row col-12 m-auto px-4">
                     <h3 class="p-0 m-0 col-6">Seat: </h3>
-                    <p class="m-0 col-6 text-right mb-2">A-10, A-9, A-8</p>
+                    <p id = "<?php echo $seat_code;?>" class="seat_code m-0 col-6 text-right mb-2"><?php echo $seat_code;?> </p>
                 </div>
                 <div class="row col-12 m-auto px-4">
                     <h3 class="p-0 m-0 col-6">Time: </h3>
-                    <p class="m-0 col-6 text-right mb-2">12:00 AM</p>
+                    <p class="m-0 col-6 text-right mb-2"><?php echo $scr['time']; ?></p>
                 </div>
                 <div class="row col-12 m-auto px-4">
                     <h3 class="p-0 m-0 col-6"> Mode of Payment: </h3>
@@ -89,11 +134,11 @@
                 </div>
                 <div class="row col-12 m-auto px-4 ">
                     <h3 class="p-0 m-0 col-6"> Account Name: </h3>
-                    <p class="m-0 col-6 text-right mb-2">José Protacio Rizal Mercado y Alonso Realonda</p>
+                    <p class="m-0 col-6 text-right mb-2"><?php echo $_SESSION['account_name'] ?></p>
                 </div>
                 <div class="row col-12 m-auto px-4">
                     <h3 class="p-0 m-0 col-6"> Account Number: </h3>
-                    <p class="m-0 col-6 text-right">123467890291</p>
+                    <p class="m-0 col-6 text-right"><?php echo $_SESSION['account_num'] ?></p>
                 </div>
                 <!-- ********* -->                    
                 <div class="line col-12 my-1 p-0 m-0 row"> 
@@ -104,26 +149,29 @@
                 <div class="info col-12 px-4 mx-auto mb-1 mt-4 column">
                     <div class="row col-12 m-auto p-0 ">
                         <h3 class="p-0 m-0 col-4"> Ticket No.: </h3>
-                        <p class="m-0 col-8 text-right">1234567907</p>
+                        <p id = "<?php echo $ticket_no; ?>" class="ticket_num m-0 col-8 text-right"><?php echo $ticket_no; ?></p>
                     </div>
                     <div class="row col-12 m-auto p-0 ">
                         <h3 class="p-0 m-0 col-4"> Price: </h3>
-                        <p class="m-0 col-8 text-right">P200.00</p>
+                        <p class="m-0 col-8 text-right">P<?php echo $movie['movie_price']; ?></p>
                     </div>
                     <div class="row col-12 m-auto p-0 ">
                         <h3 class="p-0 m-0 col-4"> Quantity: </h3>
-                        <p class="m-0 col-8 text-right">2</p>
+                        <p class="m-0 col-8 text-right"><?php echo $count; ?></p>
                     </div>
                     <div class="row col-12 m-auto p-0 ">
                         <h3 class="p-0 m-0 col-4"> Total: </h3>
-                        <p class="m-0 col-8 text-right">P400.00</p>
+                        <p class="m-0 col-8 text-right">P<?php echo $total; ?></p>
                     </div>
                     
                 </div>
                 <!-- ********* -->  
                 <!-- BUTTONS  -->
-                <button class="btn cancel mb-1 mx-auto col-10 p-1">cancel</button>
-                <button class="btn btn-default  mb-4 mx-auto col-10 p-1" data-toggle="modal" data-target=".demo-popup">Place Order</button>
+                <button id = "cancel_btn" name = "cancel_btn" class="btn cancel mb-1 mx-auto col-10 p-1">cancel</button>
+                <form action ="" class="btn btn-default mb-4 mx-auto col-10 p-1" id = "submit_btn" name = "submit_btn">
+                    <button type= "submit"  class="btn btn-default mx-auto col-10" >Place Order</button>
+                    <!-- data-toggle="modal" data-target=".demo-popup" -->
+                </form>
                 <!-- ********* -->  
             </div>
         </div>
@@ -136,7 +184,7 @@
 <!-- ********* -->
 
 <!-- MODAL -->
-<div class="modal demo-popup " tabindex="-1" role="dialog"  aria-hidden="true" data-backdrop="static">
+<div  id = "success" class="modal demo-popup " tabindex="-1" role="dialog"  aria-hidden="true"  data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-md modal-dialog-centered ">
         <div class="modal-content  d-flex justify-content-center p-5">
             <img src="images/icons8-ticket-confirmed-100 (1).png" alt="..." class="col-3 mx-auto p-0">
@@ -144,15 +192,15 @@
             <p class="mx-auto">You'll be receiving an email with order details.</p>
             <div class="col-12 row mx-auto">
                 <div class="col-6 p-1">
-                    <button class="btn btn-default  col-12" >Back to Home</button>
+                    <form id = "okay" name = "okay" class=" col-12">
+                        <button type = "submit" class="btn btn-default  col-12" >Okay</button>
+                    </form>
                 </div>
                 <div class="col-6 p-1">
                     <button class="btn btn-default  col-12" >View Order</button>
                 </div>
             </div>
         </div>
-
-            
     </div>
 </div>
 <!-- ********* -->
@@ -186,7 +234,45 @@
 <!-- ********* -->
 
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+    <script>
+        $(document).ready(function(){
+            $('#submit_btn').submit(function(event){
+                event.preventDefault();
+                var submit_btn = $(this).val();
+                var ticket_no = $('.ticket_num').attr("id");
+                var seat_code = $('.seat_code').attr("id");
+                $.ajax({
+                    url: "includes/process.php",
+                    method: "post",
+                    data: {submit_btn: submit_btn, ticket_no: ticket_no, seat_code: seat_code},
+                    success:function(data){
+                        $("#success").modal("toggle");
+                        $('#success').modal({keyboard: false}) 
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $('#okay').submit(function(event){
+                event.preventDefault();
+                var okay = $(this).val();
+                $.ajax({
+                    url: "includes/process.php",
+                    method: "post",
+                    data: {okay: okay},
+                    success:function(data){
+                        $(location).attr('href', 'index.php');
+                    }
+                });
+            });
+        });
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" ></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
 

@@ -1,15 +1,22 @@
 <?php 
 require_once 'includes/conn.php';
 include('includes/process.php');
-session_start();
+
 
 if(isset($_GET['movie_id'])){
     $movie_id = $_GET['movie_id'];
+    session_start();
     //decrypt id
     $movie_id -= 100123;
-    //cinema_details($movie_id);
 
     $_SESSION['movie_id'] = $movie_id;
+    unset($_SESSION['reserved_seats']);
+    unset($_SESSION['account_name']);
+    unset($_SESSION["paymethod"]);
+    unset($_SESSION['account_num']);
+    unset($_SESSION['count']);
+
+    $_SESSION['count'] = 0;
     
     $query = "SELECT * FROM movie_tbl WHERE movie_id = '$movie_id' ";
     $result = mysqli_query($db, $query);
@@ -113,7 +120,7 @@ if(isset($_GET['movie_id'])){
         <!-- ******* -->
 
         <!-- CINEMA -->
-        <div id = "ch_seat">
+        <div id = "ch_seat" class = "ch_seat">
                    
         </div>
 
@@ -144,6 +151,7 @@ if(isset($_GET['movie_id'])){
         </div>
     </div>
 
+    <!--pass mall id and on success display date and time selection -->
     <script>
         $(document).ready(function(){
             $('#cinema').change(function(){
@@ -154,12 +162,18 @@ if(isset($_GET['movie_id'])){
                     data: {cinema: cinema},
                     success:function(data){
                         $('#screening_info').html(data);
+                        // if($("#cinema").hasClass("error")){
+                        //     $('#ch_seat').hide();
+                        //     $("#cinema").removeClass("error");
+                        // }
                     }
                 });
             });
         });
     </script>
+    <!-- ***** -->
 
+    <!-- pass date and time id and  on success display seats selection -->
     <script>
         $(document).ready(function(){
             $(document).on('change', '[id^="date_opt"]', function () {
@@ -169,6 +183,14 @@ if(isset($_GET['movie_id'])){
                     method: "post",
                     data: {date_id: date_id},
                     success:function(data){
+                        // if($("#cinema").hasClass("error")){
+                        //     $('#ch_seat').show(data);
+                        //     $("#cinema").addClass("error");
+                        // }
+                        // else{
+                        //     $('#ch_seat').html(data);
+                        //     $("#cinema").addClass("error");
+                        // }
                         $('#ch_seat').html(data);
                     }
                 });
@@ -176,6 +198,7 @@ if(isset($_GET['movie_id'])){
         });
     </script>
 
+    <!-- pass seats id and on success, change seats status to selected -->
     <script>
         $(document).ready(function(){
             $(document).on('click', ".status", function () {
@@ -185,20 +208,69 @@ if(isset($_GET['movie_id'])){
                     method: "post",
                     data: {seat_id: seat_id},
                     success:function(data){
-                        $("#" + seat_id).addClass("selected");  
-                        $('#re').html(data);
+                        if($("#" + seat_id).hasClass("selected")){
+                            $("#" + seat_id).removeClass("selected");
+                        }
+                        else{
+                            $("#" + seat_id).addClass("selected");
+                        }
+                        // $("#" + seat_id).addClass("selected");  
+                        // $('#re').html(data);
                     }
                 });
             });
         });
     </script>
+    <!-- ***** -->
+
+    <!-- selects payment method -->
+    <script>
+        $(document).ready(function(){
+            $(document).on('click', ".pm", function () {
+                var paymethod = $(this).attr("id");    
+                $.ajax({
+                    url: "includes/process.php",
+                    method: "post",
+                    data: {paymethod: paymethod},
+                    success:function(data){ 
+                        if($("#" + paymethod).hasClass("active")){
+                            $("#" + paymethod).removeClass("active");
+                        }
+                        else{
+                            $("#" + paymethod).addClass("active");
+                        }
+                        // $('#message').html(data);
+                    }
+                });
+            });
+        });
+    </script>
+     <!-- ***** -->
+
+    <!-- validated account name and account number-->
+    <script>
+        $(document).ready(function(){
+            $(document).on('submit', '[id^="proceed_btn"]', '.pm', function (event) {
+                event.preventDefault();
+                var proceed_id = $('#proceed_btn').val();
+                var account_name = $('[id^="acc_name"]').val();
+                var account_number = $('[id^="acc_num"]').val();
+                $.ajax({
+                    url: "includes/process.php",
+                    method: "post",
+                    data: {proceed_id: proceed_id, account_name: account_name, account_number: account_number},
+                    success:function(data){
+                        //alert("success");
+                        $('#message').html(data);
+                    }
+                });
+            });
+        });
+    </script>
+    <!-- ***** -->
 
 
-
-
-
-
-    <!-- ********* -->
+    
     
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" ></script>
