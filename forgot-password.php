@@ -20,7 +20,7 @@
     
 </head>
 <body>
-
+<!-- MODAL/ FORGOT PASSWORD -->
     <div class="log-in d-flex justify-content-center" >
     <div class="floating-cont d-flex flex-row flex-wrap flex-row-reverse col-md-8 col-12  m-0 p-0 ">
         <div class="div2 col-xl-8 col-md-8 col-sm-12 col-xs-12 overflow-auto ">
@@ -62,11 +62,7 @@
         
     </div>
     </div>
-<!--
-    NOTES
-    BY: RHEMA MIRANDA
-    SCOPE: MODAL/ FORGOT PASSWORD > MESSAGE SENT
--->
+<!-- MODAL/ FORGOT PASSWORD > EMAIL SENT -->
 
     <div id = "myModal" class="modal fade demo-popup2 " tabindex="-1" role="dialog" data-backdrop="static" aria-hidden="true">
         <div class="modal-dialog modal-md modal-dialog-centered ">
