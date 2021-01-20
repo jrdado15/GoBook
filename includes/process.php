@@ -675,13 +675,12 @@ if(isset($_POST["submit_btn"])){
         mysqli_query($db, $query);
 
         foreach($_SESSION['reserved_seats'] as $seats){
-            $query = "SELECT * FROM seat_tbl WHERE seat_id = '$seats' LIMIT 1";
+            $query = "SELECT * FROM seat_tbl WHERE seat_id = '$seats'";
             $result = mysqli_query($db, $query);                
             if(mysqli_num_rows($result)){  
-                $update_query = " UPDATE seat_tbl SET status = 'taken' WHERE seat_id = '$seats'";
+                $update_query = "UPDATE seat_tbl SET status = 'taken' WHERE seat_id = '$seats'";
                 mysqli_query($db, $update_query);
             }
-            $count += 1;
         }
 
         unset($_SESSION['reserved_seats']);
