@@ -571,8 +571,11 @@ if(isset($_POST["paymethod"])){
 
 if(isset($_POST["proceed_id"])){
     session_start();
-
-    if(isset($_SESSION["paymethod"])){
+    
+    if(empty($_SESSION['reserved_seats'])){
+        echo '<span class = "text-danger">Please select your seat/s</span>';
+    }
+    elseif(isset($_SESSION["paymethod"])){
         //validate gcash account
         if($_SESSION["paymethod"] == "gcash"){
         if(empty($_POST["account_name"])){
@@ -636,11 +639,12 @@ if(isset($_POST["proceed_id"])){
             }
         }
 
-        if(!empty($_SESSION['reserved_seats']) && isset($_SESSION["account_name"]) && isset($_SESSION["account_num"])){
-            echo "<script>$(location).attr('href', 'confirmation-page.php');</script>";
+        if(isset($_SESSION["account_name"]) && isset($_SESSION["account_num"])){
+            echo "<script>$(location).attr('href', 'confirmation-page.php');</script>"; 
         }
         else{
-            echo '<span class = "text-danger">Please select your seat/s</span>';
+            unset($_SESSION["account_name"]);
+            unset($_SESSION["account_num"]);
         }
     }
     else{
@@ -667,9 +671,18 @@ if(isset($_POST["submit_btn"])){
 
         echo $_POST["ticket_no"];
     
-    
         $query = "INSERT INTO booking_tbl(booking_id, scr_id, account_id, seat_code) VALUES ('$ticket_no', '$scr_id', '$account_id', '$seat_code')";
         mysqli_query($db, $query);
+
+        foreach($_SESSION['reserved_seats'] as $seats){
+            $query = "SELECT * FROM seat_tbl WHERE seat_id = '$seats' LIMIT 1";
+            $result = mysqli_query($db, $query);                
+            if(mysqli_num_rows($result)){  
+                $update_query = " UPDATE seat_tbl SET status = 'taken' WHERE seat_id = '$seats'";
+                mysqli_query($db, $update_query);
+            }
+            $count += 1;
+        }
 
         unset($_SESSION['reserved_seats']);
         unset($_SESSION['account_name']);
