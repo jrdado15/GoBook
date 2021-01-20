@@ -681,7 +681,7 @@ if(isset($_POST["submit_btn"])){
                 $update_query = " UPDATE seat_tbl SET status = 'taken' WHERE seat_id = '$seats'";
                 mysqli_query($db, $update_query);
             }
-            $count += 1;
+
         }
 
         unset($_SESSION['reserved_seats']);
