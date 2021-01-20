@@ -3,15 +3,16 @@ session_start();
 
 require_once 'includes/conn.php';
 
+//restricts user to access confirmation page without going to booking process
 if(!isset($_SESSION['userId']) || !isset($_SESSION['reserved_seats']) || !isset($_SESSION['scr_id'])){
-    header('location: verification-page.php');
+    header('location: index.php');
     exit();
 }
 
 $count = 0;
-
 $seat_code = '';
 
+//concatenates selected seats in seat code variable to be displayed
 foreach($_SESSION['reserved_seats'] as $seats){
     $query = "SELECT * FROM seat_tbl WHERE seat_id = '$seats' LIMIT 1";
     $result = mysqli_query($db, $query);                
@@ -19,25 +20,30 @@ foreach($_SESSION['reserved_seats'] as $seats){
         $seat = mysqli_fetch_assoc($result);
         $seat_code .= $seat['row'];  $seat_code .= '-';  $seat_code .= $seat['seat_column'];  $seat_code .= ', ';
     }
+    //counts the quantity of selected seat/s
     $count += 1;
 }
 
+//access associated data stored in screening_table
 $query = "SELECT * FROM screening_tbl WHERE scr_id = ".$_SESSION["scr_id"]."";
 $result = mysqli_query($db, $query);                
 if(mysqli_num_rows($result)){  
     $scr = mysqli_fetch_assoc($result);
 }
 
+//gets movie details
 $query = "SELECT * FROM movie_tbl WHERE movie_id = ". $scr["movie_id"]."";
 $result = mysqli_query($db, $query);                
 if(mysqli_num_rows($result)){  
     $movie = mysqli_fetch_assoc($result);
 }
 
+//multiplies the movie price to selected seat quantity
 $total = $count *  $movie['movie_price'];
 
 $ticket_no = '';
 
+//generates 10 digit ticket number
 for($i = 0; $i < 10; $i++){
     $ticket_no .= rand(1, 9);
 }

@@ -553,7 +553,7 @@
   </div>
 
 <!-- MODAL/ ACCOUNT SETTINGS , CHANGE PASSWORD > NOTIFICATION -->
-<div class="modal demo-popup5 " tabindex="-1" role="dialog" data-backdrop="static" aria-hidden="true">
+<div id = "success_cpass" class="modal demo-popup5 " tabindex="-1" role="dialog" data-backdrop="static" aria-hidden="true">
     <div class="modal-dialog modal-md modal-dialog-centered ">
         <div class="modal-content  d-flex justify-content-center div3 p-2">
 
