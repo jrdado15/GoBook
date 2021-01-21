@@ -83,7 +83,7 @@ if(isset($_GET['movie_id'])){
 <!-- ********* -->
 
 <!-- BOOKING PROCESS -->
-    <div class="container-fluid col-md-10 col-12 py-3 px-lg-5 px-0 m-auto  flex-column justify-content-center co-cont ">
+    <div class="container-fluid col-md-10 col-12 py-3 px-lg-5 px-0 m-auto  flex-column justify-content-center co-cont " id="co-cont-id">
         <!-- BOTTOM DIV -->
             <div class="col-md-8 col-12  py-1 column mx-auto mb-auto">
                 <div class="col-12 right-div justify-content-center" >
