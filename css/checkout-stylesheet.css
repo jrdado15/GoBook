@@ -91,7 +91,9 @@ a:hover{
     min-height: 70vh !important;
 }
 
-
+#co-cont-id{
+    min-height: 70vh !important;
+}
 /****************************
       -- CP/ LEFT DIV --
 ****************************/
